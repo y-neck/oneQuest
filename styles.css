@@ -1,0 +1,61 @@
+/*CSS*/
+:root {
+  box-sizing: border-box; /*Prevent overflow/vertical scroll bars*/
+  scroll-behavior: smooth; /* Set smooth scrolling for same-page links */
+
+  /* Define used css variables: */
+  @media (prefers-color-scheme: light) {
+    :root {
+      --text: #000000;
+      --background: #f0fdff;
+      --primary: #3692a1;
+      --secondary: #a6e0e8;
+      --accent: #f9c34e;
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --text: #ffffff;
+      --background: #000d0f;
+      --primary: #5ebbc9;
+      --secondary: #175159;
+      --accent: #b17b06;
+    }
+  }
+}
+
+*,
+::before,
+::after {
+  padding: 0; /*reset default padding; [rem]*/
+  margin: 0 auto; /*reset default margin [rem]*/
+}
+
+html {
+  background-color: var(--default-background-color, gray /* Adding fallback */);
+  color: var(--default-text-color, white);
+  height: 100%;
+  max-width: 100%;
+
+  /* Force footer to end of page
+  https://stackoverflow.com/questions/16679146/force-footer-on-bottom-on-pages-with-little-content */
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  height: 100%;
+  font-family: "Urbanist", sans-serif;
+  font-size: 1rem; /* Define default font size [rem]*/
+}
+
+main {
+  flex: 1 0 auto; /* Force footer to end of page */
+  padding-inline: 10%;
+}
+
+.footer {
+  /* Force footer to end of page */
+  flex-shrink: 0;
+}
