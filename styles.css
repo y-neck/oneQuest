@@ -33,7 +33,7 @@
 
 html {
   background-color: var(--default-background-color, gray /* Adding fallback */);
-  color: var(--default-text-color, white);
+  color: var(--default-text-color, black);
   height: 100%;
   max-width: 100%;
 
