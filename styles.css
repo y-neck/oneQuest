@@ -7,19 +7,18 @@
   @media (prefers-color-scheme: light) {
     :root {
       --text: #000000;
-      --background: #f0fdff;
+      --background: #c4eff3;
       --primary: #3692a1;
-      --secondary: #a6e0e8;
+      --secondary: #ffffff;
       --accent: #f9c34e;
     }
   }
-
   @media (prefers-color-scheme: dark) {
     :root {
       --text: #ffffff;
-      --background: #000d0f;
+      --background: #0c373b;
       --primary: #5ebbc9;
-      --secondary: #175159;
+      --secondary: #000000;
       --accent: #b17b06;
     }
   }
@@ -46,7 +45,7 @@ html {
 
 body {
   height: 100%;
-  font-family: "Urbanist", sans-serif;
+  font-family: 'Urbanist', sans-serif;
   font-size: 1rem; /* Define default font size [rem]*/
 }
 
