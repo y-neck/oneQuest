@@ -1,38 +1,45 @@
 /*CSS*/
 :root {
-  box-sizing: border-box; /*Prevent overflow/vertical scroll bars*/
-  scroll-behavior: smooth; /* Set smooth scrolling for same-page links */
+  /*Prevent overflow/vertical scroll bars*/
+  box-sizing: border-box;
+  /* Set smooth scrolling for same-page links */
+  scroll-behavior: smooth;
+}
 
-  /* Define used css variables: */
-  @media (prefers-color-scheme: light) {
-    :root {
-      --text: #000000;
-      --background: #c4eff3;
-      --primary: #3692a1;
-      --secondary: #ffffff;
-      --accent: #f9c34e;
-    }
+/* Define used css variables: */
+/* Prefers-color-scheme: https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme */
+@media (prefers-color-scheme: light) {
+  :root {
+    --text: #000000;
+    --background: #c4eff3;
+    --primary: #3692a1;
+    --secondary: #ffffff;
+    --accent: #f9c34e;
   }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --text: #ffffff;
-      --background: #0c373b;
-      --primary: #5ebbc9;
-      --secondary: #000000;
-      --accent: #b17b06;
-    }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #ffffff;
+    --background: #0c373b;
+    --primary: #5ebbc9;
+    --secondary: #000000;
+    --accent: #b17b06;
   }
 }
 
 *,
 ::before,
 ::after {
-  padding: 0; /*reset default padding; [rem]*/
-  margin: 0 auto; /*reset default margin [rem]*/
+  padding: 0;
+  /*reset default padding; [rem]*/
+  margin: 0 auto;
+  /*reset default margin [rem]*/
 }
 
 html {
-  background-color: var(--default-background-color, gray /* Adding fallback */);
+  background-color: var(--default-background-color, gray
+      /* Adding fallback */
+    );
   color: var(--default-text-color, black);
   height: 100%;
   max-width: 100%;
@@ -46,11 +53,13 @@ html {
 body {
   height: 100%;
   font-family: 'Urbanist', sans-serif;
-  font-size: 1rem; /* Define default font size [rem]*/
+  font-size: 1rem;
+  /* Define default font size [rem]*/
 }
 
 main {
-  flex: 1 0 auto; /* Force footer to end of page */
+  flex: 1 0 auto;
+  /* Force footer to end of page */
   padding-inline: 10%;
 }
 
