@@ -1,4 +1,5 @@
 #Exclude vscode settings
-/.vscode
+#/.vscode
+
 #Exclude ds_store
 .ds_Store
