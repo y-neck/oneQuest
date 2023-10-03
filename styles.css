@@ -37,9 +37,7 @@
 }
 
 html {
-  background-color: var(--background, gray
-      /* Adding fallback */
-    );
+  background-color: var(--background, gray /* Adding fallback */);
   color: var(--text, black);
   height: 100%;
   max-width: 100%;
@@ -55,6 +53,12 @@ body {
   font-family: 'Urbanist', sans-serif;
   font-size: 1rem;
   /* Define default font size [rem]*/
+}
+
+header {
+  height: 65px;
+  width:100vw;
+  background-color: var(--primary,);
 }
 
 main {
@@ -77,5 +81,3 @@ h2 {
   font-weight: 600;
   line-height: normal;
 }
-
-
