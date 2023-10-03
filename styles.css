@@ -37,10 +37,10 @@
 }
 
 html {
-  background-color: var(--default-background-color, gray
+  background-color: var(--background, gray
       /* Adding fallback */
     );
-  color: var(--default-text-color, black);
+  color: var(--text, black);
   height: 100%;
   max-width: 100%;
 
