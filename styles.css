@@ -67,3 +67,15 @@ main {
   /* Force footer to end of page */
   flex-shrink: 0;
 }
+
+/* H2 Heading */
+h2 {
+  text-align: center;
+  font-family: Urbanist;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+
