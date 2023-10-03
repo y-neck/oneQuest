@@ -57,8 +57,23 @@ body {
 
 header {
   height: 65px;
-  width:100vw;
-  background-color: var(--primary,);
+  width: 100vw;
+  background-color: var(--primary);
+/*   display: flex;
+ */  }
+
+#header_logo {
+  height: 34;
+  width: 34px;
+  margin-top: 16px;
+  margin-left: 40px;
+}
+
+#profile_icon {
+  height: 34px;
+  width: 34px;
+  margin-top: 16px;
+  margin-right: 40px;
 }
 
 main {
