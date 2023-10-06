@@ -59,8 +59,9 @@ header {
   height: 65px;
   width: 100vw;
   background-color: var(--primary);
-/*   display: flex;
- */  }
+  /*   display: flex;
+ */
+}
 
 #header_logo {
   height: 34;
@@ -73,7 +74,8 @@ header {
   height: 34px;
   width: 34px;
   margin-top: 16px;
-  margin-right: 40px; /* #1 Todo @y-neck: fix margin-right */
+  margin-right: 40px;
+  float: right; /* Forces icon to appear on right*/
 }
 
 main {
