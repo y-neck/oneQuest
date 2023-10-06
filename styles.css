@@ -55,24 +55,13 @@ body {
   /* Define default font size [rem]*/
 }
 
-header {
-  height: 65px;
-  width: 100vw;
-  background-color: var(--primary);
-}
-
-footer {
-  /* Force footer to end of page */
-  flex-shrink: 0;
-}
-
 main {
   flex: 1 0 auto;
   /* Force footer to end of page */
   padding-inline: 10%;
 }
 
-a{
+a {
   color: var(--accent, yellow);
 }
 
@@ -84,6 +73,26 @@ h2 {
   font-style: normal;
   font-weight: 600;
   line-height: normal;
+}
+header {
+  height: 65px;
+  width: 100vw;
+  background-color: var(--primary);
+}
+
+footer {
+  flex-shrink: 0; /* Force footer to end of page */
+  width: 100vw;
+  height: 65px;
+  background-color: var(--primary);
+  display: flex;
+  padding-inline: 40px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+footer a {
+  color: var(--secondary);
 }
 
 #header_logo {
