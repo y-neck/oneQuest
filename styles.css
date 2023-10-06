@@ -66,14 +66,33 @@ a {
 }
 
 /* H2 Heading */
+h1 {
+  text-align: center;
+  font-family: 'Urbanist', sans-serif;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
 h2 {
   text-align: center;
-  font-family: Urbanist;
-  font-size: 18px;
+  font-family: 'Urbanist', sans-serif;
+  font-size: 1.25rem;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
 }
+
+p {
+  font-family: 'Urbanist', sans-serif;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+/* Header */
 header {
   flex-shrink: 0;
   height: 65px;
@@ -81,6 +100,7 @@ header {
   background-color: var(--primary);
 }
 
+/* Footer */
 footer {
   flex-shrink: 0; /* Force footer to end of page */
   width: 100vw;
@@ -109,4 +129,47 @@ footer a {
   margin-top: 16px;
   margin-right: 40px;
   float: right; /* Forces icon to appear on right; reference #header_logo:float*/
+}
+
+/* Home */
+
+/* Login */
+
+/* Register */
+
+/* Profile page */
+#profile_picture {
+  border-radius: 114px;
+  background: var(--secondary, #fff);
+  margin-top: 42px;
+  margin-bottom: 5px;
+  width: 114px;
+  height: 114px;
+}
+
+#profile_picture img {
+  width: 114px;
+  height: 114px;
+  flex-shrink: 0;
+}
+
+#profile_username {
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+#profile_questpoints {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 34px;
+}
+
+#profile_questpoints_number {
+  color: var(--accent, yellow);
+  text-align: center;
+  font-family: 'Urbanist', sans-serif;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
 }
