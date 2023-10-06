@@ -75,6 +75,7 @@ h2 {
   line-height: normal;
 }
 header {
+  flex-shrink: 0;
   height: 65px;
   width: 100vw;
   background-color: var(--primary);
@@ -86,7 +87,6 @@ footer {
   height: 65px;
   background-color: var(--primary);
   display: flex;
-  padding-inline: 40px;
   align-items: center;
   justify-content: space-between;
 }
