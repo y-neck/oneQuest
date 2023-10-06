@@ -59,8 +59,31 @@ header {
   height: 65px;
   width: 100vw;
   background-color: var(--primary);
-  /*   display: flex;
- */
+}
+
+footer {
+  /* Force footer to end of page */
+  flex-shrink: 0;
+}
+
+main {
+  flex: 1 0 auto;
+  /* Force footer to end of page */
+  padding-inline: 10%;
+}
+
+a{
+  color: var(--accent, yellow);
+}
+
+/* H2 Heading */
+h2 {
+  text-align: center;
+  font-family: Urbanist;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
 }
 
 #header_logo {
@@ -77,25 +100,4 @@ header {
   margin-top: 16px;
   margin-right: 40px;
   float: right; /* Forces icon to appear on right; reference #header_logo:float*/
-}
-
-main {
-  flex: 1 0 auto;
-  /* Force footer to end of page */
-  padding-inline: 10%;
-}
-
-.footer {
-  /* Force footer to end of page */
-  flex-shrink: 0;
-}
-
-/* H2 Heading */
-h2 {
-  text-align: center;
-  font-family: Urbanist;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
 }
