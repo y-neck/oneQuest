@@ -156,6 +156,22 @@ footer a {
 /* Register */
 
 /* Profile page */
+
+#profile_header {
+  height: 65px;
+  width: 100vw;
+  background-color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.profile_headerIcon {
+  color: var(--secondary);
+  margin-inline: 40px;
+  font-size: 1.25rem;
+}
+
 #profile_picture {
   border-radius: 114px;
   background: var(--secondary);
@@ -209,7 +225,6 @@ footer a {
   border: none;
   cursor: pointer;
   color: var(--text);
-  
 }
 
 .login_buttonS {
@@ -229,17 +244,17 @@ footer a {
   height: 114px;
 }
 
-.login_text{
-margin: 8px;
+.login_text {
+  margin: 8px;
 }
 
-#register_input{
+#register_input {
   display: flex;
   flex-direction: column;
   margin: 25px;
 }
 
-#login_input{
+#login_input {
   display: flex;
   flex-direction: column;
   margin: 25px;
