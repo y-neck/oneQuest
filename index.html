@@ -44,9 +44,9 @@
 
 <body>
 
-    <h2 id="Heutige_Quest_1">Heutige Quest:</h2>
+    <h2 id="daily_Quest_1">Heutige Quest:</h2>
 
-    <h1 id="Heutige_Quest_2">Hier steht eine Quest.</h1>
+    <h1 id="daily_Quest_2">Hier steht eine Quest.</h1>
 
     <div class="quest_Images">
         <img src="" alt="img1">
@@ -60,7 +60,9 @@
         <img src="" alt="img9">
     </div>
 
-    <input id="quest_checkbox" type="checkbox" name="myCheckbox" id="myCheckbox" onclick="this.disabled = true;">
+    <div class="checkbox">
+        <input id="quest_checkbox" type="checkbox" name="myCheckbox" id="myCheckbox" onclick="this.disabled = true;">
+    </div>
 
     <!-- Import supabase -->
     <script type='module' src=" ../00_setup/supabase.js"></script>
