@@ -151,7 +151,6 @@ footer a {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr; /* 3 columns with equal width */
   grid-template-rows: auto auto auto; /* 3 rows with automatic height */
-  grid-gap: 10px; /* spacing between grid cells */
 }
 
 .quest_Images img {
