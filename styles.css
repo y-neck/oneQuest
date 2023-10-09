@@ -154,6 +154,9 @@ footer a {
   grid-gap: 10px; /* spacing between grid cells */
 }
 
+.quest_Images img {
+}
+
 .checkbox {
   display: flex;
   justify-content: center;
