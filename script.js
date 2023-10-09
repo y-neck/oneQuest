@@ -5,6 +5,9 @@ document.addEventListener('DOMContentLoaded', function () {
     console.log('DOM Loaded');      //Prevent loading script before DOM is loaded
 })
 
+//import supabase
+import { supabase } from '../00_setup/supabase.js';
+
 /* DEMO CODE
 TODO: @y-neck should be implemented correctly
 var userId;
