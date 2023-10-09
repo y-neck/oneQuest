@@ -158,9 +158,6 @@ footer a {
   border: 5px var(--primary);
 }
 
-input[type="file"]{
-  display: none;
-}
 
 #quest_checkbox {
   all: unset;
