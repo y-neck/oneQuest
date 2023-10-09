@@ -179,6 +179,14 @@ footer a {
 
 #profile_confirmChanges {
   all: unset; /* Remove all default styles */
+  width: fit-content;
+  margin-inline-start: auto;
+  margin-right: 40px;
+}
+
+#editProfileIcon {
+  margin: 0;
+  padding: 0;
 }
 
 #profile_picture {
