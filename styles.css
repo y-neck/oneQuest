@@ -94,7 +94,7 @@ p {
 
 /* Header */
 header {
-  flex-shrink: 0;
+  flex-shrink: 0; 
   height: 65px;
   width: 100vw;
   background-color: var(--primary);
