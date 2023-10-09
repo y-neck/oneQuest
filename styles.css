@@ -160,7 +160,7 @@ footer a {
 
 /* Register */
 
-/* Profile page */
+/* Profile page / edit profile page */
 
 #profile_header {
   height: 65px;
@@ -175,6 +175,10 @@ footer a {
   color: var(--secondary);
   margin-inline: 40px;
   font-size: 1.25rem;
+}
+
+#profile_confirmChanges {
+  all: unset; /* Remove all default styles */
 }
 
 #profile_picture {

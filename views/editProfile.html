@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+<!--Default language german, reading from l. to r.-->
+
+<head>
+    <meta charset="utf-8">
+    <!--Default character set: https://www.w3schools.com/html/html_charset.asp-->
+    <title>Profil</title>
+    <!--Tab title-->
+    <meta name="description" content="Bearbeite dein Profil">
+    <!--Description of web page-->
+    <meta name="keywords" content="onequest, profile">
+    <!--define keywords for search engines-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Responsive web design:https://www.w3schools.com/css/css_rwd_viewport.asp-->
+
+    <link rel="icon" href="../img/graphics/LogoOQ4.png">
+    <!--Tab image-->
+
+    <!--MAXcdn:-->
+    <!--jQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!--FontAwesome Free-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Google Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Urbanist">
+
+    <!-- supabase cdns-->
+    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@1.29.0/dist/umd/supabase.js"></script>
+
+    <!-- CSS Style Sheet -->
+    <link rel="stylesheet" href="../styles.css">
+
+</head>
+
+<header id="profile_header">
+    <a id="backToHome" class="profile_headerIcon" href="../index.html"><i class="fa-solid fa-arrow-left"></i></a>
+
+    <button id="profile_confirmChanges">
+        <a id="editProfileIcon" class="profile_headerIcon" href="../views/editProfile.html"><i
+                class="fa-solid fa-check"></i></a></button>
+
+    <a id="editProfileIcon" class="profile_headerIcon" href="../views/editProfile.html">
+
+</header>
+
+<main>
+    <div id="profile_picture"><img src="../img/graphics/profile.png" alt="Profilbild"></div>
+    <!-- TODO: @y-neck Add functionality to retrieve profile picture from database -->
+    <h1 id="profile_username">User</h1>
+    <div id="profile_questpoints">
+        <p>Du hast schon</p>
+        <span id="profile_questpoints_number">0</span>
+        <!-- TODO: @y-neck Add functionality to retrieve questpoints from database -->
+        <p>Quests geschafft!</p>
+    </div>
+    <div id="profile_gallery"></div>
+
+</main>
+
+<footer>
+    <a href="../views/impressum.html" target="_blank">Impressum</a>
+    <a href="../views/rules.html" target="_blank">Regeln & Rechtliches</a>
+    <a href="../views/about.html" target="_blank">About</a>
+</footer>
+
+<!-- Import supabase -->
+<script type='module' src=" ../00_setup/supabase.js"></script>
+<script type="module" src="./01_api/supabase_api.js"></script>
+
+</html>
