@@ -138,12 +138,12 @@ footer a {
 
 /* Home */
 
-#Heutige_Quest_1 {
+#daily_Quest_1 {
   margin: 50px 0px 25px 0px;
 }
 
-#Heutige_Quest_2 {
-  margin: 50px 0px 25px 0px;
+#daily_Quest_2 {
+  margin: 0px 0px 25px 0px;
 }
 
 .quest_Images {
