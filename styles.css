@@ -173,3 +173,9 @@ footer a {
   font-weight: 700;
   line-height: normal;
 }
+
+.login-button {
+  display: flex;
+  margin-bottom: 10px;
+  display: flex;
+}
