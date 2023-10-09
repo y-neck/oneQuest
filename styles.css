@@ -154,6 +154,12 @@ footer a {
 }
 
 .quest_Images img {
+  width: calc(100vw / 3);
+  height: auto;
+  object-fit: cover;
+}
+.quest_Images img {
+  width: 100px;
   height: 100px;
 }
 
