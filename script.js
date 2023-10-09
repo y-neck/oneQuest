@@ -1,4 +1,3 @@
-//general------------------------------------------------------------------------
 console.log('Script.js loaded')
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -7,6 +6,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
 //import supabase
 import { supabase } from '../00_setup/supabase.js';
+
+//general------------------------------------------------------------------------
 
 var userId; //userID of logged-in user for further use
 
