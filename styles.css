@@ -144,7 +144,7 @@ footer a {
 }
 
 #daily_Quest_2 {
-  margin: 0px 0px 25px 0px;
+  margin: 0px 0px 50px 0px;
 }
 
 .quest_Images {
@@ -154,7 +154,9 @@ footer a {
 }
 
 .quest_Images img {
-  height: 100px;
+  width: calc(100vw / 3);
+  height: calc(100vw / 3);
+  object-fit: cover;
 }
 
 .checkbox {
@@ -164,9 +166,9 @@ footer a {
 }
 
 #quest_checkbox {
-  height: 100px;
-  width: 100px;
-  margin: 50px 0px 0px 0px;
+  height: 20vw;
+  width: 20vw;
+  margin: 50px 0px 50px 0px;
 }
 
 /* Register */
