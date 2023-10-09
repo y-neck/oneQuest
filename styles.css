@@ -94,7 +94,7 @@ p {
 
 /* Header */
 header {
-  flex-shrink: 0;
+  flex-shrink: 0; 
   height: 65px;
   width: 100vw;
   background-color: var(--primary);
@@ -132,6 +132,13 @@ footer a {
 }
 
 /* Home */
+#Heutige_Quest_1 {
+  margin: 50px 0px 25px 0px;
+}
+
+#Heutige_Quest_2 {
+  margin: 0px 0px 50px 0px;
+}
 
 /* Login */
 
@@ -172,4 +179,10 @@ footer a {
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+}
+
+.login-button {
+  display: flex;
+  margin-bottom: 10px;
+  display: flex;
 }
