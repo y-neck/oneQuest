@@ -163,8 +163,7 @@ input[type="file"]{
 }
 
 #quest_checkbox {
-  padding: 0;
-  background: none;
+  all: unset;
   height: 100px;
   border: 5px var(--primary);
 }
