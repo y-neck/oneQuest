@@ -187,7 +187,7 @@ footer a {
 #profile_confirmChanges {
   all: unset; /* Remove all default styles */
   width: fit-content;
-  margin-inline-start: auto;
+  margin-inline-start: auto;  /* Aligns button to right */
   margin-right: 40px;
 }
 
