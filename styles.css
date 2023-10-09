@@ -188,7 +188,7 @@ footer a {
 #profile_confirmChanges {
   all: unset; /* Remove all default styles */
   width: fit-content;
-  margin-inline-start: auto;  /* Aligns button to right */
+  margin-inline-start: auto; /* Aligns button to right */
   margin-right: 40px;
 }
 
@@ -231,6 +231,44 @@ footer a {
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+}
+
+#editProfile_inputs {
+  display: flex;
+  flex-direction: column;
+}
+
+#editUsername {
+  margin-top: 40px;
+  width: 232px;
+  height: 53px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  border: none;
+  background: var(--secondary);
+  color: var(--text);
+  text-align: center;
+}
+#editPassword {
+  margin-top: 26px;
+  width: 232px;
+  height: 53px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  border: none;
+  background: var(--secondary);
+  color: var(--text);
+  text-align: center;
+}
+
+#deleteProfile {
+  width: 153px;
+  height: 53px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  border: none;
+  background: var(--accent);
+  margin-top: 26px;
 }
 
 /* Login page */
