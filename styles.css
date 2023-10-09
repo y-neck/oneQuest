@@ -154,10 +154,8 @@ footer a {
 }
 
 #quest_checkbox {
-  background: var(--secondary);
   height: 100px;
   width: 100px;
-  border: 10px var(--primary);
 }
 
 /* Register */
