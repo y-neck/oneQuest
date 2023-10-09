@@ -183,5 +183,12 @@ footer a {
 }
 
 .login-button {
+  width: 232px;
+  height: 53px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  background: var(--secondary, #FFF);
   margin-bottom: 10px;
+  border: none; /* This will remove the default button border */
+  cursor: pointer; /* This will change the cursor to a hand when hovering over the button */
 }
