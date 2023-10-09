@@ -228,7 +228,6 @@ footer a {
 .button-container {
   display: flex;
   flex-direction: column;
-  margin: 25px;
 }
 
 .login_button {
@@ -256,8 +255,9 @@ footer a {
 }
 
 .mail_icon {
-  width: 114px;
-  height: 114px;
+  width: 120px;
+  height: 120px;
+  margin-top: 30px;
 }
 
 .login_text {
@@ -274,4 +274,8 @@ footer a {
   display: flex;
   flex-direction: column;
   margin: 25px;
+}
+
+#login_top{
+  margin-top: 150px;
 }
