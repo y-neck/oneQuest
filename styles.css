@@ -232,3 +232,8 @@ footer a {
 .login_text{
 
 }
+
+#register_input{
+  display: flex;
+  flex-direction: column;
+}
