@@ -179,6 +179,7 @@ footer a {
   line-height: normal;
 }
 
+/* Login page */
 .button-container {
   display: flex;
   flex-direction: column;
