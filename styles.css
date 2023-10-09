@@ -118,6 +118,7 @@ footer {
 
 footer a {
   color: var(--secondary);
+  text-decoration: none;
 }
 
 #header_logo {
