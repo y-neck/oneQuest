@@ -193,7 +193,7 @@ footer a {
 }
 
 /* Login page */
-.button-containerLogin {
+.button-container {
   display: flex;
   flex-direction: column;
 }
