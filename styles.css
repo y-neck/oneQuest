@@ -174,8 +174,11 @@ footer a {
   line-height: normal;
 }
 
-.login-button {
+.button-container {
   display: flex;
-  margin-bottom: 10px;
   flex-direction: column;
+}
+
+.login-button {
+  margin-bottom: 10px;
 }
