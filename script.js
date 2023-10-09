@@ -37,11 +37,12 @@ async function getUsername(userId) {
         .select('username')
         .eq('id', userId)   //Get username where db id = userId 
 
-        profileUsername = data[0].username; //Assign username to profileUsername
+    profileUsername = data[0].username; //Assign username to profileUsername
+
+    console.log('username: ' + getUsername(userId));
+    $('#profile_Username').innerHTML = profileUsername; //Replace default username with actual username
 }
 
-console.log('username: ' + getUsername(userId));
-$('#profile_Username').innerHTML = profileUsername; //Replace default username with actual username
 
 //Get questpoints from database
 let questPoints;
