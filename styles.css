@@ -207,6 +207,7 @@ footer a {
   margin-bottom: 10px;
   border: none;
   cursor: pointer;
+  color: var(--text);
 }
 
 .login_buttonS {
