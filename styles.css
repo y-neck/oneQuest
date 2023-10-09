@@ -53,6 +53,8 @@ body {
   font-family: 'Urbanist', sans-serif;
   font-size: 1rem;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   /* Define default font size [rem]*/
 }
 
@@ -95,7 +97,7 @@ p {
 
 /* Header */
 header {
-  flex-shrink: 0; 
+  flex-shrink: 0;
   height: 65px;
   width: 100vw;
   background-color: var(--primary);
@@ -103,6 +105,7 @@ header {
 
 /* Footer */
 footer {
+  margin-top: auto;
   flex-shrink: 0; /* Force footer to end of page */
   position: sticky;
   width: 100vw;
@@ -189,6 +192,6 @@ footer a {
   border-radius: 8px;
   background: var(--secondary, #FFF);
   margin-bottom: 10px;
-  border: none; /* This will remove the default button border */
-  cursor: pointer; /* This will change the cursor to a hand when hovering over the button */
+  border: none;
+  cursor: pointer;
 }
