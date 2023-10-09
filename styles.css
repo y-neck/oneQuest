@@ -190,16 +190,10 @@ footer a {
   font-size: 1.25rem;
 }
 
-#profile_confirmChanges {
-  all: unset; /* Remove all default styles */
-  width: fit-content;
-  margin-inline-start: auto; /* Aligns button to right */
-  margin-right: 40px;
-}
-
 #editProfileIcon {
-  margin: 0;
+  margin-left: auto;
   padding: 0;
+  justify-self: end;
 }
 
 #profile_picture {
@@ -328,6 +322,6 @@ footer a {
   margin: 25px;
 }
 
-#login_top{
+#login_top {
   margin-top: 150px;
 }
