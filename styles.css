@@ -238,3 +238,9 @@ footer a {
   flex-direction: column;
   margin: 25px;
 }
+
+#login_input{
+  display: flex;
+  flex-direction: column;
+  margin: 25px;
+}
