@@ -153,9 +153,16 @@ footer a {
   grid-gap: 10px; /* spacing between grid cells */
 }
 
+.checkbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 #quest_checkbox {
   height: 100px;
   width: 100px;
+  margin: 50px 0px 0px 0px;
 }
 
 /* Register */
