@@ -198,7 +198,7 @@ footer a {
   flex-direction: column;
 }
 
-.login-button {
+.login_button {
   width: 232px;
   height: 53px;
   flex-shrink: 0;
@@ -208,3 +208,15 @@ footer a {
   border: none;
   cursor: pointer;
 }
+
+.login_buttonSomll {
+  width: 232px;
+  height: 53px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  background: var(--secondary, #FFF);
+  margin-bottom: 10px;
+  border: none;
+  cursor: pointer;
+}
+
