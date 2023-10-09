@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
 })
 
 //import supabase
-import { supa } from '../00_setup/supabase.js';
+import { supa } from './00_setup/supabase.js';
 
 //general------------------------------------------------------------------------
 
