@@ -203,20 +203,21 @@ footer a {
   height: 53px;
   flex-shrink: 0;
   border-radius: 8px;
-  background: var(--secondary, #FFF);
+  background: var(--secondary);
   margin-bottom: 10px;
   border: none;
   cursor: pointer;
 }
 
 .login_buttonS {
-  width: 232px;
+  width: 113px;
   height: 53px;
   flex-shrink: 0;
   border-radius: 8px;
-  background: var(--secondary, #FFF);
+  background: var(--primary);
   margin-bottom: 10px;
   border: none;
   cursor: pointer;
+  color: var(--secondary);
 }
 
