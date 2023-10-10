@@ -92,15 +92,15 @@ const { data: imageData, error: imageError } = await supa
 if (imageError) {
   console.error('Error fetching image URLs:', imageError.message);
 } else {
-  // Iterate through the image data and update the image elements
-  for (let i = 0; i < 9; i++) {
+    // Iterate through the image data and update the image elements
+    for (let i = 0; i < 9; i++) {
     const img = imageContainer.children[i];
     // Check if there is an image URL available for this index
-    if (i < imageData.length) {
-        img.src = imageData[i].url;
-    } else {
-        // If there is no image URL available, you can set a fallback image or hide the image element
-        img.style.display = 'none';
+        if (i < imageData.length) {
+            img.src = imageData[i].url;
+        } else {
+    // If there is no image URL available, you can set a fallback image or hide the image element
+            img.style.display = 'none';
     }
   }
 }
