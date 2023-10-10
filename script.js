@@ -60,20 +60,20 @@ imageFileInput.addEventListener('change', async (e) => {
     if (error) {
       console.error('Error uploading image:', error.message);
     } else {
-      // Get the URL of the uploaded image
-      const imageUrl = supa.storage
-        .from('image_bucket')
-        .getPublicUrl(filename);
-      
-      // Insert the URL into the 'images' table
-      const { data: insertedData, error: insertError } = await supa
-        .from('images')
-        .insert([{ url: imageUrl }]);
-      
-      if (insertError) {
-        console.error('Error inserting image URL:', insertError.message);
-      } else {
-        console.log('Image URL inserted successfully:', insertedData);
+        // Get the URL of the uploaded image
+        const imageUrl = supa.storage
+            .from('image_bucket')
+            .getPublicUrl(filename);
+            
+        // Insert the URL into the 'images' table
+        const { data: insertedData, error: insertError } = await supa
+            .from('images')
+            .insert([{ images: imageUrl }]);
+            
+        if (insertError) {
+            console.error('Error inserting image URL:', insertError.message);
+        } else {
+            console.log('Image URL inserted successfully:', insertedData);
       }
     }
   }
