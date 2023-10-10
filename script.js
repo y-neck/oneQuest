@@ -52,12 +52,12 @@ imageFileInput.addEventListener('change', async (e) => {
   if (imageFile) {
     // Generate a unique filename for the uploaded image
     const filename = `${Date.now()}_${imageFile.name}`;
-    console.log(imageFile);
-
+    
     // Upload the image to the Supabase bucket
     const { data, error } = await supabase.storage
-      .from('image_bucket')
-      .upload(filename, imageFile);
+    .from('image_bucket')
+    .upload(filename, imageFile);
+    console.log(imageFile);
 
     if (error) {
       console.error('Error uploading image:', error.message);
