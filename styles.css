@@ -159,7 +159,7 @@ footer a {
   object-fit: cover;
 }
 
-.checkbox {
+#checkbox {
   display: flex;
   justify-content: center;
   align-items: center;
