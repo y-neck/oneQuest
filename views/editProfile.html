@@ -36,31 +36,34 @@
 
 </head>
 
-<header id="profile_header">
-    <a id="profile_confirmChanges" class="profile_headerIcon" href="../views/profile.html"><i class="fa-solid fa-check"></i></a>
+<body>
+    <header id="profile_header">
+        <a id="profile_confirmChanges" class="profile_headerIcon" href="../views/profile.html"><i
+                class="fa-solid fa-check"></i></a>
 
-</header>
+    </header>
 
-<main>
-    <div id="profile_picture"><img src="../img/graphics/profile.png" alt="Profilbild"></div>
-    <!-- TODO: @y-neck Add functionality to retrieve or update profile picture -->
-    <div id="editProfile_inputs">
-        <!-- TODO: @y-neck Add functionality to retrieve or update Username/pw -->
-        <input type="text" id="editUsername" placeholder="Benutzername">
-        <input type="password" id="editPassword" placeholder="Neues Passwort">
-        <button id="deleteProfile">Profil löschen</button>
-    </div>
+    <main>
+        <div id="profile_picture"><img src="../img/graphics/profile.png" alt="Profilbild"></div>
+        <!-- TODO: @y-neck Add functionality to retrieve or update profile picture -->
+        <div id="editProfile_inputs">
+            <!-- TODO: @y-neck Add functionality to retrieve or update Username/pw -->
+            <input type="text" id="editUsername" placeholder="Benutzername">
+            <input type="password" id="editPassword" placeholder="Neues Passwort">
+            <button id="deleteProfile">Profil löschen</button>
+        </div>
 
-</main>
+    </main>
 
-<footer>
-    <a href="../views/impressum.html" target="_blank">Impressum</a>
-    <a href="../views/rules.html" target="_blank">Regeln & Rechtliches</a>
-    <a href="../views/about.html" target="_blank">About</a>
-</footer>
+    <footer>
+        <a href="../views/impressum.html" target="_blank">Impressum</a>
+        <a href="../views/rules.html" target="_blank">Regeln & Rechtliches</a>
+        <a href="../views/about.html" target="_blank">About</a>
+    </footer>
 
-<!-- Import supabase -->
-<script type='module' src=" ../00_setup/supabase.js"></script>
-<script type="module" src="../01_api/supabase_api.js"></script>
+    <!-- Import supabase -->
+    <script type='module' src=" ../00_setup/supabase.js"></script>
+    <script type="module" src="../01_api/supabase_api.js"></script>
+</body>
 
 </html>
