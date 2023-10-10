@@ -124,6 +124,7 @@ document.addEventListener('DOMContentLoaded', function () {
             profileUsername = data[0].username; //Assign username to profileUsername
             $('#profile_username').innerHTML = profileUsername; //Replace default username with actual username
         }
+        console.log('console.log in function ' + profileUsername);
     }
 
 
