@@ -5,7 +5,7 @@ console.log('Script.js loaded')
 
 document.addEventListener('DOMContentLoaded', function () {
     console.log('DOM Loaded');      //Check if DOM is loaded
-})
+})  //End of DOM loader
 
 
 //general------------------------------------------------------------------------
@@ -113,6 +113,9 @@ if (imageError) {
 //profile-------------------------------------------------------------------------
 var profileUsername;
 
+function getUsername(userId){
+
+}
 
 
 //editProfile---------------------------------------------------------------------
