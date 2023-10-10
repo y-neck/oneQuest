@@ -55,7 +55,7 @@ imageFileInput.addEventListener('change', async (e) => {
 
     // Upload the image to the Supabase bucket
     const { data, error } = await supabase.storage
-      .from('YOUR_BUCKET_NAME') // Replace with your bucket name
+      .from('image_posts') // Replace with your bucket name
       .upload(filename, imageFile);
 
     if (error) {
