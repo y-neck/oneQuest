@@ -95,7 +95,6 @@ if (imageError) {
   // Iterate through the image data and update the image elements
   for (let i = 0; i < 9; i++) {
     const img = imageContainer.children[i];
-
     // Check if there is an image URL available for this index
     if (i < imageData.length) {
       img.src = imageData[i].url;
