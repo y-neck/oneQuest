@@ -44,7 +44,7 @@ checkbox.addEventListener('change', function() {
 
 
 
-const imageFileInput = document.getElementById('imageFile');
+const imageFileInput = document.getElementById('image_File');
 
 imageFileInput.addEventListener('change', async (e) => {
   const imageFile = e.target.files[0];
