@@ -97,10 +97,10 @@ if (imageError) {
     const img = imageContainer.children[i];
     // Check if there is an image URL available for this index
     if (i < imageData.length) {
-      img.src = imageData[i].url;
+        img.src = imageData[i].url;
     } else {
-      // If there is no image URL available, you can set a fallback image or hide the image element
-      img.style.display = 'none';
+        // If there is no image URL available, you can set a fallback image or hide the image element
+        img.style.display = 'none';
     }
   }
 }
