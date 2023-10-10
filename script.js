@@ -44,6 +44,7 @@ checkbox.addEventListener('change', function () {
 });
 
 
+//upload image-----------------------------------------------------------------------
 const imageFileInput = document.getElementById('image_File');
 
 imageFileInput.addEventListener('change', async (e) => {
@@ -81,7 +82,7 @@ imageFileInput.addEventListener('change', async (e) => {
 });
 
 
-// Loading Posts
+// loading posts
 const imageContainer = document.querySelector('.quest_Images');
 // Fetch the image URLs from the 'images' table
 const { data: imageData, error: imageError } = await supa
@@ -104,7 +105,6 @@ if (imageError) {
   }
 };
 
-//posts-----------------------------------------------------------------------
 
 //login--------------------------------------------------------------------------
 
