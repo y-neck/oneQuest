@@ -9,7 +9,7 @@ import { supa } from './00_setup/supabase.js';
 
 //general------------------------------------------------------------------------
 
-var userId; //userID of logged-in user for further use
+var userId = 1; //userID of logged-in user for further use
 
 /* DEMO CODE
 TODO: @y-neck should be implemented correctly
@@ -32,16 +32,27 @@ if(!userLoggedIn){
 var profileUsername;
 
 async function getUsername(userId) {
-    const { data, error } = await supabase
+    const { data, error } = await supa
         .from('users')
         .select('username')
         .eq('id', userId)   //Get username where db id = userId 
 
-    profileUsername = data[0].username; //Assign username to profileUsername
-
-    console.log('username: ' + getUsername(userId));
-    $('#profile_Username').innerHTML = profileUsername; //Replace default username with actual username
+    if (error) {
+        console.error('Could not retrieve username from database')  //Add error handling
+    }
+    else {
+        profileUsername = data[0].username; //Assign username to profileUsername
+        $('#profile_Username').innerHTML = profileUsername; //Replace default username with actual username
+    }
+    console.log(profileUsername);
 }
+//Trigger getUsername on pageload
+(async () => {
+    profileUsername = await getUsername(userId);
+    console.log(profileUsername);
+})();   //Test
+
+
 
 
 //Get questpoints from database
