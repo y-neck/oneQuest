@@ -32,12 +32,12 @@ checkbox.addEventListener('change', function() {
     setTimeout(function() {
         checkbox.style.display = 'none';
         uploadForm.style.display = 'block';
-    }, 500);
+    }, 400);
   } else {
     setTimeout(function() {
         checkbox.style.display = 'block';
         uploadForm.style.display = 'none';
-    }, 500);
+    }, 400);
   }
 });
 // 1. Retrieve the image URLs from the database
