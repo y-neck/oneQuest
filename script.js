@@ -5,7 +5,6 @@ console.log('Script.js loaded')
 
 document.addEventListener('DOMContentLoaded', function () {
     console.log('DOM Loaded');      //Check if DOM is loaded
-})  //End of DOM loader
 
 
 //general------------------------------------------------------------------------
@@ -119,3 +118,5 @@ function getUsername(userId){
 
 
 //editProfile---------------------------------------------------------------------
+
+});  //End of DOM loader
