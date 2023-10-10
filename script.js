@@ -100,7 +100,7 @@ async function getUsername(userId) {
         console.error('Could not retrieve username from database')  //Add error handling
     }
     else {
-        const profileUsername = data[0].username; //Assign username to profileUsername
+        profileUsername = data[0].username; //Assign username to profileUsername
         $('#profile_Username').innerHTML = profileUsername; //Replace default username with actual username
     }
     console.log(profileUsername);
