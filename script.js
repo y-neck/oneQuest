@@ -42,6 +42,30 @@ checkbox.addEventListener('change', function() {
     }
 });
 
+
+
+const imageFileInput = document.getElementById('imageFile');
+
+imageFileInput.addEventListener('change', async (e) => {
+  const imageFile = e.target.files[0];
+
+  if (imageFile) {
+    // Generate a unique filename for the uploaded image
+    const filename = `${Date.now()}_${imageFile.name}`;
+
+    // Upload the image to the Supabase bucket
+    const { data, error } = await supabase.storage
+      .from('YOUR_BUCKET_NAME') // Replace with your bucket name
+      .upload(filename, imageFile);
+
+    if (error) {
+      console.error('Error uploading image:', error.message);
+    } else {
+      console.log('Image uploaded successfully:', data.Key);
+    }
+  }
+});
+
 //posts-----------------------------------------------------------------------
 
 // 1. Retrieve the image URLs from the database
