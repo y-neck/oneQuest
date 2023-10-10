@@ -103,7 +103,7 @@ async function getUsername(userId) {
         const profileUsername = data[0].username; //Assign username to profileUsername
         $('#profile_Username').innerHTML = profileUsername; //Replace default username with actual username
     }
-    console.log(data[0].username);
+    console.log(profileUsername);
 }
 //Test
 (async () => {
@@ -111,9 +111,9 @@ async function getUsername(userId) {
     console.log(profileUsername);
 })();
 //Trigger getUsername on pageload
-document.addEventListener('load', async () => {
+/* document.addEventListener('load', async () => {
     getUsername();
-})
+}) */
 
 //Get questpoints from database
 let questPoints;
