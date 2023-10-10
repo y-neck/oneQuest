@@ -107,9 +107,10 @@ async function getUsername(userId) {
 }
 //Test
 (async () => {
-    await getUsername(1);
+    await getUsername(userId);
     console.log(profileUsername);
 })();
+
 //Trigger getUsername on pageload
 /* document.addEventListener('load', async () => {
     getUsername();
