@@ -48,6 +48,7 @@ const imageFileInput = document.getElementById('image_File');
 
 imageFileInput.addEventListener('change', async (e) => {
   const imageFile = e.target.files[0];
+  console.log(imageFile);
 
   if (imageFile) {
     // Generate a unique filename for the uploaded image
