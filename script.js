@@ -112,7 +112,7 @@ if (imageError) {
 //profile-------------------------------------------------------------------------
 var profileUsername;
 
-function getUsername(userId){
+async function getUsername(userId){
 
 }
 
