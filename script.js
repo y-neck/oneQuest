@@ -43,7 +43,6 @@ checkbox.addEventListener('change', function() {
 });
 
 
-
 const imageFileInput = document.getElementById('image_File');
 
 imageFileInput.addEventListener('change', async (e) => {
@@ -55,13 +54,27 @@ imageFileInput.addEventListener('change', async (e) => {
     
     // Upload the image to the Supabase bucket
     const { data, error } = await supa.storage
-    .from('image_bucket')
-    .upload(filename, imageFile);
+      .from('image_bucket')
+      .upload(filename, imageFile);
 
     if (error) {
       console.error('Error uploading image:', error.message);
     } else {
-      console.log('Image uploaded successfully:', data.Key);
+      // Get the URL of the uploaded image
+      const imageUrl = supa.storage
+        .from('image_bucket')
+        .getPublicUrl(filename);
+      
+      // Insert the URL into the 'images' table
+      const { data: insertedData, error: insertError } = await supa
+        .from('images')
+        .insert([{ url: imageUrl }]);
+      
+      if (insertError) {
+        console.error('Error inserting image URL:', insertError.message);
+      } else {
+        console.log('Image URL inserted successfully:', insertedData);
+      }
     }
   }
 });
