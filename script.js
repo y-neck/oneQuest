@@ -44,6 +44,7 @@ checkbox.addEventListener('change', function () {
 });
 
 
+//upload image-----------------------------------------------------------------------
 const imageFileInput = document.getElementById('image_File');
 
 imageFileInput.addEventListener('change', async (e) => {
@@ -69,35 +70,42 @@ imageFileInput.addEventListener('change', async (e) => {
         // Insert the URL into the 'images' table
         const { data: insertedData, error: insertError } = await supa
             .from('images')
-            .insert([{ images: imageUrl }]);
+            .insert([{ url: imageUrl.publicURL }]);
             
         if (insertError) {
             console.error('Error inserting image URL:', insertError.message);
         } else {
-            console.log('Image URL inserted successfully:', insertedData);
-          }
+            console.log('Image URL inserted successfully:', imageUrl);
+        }
     }
     }
 });
 
 
-//posts-----------------------------------------------------------------------
+// loading posts
+const imageContainer = document.querySelector('.quest_Images');
+// Fetch the image URLs from the 'images' table
+const { data: imageData, error: imageError } = await supa
+  .from('images')
+  .select('url');
 
-// 1. Retrieve the image URLs from the database
-const imageUrls = [
-    "url1",
-    "url2",
-    "url3",
-    // ... more URLs
-];
+if (imageError) {
+  console.error('Error fetching image URLs:', imageError.message);
+} else {
+    // Iterate through the image data and update the image elements
+    for (let i = 0; i < 9; i++) {
+    const img = imageContainer.children[i];
+    // Check if there is an image URL available for this index
+        if (i < imageData.length) {
+            img.src = imageData[i].url;
+        } else {
+    // If there is no image URL available, you can set a fallback image or hide the image element
+            img.style.display = 'none';
+    }
+  }
+};
 
-// 2. Select the HTML elements to replace
-const imgElements = document.querySelectorAll("div.quest_Images img");
 
-// 3. Replace the images with the URLs from the database
-imgElements.forEach((imgElement, index) => {
-    imgElement.src = imageUrls[index];
-});
 //login--------------------------------------------------------------------------
 
 //register-----------------------------------------------------------------------
