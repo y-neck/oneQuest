@@ -104,12 +104,12 @@ async function getUsername(userId) {
         profileUsername = data[0].username; //Assign username to profileUsername
         $('#profile_Username').innerHTML = profileUsername; //Replace default username with actual username
     }
-    console.log(profileUsername);
+    console.log('console.log in function '+profileUsername);
 }
 //Test
 (async () => {
     await getUsername(userId);
-    console.log(profileUsername);
+    console.log('Async test: ' + profileUsername);
 })();
 
 //Trigger getUsername on pageload
