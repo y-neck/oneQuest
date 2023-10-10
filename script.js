@@ -113,7 +113,10 @@ if (imageError) {
 var profileUsername;
 
 async function getUsername(userId){
-
+    const { data, error } = await supa
+        .from('users')
+        .select('username')
+        .eq('id', userId);   //Get username where db id = userId
 }
 
 
