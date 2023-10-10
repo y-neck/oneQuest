@@ -1,11 +1,12 @@
+//import supabase
+import { supa } from './00_setup/supabase.js';
+
 console.log('Script.js loaded')
 
 document.addEventListener('DOMContentLoaded', function () {
     console.log('DOM Loaded');      //Prevent loading script before DOM is loaded
 })
 
-//import supabase
-import { supa } from './00_setup/supabase.js';
 
 //general------------------------------------------------------------------------
 
@@ -28,14 +29,14 @@ if(!userLoggedIn){
 const checkbox = document.getElementById('quest_checkbox');
 const uploadForm = document.getElementById('image_Upload');
 
-checkbox.addEventListener('change', function() {
+checkbox.addEventListener('change', function () {
     if (checkbox.checked) {
-        setTimeout(function() {
+        setTimeout(function () {
             checkbox.style.display = 'none';
             uploadForm.style.display = 'flex';
         }, 400);
     } else {
-        setTimeout(function() {
+        setTimeout(function () {
             checkbox.style.display = 'flex';
             uploadForm.style.display = 'none';
         }, 400);
@@ -47,23 +48,23 @@ checkbox.addEventListener('change', function() {
 const imageFileInput = document.getElementById('image_File');
 
 imageFileInput.addEventListener('change', async (e) => {
-  const imageFile = e.target.files[0];
-  
-  if (imageFile) {
-    // Generate a unique filename for the uploaded image
-    const filename = `image_posts/${Date.now()}_${imageFile.name}`;
-    
-    // Upload the image to the Supabase bucket
-    const { data, error } = await supa.storage
-    .from('image_bucket')
-    .upload(filename, imageFile);
+    const imageFile = e.target.files[0];
 
-    if (error) {
-      console.error('Error uploading image:', error.message);
-    } else {
-      console.log('Image uploaded successfully:', data.Key);
+    if (imageFile) {
+        // Generate a unique filename for the uploaded image
+        const filename = `image_posts/${Date.now()}_${imageFile.name}`;
+
+        // Upload the image to the Supabase bucket
+        const { data, error } = await supa.storage
+            .from('image_bucket')
+            .upload(filename, imageFile);
+
+        if (error) {
+            console.error('Error uploading image:', error.message);
+        } else {
+            console.log('Image uploaded successfully:', data.Key);
+        }
     }
-  }
 });
 
 
@@ -71,10 +72,10 @@ imageFileInput.addEventListener('change', async (e) => {
 
 // 1. Retrieve the image URLs from the database
 const imageUrls = [
-  "url1",
-  "url2",
-  "url3",
-  // ... more URLs
+    "url1",
+    "url2",
+    "url3",
+    // ... more URLs
 ];
 
 // 2. Select the HTML elements to replace
@@ -82,7 +83,7 @@ const imgElements = document.querySelectorAll("div.quest_Images img");
 
 // 3. Replace the images with the URLs from the database
 imgElements.forEach((imgElement, index) => {
-  imgElement.src = imageUrls[index];
+    imgElement.src = imageUrls[index];
 });
 //login--------------------------------------------------------------------------
 
@@ -102,9 +103,9 @@ async function getUsername(userId) {
     }
     else {
         profileUsername = data[0].username; //Assign username to profileUsername
-        $('#profile_Username').innerHTML = profileUsername; //Replace default username with actual username
+        $('#profile_username').innerHTML = profileUsername; //Replace default username with actual username
     }
-    console.log('console.log in function '+profileUsername);
+    console.log('console.log in function ' + profileUsername);
 }
 //Test
 (async () => {
@@ -118,7 +119,6 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 //Get questpoints from database
-let questPoints;
 
 
 //editProfile---------------------------------------------------------------------
