@@ -112,9 +112,9 @@ async function getUsername(userId) {
 })();
 
 //Trigger getUsername on pageload
-/* document.addEventListener('load', async () => {
+document.addEventListener('DOMContentLoaded', () => {
     getUsername();
-}) */
+})
 
 //Get questpoints from database
 let questPoints;
