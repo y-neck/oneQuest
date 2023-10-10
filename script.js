@@ -23,23 +23,27 @@ if(!userLoggedIn){
 //index--------------------------------------------------------------------------
 //TODO: @joggiletti if user is not logged in, serve login site instead
 
-//posts-----------------------------------------------------------------------
+
+//Checkbox animation------------------------------------------------------------
 const checkbox = document.getElementById('quest_checkbox');
 const uploadForm = document.getElementById('image_Upload');
 
 checkbox.addEventListener('change', function() {
-  if (checkbox.checked) {
-    setTimeout(function() {
-        checkbox.style.display = 'none';
-        uploadForm.style.display = 'block';
-    }, 400);
-  } else {
-    setTimeout(function() {
-        checkbox.style.display = 'block';
-        uploadForm.style.display = 'none';
-    }, 400);
-  }
+    if (checkbox.checked) {
+        setTimeout(function() {
+            checkbox.style.display = 'none';
+            uploadForm.style.display = 'block';
+        }, 400);
+    } else {
+        setTimeout(function() {
+            checkbox.style.display = 'block';
+            uploadForm.style.display = 'none';
+        }, 400);
+    }
 });
+
+//posts-----------------------------------------------------------------------
+
 // 1. Retrieve the image URLs from the database
 const imageUrls = [
   "url1",
