@@ -24,7 +24,21 @@ if(!userLoggedIn){
 //TODO: @joggiletti if user is not logged in, serve login site instead
 
 //posts-----------------------------------------------------------------------
+// 1. Retrieve the image URLs from the database
+const imageUrls = [
+  "url1",
+  "url2",
+  "url3",
+  // ... more URLs
+];
 
+// 2. Select the HTML elements to replace
+const imgElements = document.querySelectorAll("div.quest_Images img");
+
+// 3. Replace the images with the URLs from the database
+imgElements.forEach((imgElement, index) => {
+  imgElement.src = imageUrls[index];
+});
 //login--------------------------------------------------------------------------
 
 //register-----------------------------------------------------------------------
