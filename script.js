@@ -64,7 +64,6 @@ imgElements.forEach((imgElement, index) => {
 //register-----------------------------------------------------------------------
 
 //profile-------------------------------------------------------------------------
-//Get username of logged-in user
 var profileUsername;
 
 async function getUsername(userId) {
@@ -77,17 +76,17 @@ async function getUsername(userId) {
         console.error('Could not retrieve username from database')  //Add error handling
     }
     else {
-        profileUsername = data[0].username; //Assign username to profileUsername
+        const profileUsername = data[0].username; //Assign username to profileUsername
         $('#profile_Username').innerHTML = profileUsername; //Replace default username with actual username
     }
-    console.log(profileUsername);
+    console.log(data[0].username);
 }
-//Trigger getUsername on pageload
+//Test
 (async () => {
-    profileUsername = await getUsername(userId);
+    await getUsername(1);
     console.log(profileUsername);
-})();   //Test
-
+})();
+//Trigger getUsername on pageload
 
 
 
