@@ -32,11 +32,11 @@ checkbox.addEventListener('change', function() {
     if (checkbox.checked) {
         setTimeout(function() {
             checkbox.style.display = 'none';
-            uploadForm.style.display = 'block';
+            uploadForm.style.display = 'flex';
         }, 400);
     } else {
         setTimeout(function() {
-            checkbox.style.display = 'block';
+            checkbox.style.display = 'flex';
             uploadForm.style.display = 'none';
         }, 400);
     }
