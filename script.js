@@ -81,6 +81,32 @@ imageFileInput.addEventListener('change', async (e) => {
 });
 
 
+// Loading Posts
+const imageContainer = document.querySelector('.quest_Images');
+
+// Fetch the image URLs from the 'images' table
+const { data: imageData, error: imageError } = await supa
+  .from('images')
+  .select('url');
+
+if (imageError) {
+  console.error('Error fetching image URLs:', imageError.message);
+} else {
+  // Iterate through the image data and update the image elements
+  for (let i = 0; i < 9; i++) {
+    const img = imageContainer.children[i];
+
+    // Check if there is an image URL available for this index
+    if (i < imageData.length) {
+      img.src = imageData[i].url;
+    } else {
+      // If there is no image URL available, you can set a fallback image or hide the image element
+      img.style.display = 'none';
+    }
+  }
+}
+
+
 //posts-----------------------------------------------------------------------
 
 // 1. Retrieve the image URLs from the database
