@@ -131,6 +131,11 @@ async function getUsername(userId) {
     console.log('Async test: ' + profileUsername);
 })();
 
+//Trigger getUsername on pageload
+document.addEventListener('DOMContentLoaded', () => {
+    getUsername();
+});
+
 //editProfile---------------------------------------------------------------------
 
 
