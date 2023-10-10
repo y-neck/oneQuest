@@ -4,7 +4,7 @@ import { supa } from './00_setup/supabase.js';
 console.log('Script.js loaded')
 
 document.addEventListener('DOMContentLoaded', function () {
-    console.log('DOM Loaded');      //Prevent loading script before DOM is loaded
+    console.log('DOM Loaded');      //Check if DOM is loaded
 })
 
 
