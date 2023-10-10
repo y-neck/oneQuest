@@ -24,6 +24,19 @@ if(!userLoggedIn){
 //TODO: @joggiletti if user is not logged in, serve login site instead
 
 //posts-----------------------------------------------------------------------
+const checkbox = document.getElementById('checkbox');
+const uploadForm = document.getElementById('image_Upload');
+
+checkbox.addEventListener('change', function() {
+  if (checkbox.checked) {
+    checkbox.style.display = 'none';
+    uploadForm.style.display = 'block';
+  } else {
+    checkbox.style.display = 'block';
+    uploadForm.style.display = 'none';
+  }
+});
+
 // 1. Retrieve the image URLs from the database
 const imageUrls = [
   "url1",
