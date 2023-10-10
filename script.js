@@ -111,8 +111,9 @@ async function getUsername(userId) {
     console.log(profileUsername);
 })();
 //Trigger getUsername on pageload
-
-
+document.addEventListener('load', async () => {
+    getUsername();
+})
 
 //Get questpoints from database
 let questPoints;
