@@ -82,9 +82,9 @@ imageFileInput.addEventListener('change', async (e) => {
 });
 
 
-// loading posts
+//loading posts-----------------------------------------------------------------------
 const imageContainer = document.querySelector('.quest_Images');
-// Fetch the image URLs from the 'images' table
+//Fetch the image URLs from the 'images' table
 const { data: imageData, error: imageError } = await supa   //@joggiletti await requires to be part of an async function
     .from('images')
     .select('url');
@@ -104,6 +104,58 @@ if (imageError) {
         }
     }
 };
+
+//challenge to daily quest--------------------------------------------------------
+
+// Move one item from the "challenges" table to the "challengeToQuest" table
+async function moveChallengeToQuest() {
+  // Fetch all challenges
+  const { data: challenges, error: fetchError } = await supa
+    .from('challenges')
+    .select('*');
+
+  if (fetchError) {
+    console.error('Error fetching challenges:', fetchError.message);
+    return;
+  }
+
+  // Select a random challenge from the fetched data
+  const randomIndex = Math.floor(Math.random() * challenges.length);
+  const selectedChallenge = challenges[randomIndex];
+
+  try {
+    // Insert the selected item into the "challengeToQuest" table
+    const { data: insertedChallenge } = await supa
+      .from('challengeToQuest')
+      .insert(selectedChallenge);
+
+    console.log('Successfully moved challenge to challengeToQuest:', insertedChallenge);
+  } catch (insertError) {
+    console.error('Error inserting challenge into challengeToQuest:', insertError.message);
+  }
+}
+
+// Call the function to move one challenge to the quest
+moveChallengeToQuest();
+
+
+
+//daily quest-----------------------------------------------------------------------
+// Fetch the quest from the Supabase table
+const { data, error } = await supa.from('challengeToQuest').select('challenge');
+
+// Check for any errors
+if (error) {
+  console.error(error);
+}
+
+// Get the value from the data response
+const text = data[0].challenge;
+
+// Update the text content of the <h1> element
+document.getElementById('daily_Quest_2').textContent = text;
+
+
 
 
 //login--------------------------------------------------------------------------
