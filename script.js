@@ -31,7 +31,7 @@ const uploadForm = document.getElementById('image_Upload');
 checkbox.addEventListener('change', function () {
     if (checkbox.checked) {
         setTimeout(function () {
-            checkbox.style.display = 'none';
+            checkbox.style.display = 'none';    //Switch display state for elements after timeout
             uploadForm.style.display = 'flex';
         }, 400);
     } else {
@@ -71,6 +71,7 @@ imageFileInput.addEventListener('change', async (e) => {
                 .from('images')
                 .insert([{ url: imageUrl.publicURL }]);
 
+            //Error handling
             if (insertError) {
                 console.error('Error inserting image URL:', insertError.message);
             } else {
