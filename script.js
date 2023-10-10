@@ -24,7 +24,7 @@ if(!userLoggedIn){
 //TODO: @joggiletti if user is not logged in, serve login site instead
 
 //posts-----------------------------------------------------------------------
-const checkbox = document.getElementById('checkbox');
+const checkbox = document.getElementById('quest_checkbox');
 const uploadForm = document.getElementById('image_Upload');
 
 checkbox.addEventListener('change', function() {

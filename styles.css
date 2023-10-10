@@ -170,6 +170,12 @@ footer a {
   margin: 50px 0px 50px 0px;
 }
 
+#image_Upload {
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
 /* Register */
 
 /* Profile page / edit profile page */
