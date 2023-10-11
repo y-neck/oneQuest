@@ -49,7 +49,7 @@ imageFileInput.addEventListener('change', async (e) => {
 
             // Insert the URL and Quest_ID into the 'images' table
             const todayQuest = new Date().toISOString().split('T')[0];
-            const { data: dailyQuest, error: dailyQuestError } = await supa
+            const { data: dailyQuest } = await supa
                 .from('challengeToQuest')
                 .select('id')
                 .eq('created_at', todayQuest);
