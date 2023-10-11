@@ -48,6 +48,11 @@ imageFileInput.addEventListener('change', async (e) => {
                 .getPublicUrl(filename);
 
             // Insert the URL and Quest_ID into the 'images' table
+            const { data: dailyQuest, error: dailyQuestError } = await supa
+                .from('challenge_to_quest')
+                .select('id');
+            const questId = dailyQuest[0].id;
+
             const { data: insertedData, error: insertError } = await supa
                 .from('images')
                 .insert( {
