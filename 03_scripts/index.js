@@ -5,7 +5,7 @@ import { supa } from '../00_setup/supabase.js';
 //TODO: @joggiletti if user is not logged in, serve login site instead
 
 
-//Checkbox animation------------------------------------------------------------
+//Checkbox to image upload animation------------------------------------------------------------
 const checkbox = document.getElementById('quest_checkbox');
 const uploadForm = document.getElementById('image_Upload');
 
@@ -120,14 +120,22 @@ async function moveChallengeToQuest() {
   }
 }
 
-// Call the function to move one challenge to the quest
-const { data: questCheck, error: fetchError } = await supa.from('challengeToQuest').select('created_at');
-const isItToday = new Date().toISOString().split('T')[0];
-const newQuestCheck = questCheck[1].created_at;
-console.log(questCheck);
-console.log(isItToday);
 
-if (newQuestCheck !== isItToday) {
+//move one challenge to the quest
+const { data: questCheck, error: fetchError } = await supa
+    .from('challengeToQuest')
+    .select('created_at')
+    .order('created_at', { ascending: false })
+    .limit(1);
+
+if (questCheck.length === 0) {
+    moveChallengeToQuest();
+}
+
+const newQuestCheck = questCheck[0].created_at;
+const isItToday = new Date().toISOString().split('T')[0];
+
+if (newQuestCheck !== isItToday || questCheck.length === 0) {
     moveChallengeToQuest();
 }
 
