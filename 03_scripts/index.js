@@ -47,10 +47,13 @@ imageFileInput.addEventListener('change', async (e) => {
                 .from('image_bucket')
                 .getPublicUrl(filename);
 
-            // Insert the URL into the 'images' table
+            // Insert the URL and Quest_ID into the 'images' table
             const { data: insertedData, error: insertError } = await supa
                 .from('images')
-                .insert([{ url: imageUrl.publicURL }]);
+                .insert( {
+                    url: imageUrl.publicURL,
+                    challenge_to_quest: challenge_to_quest.id,
+                });
 
             //Error handling
             if (insertError) {
