@@ -2,8 +2,20 @@
 import { supa } from '../00_setup/supabase.js';
 console.log('imported supabase');
 
-let registerEmail = $('#registerEmail');
-let registerUsername = $('#registerEmail');
-let registerPassword = $('#registerPassword');
+function registerUser() {
+    let registerEmail = $('#registerEmail');
+    let registerUsername = $('#registerEmail');
+    let registerPassword = $('#registerPassword');
 
-console.log(registerEmail)
+    const { data, error } = supabase.auth.signUp({
+        email: registerEmail.value,
+        password: registerPassword.value
+    },
+        {//Register additional username data
+            data: {
+                username: registerUsername.value
+            }
+        }
+    );
+    console.log('User registered successfully');
+};
