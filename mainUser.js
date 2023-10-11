@@ -7,8 +7,6 @@ document.addEventListener('DOMContentLoaded', function () {
     console.log('DOM Loaded');      //Check if DOM is loaded
 });  //End of DOM loader
 
-//general------------------------------------------------------------------------
-
 var userId = 1; //userID of logged-in user for further use
 
 /* DEMO CODE
@@ -19,15 +17,3 @@ if(!userLoggedIn){
     userId = 'ID of logged-in user'
 }
 */
-
-
-
-//login--------------------------------------------------------------------------
-
-//register-----------------------------------------------------------------------
-
-//profile-------------------------------------------------------------------------
-
-//editProfile---------------------------------------------------------------------
-
-
