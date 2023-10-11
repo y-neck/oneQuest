@@ -121,10 +121,15 @@ async function moveChallengeToQuest() {
 }
 
 // Call the function to move one challenge to the quest
-const eins = supa.from('challengeToQuest').select('created_at');
-console.log(eins);
+const { data: questCheck, error: fetchError } = await supa.from('challengeToQuest').select('created_at');
+const isItToday = new Date().toISOString().split('T')[0];
+const newQuestCheck = questCheck[1].created_at;
+console.log(questCheck);
+console.log(isItToday);
 
-moveChallengeToQuest();
+if (newQuestCheck !== isItToday) {
+    moveChallengeToQuest();
+}
 
 
 
