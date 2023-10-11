@@ -44,26 +44,33 @@
 </header>
 
 <body>
-   
 
-<div class="button-container">
-    <img src="../img/graphics/profile_icon.svg" alt="Mail Icon" class="mail_icon">
-     <h1 class="login_text">Registrieren</h1>
 
-    <div id="register_input">
-        <button class="login_button">Mail</button>
-        <button class="login_button">Username</button>
-        <button class="login_button">Password</button>
+    <div class="button-container">
+        <img src="../img/graphics/profile_icon.svg" alt="Mail Icon" class="mail_icon">
+        <h1 class="login_text">Registrieren</h1>
+
+        <div id="register_input">
+            <button class="login_button">Mail</button>
+            <button class="login_button">Username</button>
+            <button class="login_button">Password</button>
+        </div>
+
+        <button class="login_buttonS">Register</button>
+
     </div>
-    
-    <button class="login_buttonS">Register</button>
-   
-</div>
 
-<footer>
-    <a href="../views/impressum.html" target="_blank">Impressum</a>
-    <a href="../views/rules.html" target="_blank">Regeln & Rechtliches</a>
-    <a href="../views/about.html" target="_blank">About</a>
-</footer>
+    <footer>
+        <a href="../views/impressum.html" target="_blank">Impressum</a>
+        <a href="../views/rules.html" target="_blank">Regeln & Rechtliches</a>
+        <a href="../views/about.html" target="_blank">About</a>
+    </footer>
+
+
+    <!-- Import supabase -->
+    <script type='module' src=" ../00_setup/supabase.js"></script>
+    <script type="module" src="../01_api/supabase_api.js"></script>
+    <script src="../mainUser.js" type="module"></script>
 </body>
+
 </html>

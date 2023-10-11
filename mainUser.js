@@ -3,6 +3,8 @@ import { supa } from './00_setup/supabase.js';
 
 var userId; //userID of logged-in user for further use
 
+
+
 /* DEMO CODE
 TODO: @y-neck should be implemented correctly
 if(!userLoggedIn){
