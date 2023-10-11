@@ -121,7 +121,8 @@ async function moveChallengeToQuest() {
 }
 
 // Call the function to move one challenge to the quest
-
+const eins = supa.from('challengeToQuest').select('created_at');
+console.log(eins);
 
 moveChallengeToQuest();
 
