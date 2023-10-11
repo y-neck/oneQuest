@@ -139,7 +139,7 @@ async function moveChallengeToQuest() {
 // Call the function to move one challenge to the quest
 moveChallengeToQuest();
 
-/* 
+
 
 //daily quest-----------------------------------------------------------------------
 // Fetch the quest from the Supabase table
@@ -157,7 +157,7 @@ const text = data[0].challenge;
 document.getElementById('daily_Quest_2').textContent = text;
 
 
- */
+
 
 //login--------------------------------------------------------------------------
 
