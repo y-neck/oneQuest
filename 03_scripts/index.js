@@ -121,8 +121,10 @@ async function moveChallengeToQuest() {
 }
 
 // Call the function to move one challenge to the quest
-
-
+const date = supa.from('challengeToQuest').select('created_at');
+console.log(date);
+if{
+}
 moveChallengeToQuest();
 
 
