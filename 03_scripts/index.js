@@ -1,3 +1,5 @@
+//import supabase
+import { supa } from '../00_setup/supabase.js';
 
 
 //TODO: @joggiletti if user is not logged in, serve login site instead
