@@ -1,4 +1,7 @@
-
+document.addEventListener('DOMContentLoaded', function () {
+    console.log('Script.js loaded')
+    console.log('DOM Loaded');      //Check if DOM is loaded
+});  //End of DOM loader
 
 var profileUsername;
 
