@@ -52,7 +52,7 @@ body {
   height: 100%;
   font-family: 'Urbanist', sans-serif;
   font-size: 1rem;
-  min-height: 100vh;
+  min-height: 100vh; /* Force footer to end of page */
   display: flex;
   flex-direction: column;
   /* Define default font size [rem]*/
@@ -105,9 +105,9 @@ header {
 
 /* Footer */
 footer {
-  margin-top: auto;
-  flex-shrink: 0; /* Force footer to end of page */
-  position: sticky;
+  margin-top: auto; /* Force footer to end of page */
+  flex-shrink: 0; 
+  position: sticky; /* Force footer to end of page */
   width: 100vw;
   height: 65px;
   background-color: var(--primary);
