@@ -106,7 +106,7 @@ header {
 /* Footer */
 footer {
   margin-top: auto; /* Force footer to end of page */
-  flex-shrink: 0; 
+  flex-shrink: 0;
   position: sticky; /* Force footer to end of page */
   width: 100vw;
   height: 65px;
@@ -178,6 +178,24 @@ footer a {
 }
 
 /* Register */
+
+#register_input {
+  display: flex;
+  flex-direction: column;
+  margin: 25px;
+}
+
+#register_input input{
+    width: 232px;
+  height: 53px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  background: var(--secondary);
+  margin-bottom: 15px;
+  border: none;
+  color: var(--text);
+  text-align: center;
+}
 
 /* Profile page / edit profile page */
 
@@ -314,12 +332,6 @@ footer a {
 
 .login_text {
   margin: 8px;
-}
-
-#register_input {
-  display: flex;
-  flex-direction: column;
-  margin: 25px;
 }
 
 #login_input {
