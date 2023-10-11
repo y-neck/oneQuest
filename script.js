@@ -127,7 +127,10 @@ async function moveChallengeToQuest() {
     // Insert the selected item into the "challengeToQuest" table
     const { data: insertedChallenge } = await supa
       .from('challengeToQuest')
-      .insert(selectedChallenge);
+      .insert({
+        challenge: selectedChallenge.challenge,
+        created_at: new Date().toISOString(),
+      });
       
       console.log('Successfully moved challenge to challengeToQuest:', insertedChallenge);
 
@@ -142,17 +145,16 @@ moveChallengeToQuest();
 
 
 //daily quest-----------------------------------------------------------------------
-//Fetch the quest from the Supabase table
 const today = new Date().toISOString().split('T')[0];
 
+//Fetch the quest from the Supabase table
 const { data, error } = await supa
-.from('challengeToQuest')
-  .select('challenge')
-  .eq('created_at', today);
-
+    .from('challengeToQuest')
+    .select('challenge')
+    .eq('created_at', today);
 
 if (error) {
-  console.error('Error fetching challenges:', error.message);
+    console.error('Error fetching challenges:', error.message);
 }
 
 console.log('Fetched challenges:', data);
