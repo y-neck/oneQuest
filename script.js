@@ -142,7 +142,7 @@ moveChallengeToQuest();
 
 
 //daily quest-----------------------------------------------------------------------
-// Fetch the quest from the Supabase table
+//Fetch the quest from the Supabase table
 const today = new Date().toISOString().split('T')[0];
 
 const { data, error } = await supa
@@ -157,10 +157,10 @@ if (error) {
 
 console.log('Fetched challenges:', data);
 
-// Get the value from the data response
+//Get the value from the data response
 const text = data[0].challenge;
 
-// Update the text content of the <h1> element
+//Update the text content of the <h1> element
 document.getElementById('daily_Quest_2').textContent = text;
 
 
