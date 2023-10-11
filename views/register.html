@@ -34,45 +34,45 @@
     <!-- CSS Style Sheet -->
     <link rel="stylesheet" href="../styles.css">
 
-    <script type="module" src="../views/register.js"></script>
-
+    
 </head>
 
 <header>
     <a href="#"><img id="header_logo" src="../img/graphics/LogoOQ4.png" alt="Header Logo OQ"></a>
     <a href="../views/profile.html">
         <img id="profile_icon" src="../img/graphics/profile.png" alt="Profile Icon"></a>
-
+        
 </header>
 
 <body>
-
-
+    
+    
     <div class="button-container">
         <img src="../img/graphics/profile_icon.svg" alt="Mail Icon" class="mail_icon">
         <h1 class="login_text">Registrieren</h1>
-
+        
         <div id="register_input">
             <input type="text" id="registerEmail" placeholder="Email" required>
             <input type="text" id="registerUsername" placeholder="Benutzername" required>
             <input type="password" id="registerPassword" placeholder="Passwort" required>
         </div>
-
+        
         <button class="login_buttonS" id="registerButton" onclick="registerUser()">Registrieren</button>
-
+        
     </div>
-
+    
     <footer>
         <a href="../views/impressum.html" target="_blank">Impressum</a>
         <a href="../views/rules.html" target="_blank">Regeln & Rechtliches</a>
         <a href="../views/about.html" target="_blank">About</a>
     </footer>
-
-
+    
+    
     <!-- Import supabase -->
     <script type='module' src=" ../00_setup/supabase.js"></script>
     <script type="module" src="../01_api/supabase_api.js"></script>
     <script src="../mainUser.js" type="module"></script>
+    <script type="module" src="../03_scripts/register.js"></script>
     
 </body>
 
