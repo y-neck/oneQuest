@@ -121,7 +121,7 @@ async function moveChallengeToQuest() {
 }
 
 
-// Call the function to move one challenge to the quest
+//move one challenge to the quest
 const { data: questCheck, error: fetchError } = await supa
     .from('challengeToQuest')
     .select('created_at')
