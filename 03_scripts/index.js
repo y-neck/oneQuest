@@ -48,16 +48,17 @@ imageFileInput.addEventListener('change', async (e) => {
                 .getPublicUrl(filename);
 
             // Insert the URL and Quest_ID into the 'images' table
+            const todayQuest = new Date().toISOString().split('T')[0];
             const { data: dailyQuest, error: dailyQuestError } = await supa
-                .from('challenge_to_quest')
-                .select('id');
-            const questId = dailyQuest[0].id;
+                .from('challengeToQuest')
+                .select('id')
+                .eq('created_at', todayQuest);
 
             const { data: insertedData, error: insertError } = await supa
                 .from('images')
                 .insert( {
                     url: imageUrl.publicURL,
-                    challenge_to_quest: challenge_to_quest.id,
+                    challenge_to_quest: dailyQuest[0].id,
                 });
 
             //Error handling
@@ -69,6 +70,7 @@ imageFileInput.addEventListener('change', async (e) => {
         }
     }
 });
+
 
 
 //loading posts-----------------------------------------------------------------------
