@@ -1,13 +1,7 @@
 //import supabase
 import { supa } from './00_setup/supabase.js';
 
-
-document.addEventListener('DOMContentLoaded', function () {
-    console.log('Script.js loaded')
-    console.log('DOM Loaded');      //Check if DOM is loaded
-});  //End of DOM loader
-
-var userId = 1; //userID of logged-in user for further use
+var userId; //userID of logged-in user for further use
 
 /* DEMO CODE
 TODO: @y-neck should be implemented correctly
@@ -17,3 +11,5 @@ if(!userLoggedIn){
     userId = 'ID of logged-in user'
 }
 */
+export { userId };
+export {  }
