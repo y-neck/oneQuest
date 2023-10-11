@@ -85,7 +85,7 @@ imageFileInput.addEventListener('change', async (e) => {
 //loading posts-----------------------------------------------------------------------
 const imageContainer = document.querySelector('.quest_Images');
 //Fetch the image URLs from the 'images' table
-const { data: imageData, error: imageError } = await supa   //@joggiletti await requires to be part of an async function
+const { data: imageData, error: imageError } = await supa
     .from('images')
     .select('url');
 
