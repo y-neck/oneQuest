@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 var profileUsername;
 
+//Replace default username with username from database
 async function getUsername(userId) {
     const { data, error } = await supa
         .from('users')
