@@ -143,12 +143,19 @@ moveChallengeToQuest();
 
 //daily quest-----------------------------------------------------------------------
 // Fetch the quest from the Supabase table
-const { data, error } = await supa.from('challengeToQuest').select('challenge');
+const today = new Date().toISOString().split('T')[0];
 
-// Check for any errors
+const { data, error } = await supa
+.from('challengeToQuest')
+  .select('challenge')
+  .eq('created_at', today);
+
+
 if (error) {
-  console.error(error);
+  console.error('Error fetching challenges:', error.message);
 }
+
+console.log('Fetched challenges:', data);
 
 // Get the value from the data response
 const text = data[0].challenge;
