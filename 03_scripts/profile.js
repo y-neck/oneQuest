@@ -1,7 +1,18 @@
+//import supabase
+import { supa } from './00_setup/supabase.js';
+
+//Import mainUser.js
+$.getScript("../mainUser.js", function () {
+    alert("Script loaded but not necessarily executed.");
+});
+
+console.log('UserID: ' + userId)
+
 document.addEventListener('DOMContentLoaded', function () {
     console.log('Script.js loaded')
     console.log('DOM Loaded');      //Check if DOM is loaded
 });  //End of DOM loader
+
 
 var profileUsername;
 
