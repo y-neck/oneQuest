@@ -2,7 +2,8 @@
 import { supa } from '../00_setup/supabase.js';
 
 //Import mainUser.js functions
-import {  } from '../mainUser.js';
+import { userId } from '../mainUser.js';
+console.log ('Imported mainUser.js');
 
 document.addEventListener('DOMContentLoaded', function () {
     console.log('profile.js loaded')
@@ -17,21 +18,16 @@ async function getUsername(userId) {
         .from('users')
         .select('username')
         .eq('id', userId);   //Get username where db id = userId
-    if (error) {
-        console.error('Could not retrieve username from database');  //Add error handling
-    }
-    else {
+    
+    if(data){
         profileUsername = data[0].username; //Assign username to profileUsername
-        $('#profile_username').innerHTML = profileUsername; //Replace default username with actual username
+        document.getElementById('profile_username').innerHTML = profileUsername; //Replace default username with actual username
+
+    } else{
+        console.error('Could not retrieve username from database');  //Add error handling
     }
     console.log('console.log in function ' + profileUsername);
 }
 (async () => {
     await getUsername(userId);
-    console.log('Async test: ' + profileUsername);
 })();
-
-//Trigger getUsername on pageload
-document.addEventListener('DOMContentLoaded', () => {
-    getUsername();
-});
