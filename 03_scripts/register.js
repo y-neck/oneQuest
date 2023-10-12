@@ -7,14 +7,11 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 function registerUser() {
-    let registerEmail = $('#registerEmail');
-    let registerUsername = $('#registerEmail');
-    let registerPassword = $('#registerPassword');
+    let registerEmail = $('#registerEmail').value;
+    let registerUsername = $('#registerEmail').value;
+    let registerPassword = $('#registerPassword').value;
 
-    const { data, error } = supa.auth.signUp({
-        email: registerEmail.value,
-        password: registerPassword.value
-    },
+    const { data, error } = supa.auth.signUp({registerEmail,registerPassword},
         {//Register additional username data
             data: {
                 username: registerUsername.value
