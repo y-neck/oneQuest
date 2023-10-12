@@ -7,9 +7,9 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 async function registerUser() {
-    const registerEmail = $('#registerEmail').value;
-    const registerUsername = $('#registerEmail').value;
-    const registerPassword = $('#registerPassword').value;
+    const registerEmail = document.querySelector('#registerEmail').value;
+    const registerUsername = document.querySelector('#registerEmail').value;
+    const registerPassword = document.querySelector('#registerPassword').value;
 
     const { data, error } = await supa.auth.signUp({registerEmail,registerPassword},
         {//Register additional username data
@@ -26,3 +26,6 @@ async function registerUser() {
         console.log('User registered successfully as' + data[0].registerUsername);
     }
 }
+
+// RegisterUser button event listener
+document.querySelector('#registerButton').addEventListener('click', registerUser);
