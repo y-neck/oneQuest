@@ -6,12 +6,12 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('DOM loaded');
 })
 
-function registerUser() {
-    let registerEmail = $('#registerEmail').value;
-    let registerUsername = $('#registerEmail').value;
-    let registerPassword = $('#registerPassword').value;
+async function registerUser() {
+    const registerEmail = $('#registerEmail').value;
+    const registerUsername = $('#registerEmail').value;
+    const registerPassword = $('#registerPassword').value;
 
-    const { data, error } = supa.auth.signUp({registerEmail,registerPassword},
+    const { data, error } = await supa.auth.signUp({registerEmail,registerPassword},
         {//Register additional username data
             data: {
                 username: registerUsername.value
@@ -23,6 +23,6 @@ function registerUser() {
     }
     else {
         console.log(data);
-        console.log('User registered successfully');
+        console.log('User registered successfully as' + data[0].registerUsername);
     }
 };
