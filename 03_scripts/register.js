@@ -26,7 +26,7 @@ async function registerUser() {
         if (error) {
             console.error('Error registering user:', error.message);    //Add error handling
         } else {
-            console.log('User registered successfully:', data);
+            console.log('User registered successfully as ', data[0].username);
             // You can use user and session data here for further actions.
         }
     } catch (error) {
