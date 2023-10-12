@@ -11,13 +11,14 @@ async function registerUser() {
     const registerUsername = document.querySelector('#registerEmail').value;
     const registerPassword = document.querySelector('#registerPassword').value;
 
-    const { data, error } = await supa.auth.signUp({registerEmail,registerPassword},
-        {//Register additional username data
+    const { data, error } = await supa.auth.signUp({registerEmail,registerPassword,
+        options: {
+            //Register additional username data: https://github.com/orgs/supabase/discussions/3491
             data: {
-                username: registerUsername.value
+                username: registerUsername
             }
         }
-    );
+});
     if (error) {
         console.error('Error registering user:', error.message);    //Add error handling
     }
