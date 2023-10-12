@@ -25,4 +25,4 @@ async function registerUser() {
         console.log(data);
         console.log('User registered successfully as' + data[0].registerUsername);
     }
-};
+}
