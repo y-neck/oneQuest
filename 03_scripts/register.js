@@ -8,25 +8,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
 async function registerUser() {
     const registerEmail = document.querySelector('#registerEmail').value;
-    const registerUsername = document.querySelector('#registerEmail').value;
+    const registerUsername = document.querySelector('#registerUsername').value;
     const registerPassword = document.querySelector('#registerPassword').value;
 
-    const { data, error } = await supa.auth.signUp({registerEmail,registerPassword,
-        options: {
-            //Register additional username data: https://github.com/orgs/supabase/discussions/3491
-            data: {
-                username: registerUsername
+    try {
+        const { data, error } = await supa.auth.signUp({
+            email: registerEmail,
+            password: registerPassword,
+            options: {
+                //Register additional username data: https://github.com/orgs/supabase/discussions/3491
+                data: {
+                    username: registerUsername
+                }
             }
+        });
+
+        if (error) {
+            console.error('Error registering user:', error.message);    //Add error handling
+        } else {
+            console.log('User registered successfully:', data);
+            // You can use user and session data here for further actions.
         }
-});
-    if (error) {
-        console.error('Error registering user:', error.message);    //Add error handling
-    }
-    else {
-        console.log(data);
-        console.log('User registered successfully as' + data[0].registerUsername);
+    } catch (error) {
+        console.error('An error occurred during registration:', error.message);
     }
 }
+
 
 // RegisterUser button event listener
 document.querySelector('#registerButton').addEventListener('click', registerUser);
