@@ -17,6 +17,7 @@
     --accent: #f9c34e;
   }
 }
+
 @media (prefers-color-scheme: dark) {
   :root {
     --text: #ffffff;
@@ -37,7 +38,9 @@
 }
 
 html {
-  background-color: var(--background, gray /* Adding fallback */);
+  background-color: var(--background, gray
+      /* Adding fallback */
+    );
   color: var(--text, black);
   height: 100%;
   max-width: 100%;
@@ -52,7 +55,8 @@ body {
   height: 100%;
   font-family: 'Urbanist', sans-serif;
   font-size: 1rem;
-  min-height: 100vh; /* Force footer to end of page */
+  min-height: 100vh;
+  /* Force footer to end of page */
   display: flex;
   flex-direction: column;
   /* Define default font size [rem]*/
@@ -72,6 +76,7 @@ a {
 h1 {
   text-align: center;
   font-family: 'Urbanist', sans-serif;
+  font-weight: 700;
   font-size: 1.5rem;
   font-style: normal;
   font-weight: 700;
@@ -105,9 +110,11 @@ header {
 
 /* Footer */
 footer {
-  margin-top: auto; /* Force footer to end of page */
+  margin-top: auto;
+  /* Force footer to end of page */
   flex-shrink: 0;
-  position: sticky; /* Force footer to end of page */
+  position: sticky;
+  /* Force footer to end of page */
   width: 100vw;
   height: 65px;
   background-color: var(--primary);
@@ -126,7 +133,8 @@ footer a {
   width: 34px;
   margin-top: 16px;
   margin-left: 40px;
-  float: left; /* Forces logo to appear on left */
+  float: left;
+  /* Forces logo to appear on left */
 }
 
 #profile_icon {
@@ -134,7 +142,8 @@ footer a {
   width: 34px;
   margin-top: 16px;
   margin-right: 40px;
-  float: right; /* Forces icon to appear on right; reference #header_logo:float*/
+  float: right;
+  /* Forces icon to appear on right; reference #header_logo:float*/
 }
 
 /* Home */
@@ -145,12 +154,15 @@ footer a {
 
 #daily_Quest_2 {
   margin: 0px 0px 50px 0px;
+  font-weight: 700;
 }
 
 .quest_Images {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr; /* 3 columns with equal width */
-  grid-template-rows: auto auto auto; /* 3 rows with automatic height */
+  grid-template-columns: 1fr 1fr 1fr;
+  /* 3 columns with equal width */
+  grid-template-rows: auto auto auto;
+  /* 3 rows with automatic height */
 }
 
 .quest_Images img {
@@ -185,8 +197,8 @@ footer a {
   margin: 25px;
 }
 
-#register_input input{
-    width: 232px;
+#register_input input {
+  width: 232px;
   height: 53px;
   flex-shrink: 0;
   border-radius: 8px;
@@ -272,6 +284,7 @@ footer a {
   color: var(--text);
   text-align: center;
 }
+
 #editPassword {
   margin-top: 26px;
   width: 232px;
