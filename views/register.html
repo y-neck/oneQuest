@@ -25,7 +25,11 @@
         integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Google Font -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Urbanist">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
 
     <!-- supabase cdns-->
     <script src="https://unpkg.com/@supabase/supabase-js@2"> </script>
@@ -33,37 +37,47 @@
 
     <!-- CSS Style Sheet -->
     <link rel="stylesheet" href="../styles.css">
+    <script type="module" src="../03_scripts/register.js"></script>
 
 </head>
 
-<header>
-    <a href="#"><img id="header_logo" src="../img/graphics/LogoOQ4.png" alt="Header Logo OQ"></a>
-    <a href="../views/profile.html">
-        <img id="profile_icon" src="../img/graphics/profile.png" alt="Profile Icon"></a>
-
-</header>
 
 <body>
-   
 
-<div class="button-container">
-    <img src="../img/graphics/profile_icon.svg" alt="Mail Icon" class="mail_icon">
-     <h1 class="login_text">Registrieren</h1>
+    <header>
+        <a href="../index.html"><img id="header_logo" src="../img/graphics/LogoOQ4.png" alt="Header Logo OQ"></a>
+        <a href="../views/profile.html">
+            <img id="profile_icon" src="../img/graphics/profile.png" alt="Profile Icon"></a>
 
-    <div id="register_input">
-        <button class="login_button">Mail</button>
-        <button class="login_button">Username</button>
-        <button class="login_button">Password</button>
+    </header>
+
+    <div class="button-container">
+        <img src="../img/graphics/profile_icon.svg" alt="Mail Icon" class="mail_icon">
+        <h1 class="login_text">Registrieren</h1>
+
+        <div id="register_input">
+            <input type="text" id="registerEmail" placeholder="Email" required>
+            <input type="text" id="registerUsername" placeholder="Benutzername" required>
+            <input type="password" id="registerPassword" placeholder="Passwort" required>
+        </div>
+
+        <button class="login_buttonS" id="registerButton" onclick="registerUser()">Registrieren</button>
+
     </div>
-    
-    <button class="login_buttonS">Register</button>
-   
-</div>
 
-<footer>
-    <a href="../views/impressum.html" target="_blank">Impressum</a>
-    <a href="../views/rules.html" target="_blank">Regeln & Rechtliches</a>
-    <a href="../views/about.html" target="_blank">About</a>
-</footer>
+    <footer>
+        <a href="../views/impressum.html" target="_blank">Impressum</a>
+        <a href="../views/rules.html" target="_blank">Regeln & Rechtliches</a>
+        <a href="../views/about.html" target="_blank">About</a>
+    </footer>
+
+
+    <!-- Import supabase -->
+    <script type='module' src=" ../00_setup/supabase.js"></script>
+    <script type="module" src="../01_api/supabase_api.js"></script>
+    <script src="../mainUser.js" type="module"></script>
+    <script type="module" src="../03_scripts/register.js"></script>
+
 </body>
+
 </html>

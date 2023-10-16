@@ -25,7 +25,11 @@
         integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Google Font -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Urbanist">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
 
     <!-- supabase cdns-->
     <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
@@ -33,37 +37,43 @@
 
     <!-- CSS Style Sheet -->
     <link rel="stylesheet" href="../styles.css">
-
+    <!-- JS -->
 </head>
 
-<header id="profile_header">
-    <a id="backToHome" class="profile_headerIcon" href="../index.html"><i class="fa-solid fa-arrow-left"></i></a>
-    <a id="editProfileIcon" class="profile_headerIcon" href="../views/editProfile.html">
-        <i class="fa-solid fa-pencil"></i></a>
-</header>
+<body>
+    <header id="profile_header">
+        <a id="backToHome" class="profile_headerIcon" href="../index.html"><i class="fa-solid fa-arrow-left"></i></a>
+        <a id="editProfileIcon" class="profile_headerIcon" href="../views/editProfile.html">
+            <i class="fa-solid fa-pencil"></i></a>
+    </header>
 
-<main>
-    <div id="profile_picture"><img src="../img/graphics/profile.png" alt="Profilbild"></div>
-    <!-- TODO: @y-neck Add functionality to retrieve profile picture from database -->
-    <h1 id="profile_username">User</h1>
-    <div id="profile_questpoints">
-        <p>Du hast schon</p>
-        <span id="profile_questpoints_number">0</span>
-        <!-- TODO: @y-neck Add functionality to retrieve questpoints from database -->
-        <p>Quests geschafft!</p>
-    </div>
-    <div id="profile_gallery"></div>
+    <main>
+        <div id="profile_picture"><img src="../img/graphics/profile.png" alt="Profilbild"></div>
+        <!-- TODO: @y-neck Add functionality to retrieve profile picture from database -->
+        <h1 id="profile_username">User</h1>
+        <div id="profile_questpoints">
+            <p>Du hast schon</p>
+            <span id="profile_questpoints_number">0</span>
+            <!-- TODO: @y-neck Add functionality to retrieve questpoints from database -->
+            <p>Quests geschafft!</p>
+        </div>
+        <div id="profile_gallery"></div>
 
-</main>
+    </main>
 
-<footer>
-    <a href="../views/impressum.html" target="_blank">Impressum</a>
-    <a href="../views/rules.html" target="_blank">Regeln & Rechtliches</a>
-    <a href="../views/about.html" target="_blank">About</a>
-</footer>
+    <footer>
+        <a href="../views/impressum.html" target="_blank">Impressum</a>
+        <a href="../views/rules.html" target="_blank">Regeln & Rechtliches</a>
+        <a href="../views/about.html" target="_blank">About</a>
+    </footer>
 
-<!-- Import supabase -->
-<script type='module' src=" ../00_setup/supabase.js"></script>
-<script type="module" src="./01_api/supabase_api.js"></script>
+    <!-- Import supabase -->
+    <script type="module" src=" ../00_setup/supabase.js"></script>
+    <script type="module" src="../01_api/supabase_api.js"></script>
+    <!-- JS -->
+    <script src="../03_scripts/profile.js" type="module"></script>
+    <script src="../mainUser.js" type="module"></script> <!-- Require type="module" when working with imports in the js file -->
+
+</body>
 
 </html>

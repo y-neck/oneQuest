@@ -17,6 +17,7 @@
     --accent: #f9c34e;
   }
 }
+
 @media (prefers-color-scheme: dark) {
   :root {
     --text: #ffffff;
@@ -37,7 +38,9 @@
 }
 
 html {
-  background-color: var(--background, gray /* Adding fallback */);
+  background-color: var(--background, gray
+      /* Adding fallback */
+    );
   color: var(--text, black);
   height: 100%;
   max-width: 100%;
@@ -53,6 +56,7 @@ body {
   font-family: 'Urbanist', sans-serif;
   font-size: 1rem;
   min-height: 100vh;
+  /* Force footer to end of page */
   display: flex;
   flex-direction: column;
   /* Define default font size [rem]*/
@@ -68,13 +72,13 @@ a {
   color: var(--accent, yellow);
 }
 
-/* Heading */
+/* Headings */
 h1 {
   text-align: center;
   font-family: 'Urbanist', sans-serif;
+  font-weight: 700;
   font-size: 1.5rem;
   font-style: normal;
-  font-weight: 700;
   line-height: normal;
 }
 
@@ -106,8 +110,10 @@ header {
 /* Footer */
 footer {
   margin-top: auto;
-  flex-shrink: 0; /* Force footer to end of page */
+  /* Force footer to end of page */
+  flex-shrink: 0;
   position: sticky;
+  /* Force footer to end of page */
   width: 100vw;
   height: 65px;
   background-color: var(--primary);
@@ -122,11 +128,12 @@ footer a {
 }
 
 #header_logo {
-  height: 34;
+  height: 34px;
   width: 34px;
   margin-top: 16px;
   margin-left: 40px;
-  float: left; /* Forces logo to appear on left */
+  float: left;
+  /* Forces logo to appear on left */
 }
 
 #profile_icon {
@@ -134,7 +141,8 @@ footer a {
   width: 34px;
   margin-top: 16px;
   margin-right: 40px;
-  float: right; /* Forces icon to appear on right; reference #header_logo:float*/
+  float: right;
+  /* Forces icon to appear on right; reference #header_logo:float*/
 }
 
 /* Home */
@@ -144,29 +152,61 @@ footer a {
 }
 
 #daily_Quest_2 {
-  margin: 0px 0px 25px 0px;
+  margin: 0px 0px 50px 0px;
+  font-weight: 700;
 }
 
 .quest_Images {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr; /* 3 columns with equal width */
-  grid-template-rows: auto auto auto; /* 3 rows with automatic height */
-  grid-gap: 10px; /* spacing between grid cells */
+  grid-template-columns: 1fr 1fr 1fr;
+  /* 3 columns with equal width */
+  grid-template-rows: auto auto auto;
+  /* 3 rows with automatic height */
 }
 
-.checkbox {
-  display: flex;
+.quest_Images img {
+  width: calc(100vw / 3);
+  height: calc(100vw / 3);
+  object-fit: cover;
+}
+
+#checkbox {
   justify-content: center;
   align-items: center;
 }
 
 #quest_checkbox {
-  height: 100px;
-  width: 100px;
-  margin: 50px 0px 0px 0px;
+  height: 20vw;
+  width: 20vw;
+  margin: 50px 0px 50px 0px;
+}
+
+#image_Upload {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  margin: 50px 0px 50px 0px;
 }
 
 /* Register */
+
+#register_input {
+  display: flex;
+  flex-direction: column;
+  margin: 25px;
+}
+
+#register_input input {
+  width: 232px;
+  height: 53px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  background: var(--secondary);
+  margin-bottom: 15px;
+  border: none;
+  color: var(--text);
+  text-align: center;
+}
 
 /* Profile page / edit profile page */
 
@@ -185,16 +225,10 @@ footer a {
   font-size: 1.25rem;
 }
 
-#profile_confirmChanges {
-  all: unset; /* Remove all default styles */
-  width: fit-content;
-  margin-inline-start: auto;  /* Aligns button to right */
-  margin-right: 40px;
-}
-
 #editProfileIcon {
-  margin: 0;
+  margin-left: auto;
   padding: 0;
+  justify-self: end;
 }
 
 #profile_picture {
@@ -231,6 +265,45 @@ footer a {
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+}
+
+#editProfile_inputs {
+  display: flex;
+  flex-direction: column;
+}
+
+#editUsername {
+  margin-top: 40px;
+  width: 232px;
+  height: 53px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  border: none;
+  background: var(--secondary);
+  color: var(--text);
+  text-align: center;
+}
+
+#editPassword {
+  margin-top: 26px;
+  width: 232px;
+  height: 53px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  border: none;
+  background: var(--secondary);
+  color: var(--text);
+  text-align: center;
+}
+
+#deleteProfile {
+  width: 153px;
+  height: 53px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  border: none;
+  background: var(--accent);
+  margin-top: 26px;
 }
 
 /* Login page */
@@ -273,18 +346,12 @@ footer a {
   margin: 8px;
 }
 
-#register_input {
-  display: flex;
-  flex-direction: column;
-  margin: 25px;
-}
-
 #login_input {
   display: flex;
   flex-direction: column;
   margin: 25px;
 }
 
-#login_top{
+#login_top {
   margin-top: 150px;
 }
