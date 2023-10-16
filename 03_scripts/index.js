@@ -73,8 +73,7 @@ imageFileInput.addEventListener('change', async (e) => {
 });
 
 
-
-//loading posts-----------------------------------------------------------------------
+//Loading posts-----------------------------------------------------------------------
 const imageContainer = document.querySelector('.quest_Images');
 //Fetch the image URLs from the 'images' table
 const { data: imageData, error: imageError } = await supa
@@ -92,13 +91,14 @@ if (imageError) {
         if (i < imageData.length) {
             img.src = imageData[i].url;
         } else {
-            // If there is no image URL available, you can set a fallback image or hide the image element
+        // If there is no image URL available, you can set a fallback image or hide the image element
             img.style.display = 'none';
         }
     }
 };
 
-//challenge to daily quest--------------------------------------------------------
+
+//Challenge to daily quest--------------------------------------------------------
 
 // Move one item from the "challenges" table to the "challengeToQuest" table
 async function moveChallengeToQuest() {
