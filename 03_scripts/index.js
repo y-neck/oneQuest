@@ -5,10 +5,11 @@ import { supa } from '../00_setup/supabase.js';
 //TODO: @joggiletti if user is not logged in, serve login site instead
 
 
-//Checkbox to image upload animation------------------------------------------------------------
+//Checkbox to image: upload animation------------------------------------------------------------
 const checkbox = document.getElementById('quest_checkbox');
 const uploadForm = document.getElementById('image_Upload');
 
+/* Show Upload Button instead of Checkbox when it's checked */
 checkbox.addEventListener('change', function () {
     if (checkbox.checked) {
         setTimeout(function () {
@@ -24,7 +25,7 @@ checkbox.addEventListener('change', function () {
 });
 
 
-//upload image-----------------------------------------------------------------------
+//Upload image to bucket and table-----------------------------------------------------------------------
 const imageFileInput = document.getElementById('image_File');
 
 imageFileInput.addEventListener('change', async (e) => {
