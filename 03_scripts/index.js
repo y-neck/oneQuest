@@ -98,9 +98,9 @@ if (imageError) {
 };
 
 
-//Challenge to daily quest--------------------------------------------------------
+// Challenge to daily quest--------------------------------------------------------
 
-// Move one item from the "challenges" table to the "challengeToQuest" table
+// Function to move one item from the "challenges" table to the "challengeToQuest" table
 async function moveChallengeToQuest() {
   // Fetch all challenges
   const { data: challenges, error: fetchError } = await supa
@@ -133,12 +133,12 @@ async function moveChallengeToQuest() {
 }
 
 
-//Move one challenge to the quest
+// Move one challenge from "challenge" to "challenge to quest" per day
 const { data: questCheck, error: fetchError } = await supa
     .from('challengeToQuest')
     .select('created_at')
-    .order('created_at', { ascending: false })
-    .limit(1);
+    .order('created_at', { ascending: false })  /* choose newest quest */
+    .limit(1);                                  /* only choose 1 quest */
 
 if (questCheck.length === 0) {
     moveChallengeToQuest();
