@@ -157,10 +157,10 @@ footer a {
 
 .quest_Images {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
   /* 3 columns with equal width */
-  grid-template-rows: auto auto auto;
+  grid-template-columns: 1fr 1fr 1fr;
   /* 3 rows with automatic height */
+  grid-template-rows: auto auto auto;
 }
 
 .quest_Images img {
