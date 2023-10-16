@@ -29,19 +29,16 @@ async function registerUser() {
 
 // Function to update user status
 function updateUserStatus(user) {
-    const userStatusElement = document.getElementById('userStatus');
-
     if (user) {
-        userStatusElement.textContent = `Authenticated as: ${user.email}`;
+        console.log(`Authenticated as: ${user.email}`);
     } else {
-        userStatusElement.textContent = "Not authenticated.";
+        console.log('Not authenticated.');
     }
 }
 
 // Check and display the initial user status
 const initialUser = supa.auth.user();
 updateUserStatus(initialUser);
-console.log(initialUser);
 
 // RegisterUser button event listener
 document.querySelector('#registerButton').addEventListener('click', registerUser);
