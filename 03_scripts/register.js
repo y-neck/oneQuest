@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 async function registerUser() {
     const registerEmail = document.querySelector('#registerEmail').value;
-    const registerUsername = document.querySelector('#registerUsername').value;
     const registerPassword = document.querySelector('#registerPassword').value;
 
     //Signup user
@@ -21,6 +20,7 @@ async function registerUser() {
         console.error('Error registering user:', error.message);    //Add error handling
     } else {
         console.log('User registered successfully as ', user);
+        updateUserName(user);
     }
 
 }
@@ -37,6 +37,23 @@ function updateUserStatus(user) {
 // Check and display the initial user status
 const initialUser = supa.auth.user();
 updateUserStatus(initialUser);
+
+//Update users table with username and email
+async function updateUserName(user) {
+    const registerUsername = document.querySelector('#registerUsername').value;
+    //Update username
+    const { data, error } = await supa.from('users').insert([
+        {id: user.id, username: registerUsername}
+    ])
+    console.log(data);
+}
+
+/*     const { data, error } = await supa.auth.updateUser({
+        data: { username: registerUsername }
+    }
+    )
+}; */
+ 
 
 // RegisterUser button event listener
 document.querySelector('#registerButton').addEventListener('click', registerUser);
