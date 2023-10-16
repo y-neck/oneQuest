@@ -140,6 +140,7 @@ const { data: questCheck, error: fetchError } = await supa
     .order('created_at', { ascending: false })  /* choose newest quest */
     .limit(1);                                  /* only choose 1 quest */
 
+// Activate function if there is no quest at all in the "challengeToQuest" table
 if (questCheck.length === 0) {
     moveChallengeToQuest();
 }
@@ -147,6 +148,7 @@ if (questCheck.length === 0) {
 const newQuestCheck = questCheck[0].created_at;
 const isItToday = new Date().toISOString().split('T')[0];
 
+// Activate function if today no quest was moved to the "challengeToQuest" table
 if (newQuestCheck !== isItToday || questCheck.length === 0) {
     moveChallengeToQuest();
 }
