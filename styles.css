@@ -115,8 +115,7 @@ header {
   width: 34px;
   margin-top: 16px;
   margin-left: 40px;
-  float: left;
-  /* Forces logo to appear on left */
+  float: left; /* Forces logo to appear on left */
 }
 
 #profile_icon {
@@ -124,11 +123,10 @@ header {
   width: 34px;
   margin-top: 16px;
   margin-right: 40px;
-  float: right;
-  /* Forces icon to appear on right; reference #header_logo:float*/
+  float: right; /* Forces icon to appear on right; reference #header_logo:float*/
 }
 
-/* Footer */
+/* Footer ------------------------------------------------------------------------------------------------------------- */
 footer {
   margin-top: auto;
   /* Force footer to end of page */
@@ -214,7 +212,7 @@ footer a {
   text-align: center;
 }
 
-/* Profile page / edit profile page */
+/* Profile page / edit profile page ----------------------------------------------------------------------------------- */
 
 #profile_header {
   height: 65px;
