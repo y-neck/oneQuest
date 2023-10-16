@@ -361,7 +361,8 @@ footer a {
   display: flex;
   justify-content: center; /* Center content horizontally */
   align-items: center;     /* Center content vertically */
-  height: 100vh;           /* Take the full viewport height */
+  height: calc(100vh - 40px); /* Subtract 40px (20px top + 20px bottom) from the full viewport height */
+  margin: 20px 20%;         /* 20px top and bottom, 20% left and right */
 }
 
 #impressum_container p {
