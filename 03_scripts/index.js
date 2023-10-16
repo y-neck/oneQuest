@@ -55,11 +55,16 @@ imageFileInput.addEventListener('change', async (e) => {
                 .select('id')
                 .eq('created_at', todayQuest);
 
+            const { data: userId } = await supa
+                .from('users')
+                .select('id')
+
             const { data: insertedData, error: insertError } = await supa
                 .from('images')
                 .insert( {
                     url: imageUrl.publicURL,
                     challenge_to_quest: dailyQuest[0].id,
+                    user: userId,
                 });
 
             //Error handling
