@@ -1,14 +1,15 @@
-//import supabase
+// Import supabase
 import { supa } from '../00_setup/supabase.js';
 
 
 //TODO: @joggiletti if user is not logged in, serve login site instead
 
 
-//Checkbox to image upload animation------------------------------------------------------------
+// Checkbox to image: upload animation------------------------------------------------------------
 const checkbox = document.getElementById('quest_checkbox');
 const uploadForm = document.getElementById('image_Upload');
 
+/* Show Upload Button instead of Checkbox when it's checked */
 checkbox.addEventListener('change', function () {
     if (checkbox.checked) {
         setTimeout(function () {
@@ -24,7 +25,7 @@ checkbox.addEventListener('change', function () {
 });
 
 
-//upload image-----------------------------------------------------------------------
+// Upload image to bucket and table-----------------------------------------------------------------------
 const imageFileInput = document.getElementById('image_File');
 
 imageFileInput.addEventListener('change', async (e) => {
@@ -72,10 +73,9 @@ imageFileInput.addEventListener('change', async (e) => {
 });
 
 
-
-//loading posts-----------------------------------------------------------------------
+// Loading posts-----------------------------------------------------------------------
 const imageContainer = document.querySelector('.quest_Images');
-//Fetch the image URLs from the 'images' table
+// Fetch the image URLs from the 'images' table
 const { data: imageData, error: imageError } = await supa
     .from('images')
     .select('url')
@@ -91,15 +91,16 @@ if (imageError) {
         if (i < imageData.length) {
             img.src = imageData[i].url;
         } else {
-            // If there is no image URL available, you can set a fallback image or hide the image element
+        // If there is no image URL available, you can set a fallback image or hide the image element
             img.style.display = 'none';
         }
     }
 };
 
-//challenge to daily quest--------------------------------------------------------
 
-// Move one item from the "challenges" table to the "challengeToQuest" table
+// Challenge to daily quest--------------------------------------------------------
+
+// Function to move one item from the "challenges" table to the "challengeToQuest" table
 async function moveChallengeToQuest() {
   // Fetch all challenges
   const { data: challenges, error: fetchError } = await supa
@@ -132,12 +133,12 @@ async function moveChallengeToQuest() {
 }
 
 
-//move one challenge to the quest
+// Move one challenge from "challenge" to "challenge to quest" per day
 const { data: questCheck, error: fetchError } = await supa
     .from('challengeToQuest')
     .select('created_at')
-    .order('created_at', { ascending: false })
-    .limit(1);
+    .order('created_at', { ascending: false })  /* choose newest quest */
+    .limit(1);                                  /* only choose 1 quest */
 
 if (questCheck.length === 0) {
     moveChallengeToQuest();

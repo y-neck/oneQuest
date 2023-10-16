@@ -63,8 +63,7 @@ body {
 }
 
 main {
-  flex: 1 0 auto;
-  /* Force footer to end of page */
+  flex: 1 0 auto; /* Force footer to end of page */
   padding-inline: 10%;
 }
 
@@ -72,7 +71,7 @@ a {
   color: var(--accent, yellow);
 }
 
-/* Headings */
+/* Headings ----------------------------------------------------------------------------------------------------------- */
 h1 {
   text-align: center;
   font-family: 'Urbanist', sans-serif;
@@ -102,7 +101,7 @@ p {
   margin-bottom: 20px;
 }
 
-/* Header */
+/* Header ------------------------------------------------------------------------------------------------------------- */
 header {
   flex-shrink: 0;
   height: 65px;
@@ -115,8 +114,7 @@ header {
   width: 34px;
   margin-top: 16px;
   margin-left: 40px;
-  float: left;
-  /* Forces logo to appear on left */
+  float: left; /* Forces logo to appear on left */
 }
 
 #profile_icon {
@@ -124,11 +122,10 @@ header {
   width: 34px;
   margin-top: 16px;
   margin-right: 40px;
-  float: right;
-  /* Forces icon to appear on right; reference #header_logo:float*/
+  float: right; /* Forces icon to appear on right; reference #header_logo:float*/
 }
 
-/* Footer */
+/* Footer ------------------------------------------------------------------------------------------------------------- */
 footer {
   margin-top: auto;
   /* Force footer to end of page */
@@ -148,7 +145,7 @@ footer a {
   text-decoration: none;
 }
 
-/* Home */
+/* Home --------------------------------------------------------------------------------------------------------------- */
 #quest_box {
   margin-left: calc(100vw / 4);
   margin-right: calc(100vw / 4);
@@ -164,15 +161,13 @@ footer a {
 
 .quest_Images {
   display: grid;
-  /* 3 columns with equal width */
-  grid-template-columns: 1fr 1fr 1fr;
-  /* 3 rows with automatic height */
-  grid-template-rows: auto auto auto;
+  grid-template-columns: 1fr 1fr 1fr;   /* 3 columns with equal width */
+  grid-template-rows: auto auto auto;   /* 3 rows with automatic height */
 }
 
 .quest_Images img {
-  width: calc(100vw / 3);
-  height: calc(100vw / 3);
+  width: calc(100vw / 3);   /* defines width ofo each image */
+  height: calc(100vw / 3);  /* defines height of each image */
   object-fit: cover;
 }
 
@@ -194,7 +189,7 @@ footer a {
   margin: 50px 0px 50px 0px;
 }
 
-/* Register */
+/* Register ------------------------------------------------------------------------------------------------------------- */
 
 #register_input {
   display: flex;
@@ -214,7 +209,7 @@ footer a {
   text-align: center;
 }
 
-/* Profile page / edit profile page */
+/* Profile page / edit profile page ----------------------------------------------------------------------------------- */
 
 #profile_header {
   height: 65px;
@@ -312,7 +307,7 @@ footer a {
   margin-top: 26px;
 }
 
-/* Login page */
+/* Login page --------------------------------------------------------------------------------------------------------- */
 .button-container {
   display: flex;
   flex-direction: column;
@@ -363,7 +358,7 @@ footer a {
 }
 
 
-/* Impressum Text */
+/* Impressum Text ----------------------------------------------------------------------------------------------------- */
 
 #impressum_container {
   display: flex;
