@@ -154,11 +154,10 @@ if (newQuestCheck !== isItToday || questCheck.length === 0) {
 }
 
 
-
-//daily quest-----------------------------------------------------------------------
+// Daily quest-----------------------------------------------------------------------
 const today = new Date().toISOString().split('T')[0];
 
-//Fetch the quest from the Supabase table
+// Fetch the quest from the Supabase table
 const { data, error } = await supa
     .from('challengeToQuest')
     .select('challenge')
@@ -170,8 +169,8 @@ if (error) {
 
 console.log('Fetched challenges:', data);
 
-//Get the value from the data response
+// Get the value from the data response
 const text = data[0].challenge;
 
-//Update the text content of the <h1> element
+// Update the text content of the <h1> element
 document.getElementById('daily_Quest_2').textContent = text;
