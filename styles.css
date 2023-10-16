@@ -161,15 +161,13 @@ footer a {
 
 .quest_Images {
   display: grid;
-  /* 3 columns with equal width */
-  grid-template-columns: 1fr 1fr 1fr;
-  /* 3 rows with automatic height */
-  grid-template-rows: auto auto auto;
+  grid-template-columns: 1fr 1fr 1fr;   /* 3 columns with equal width */
+  grid-template-rows: auto auto auto;   /* 3 rows with automatic height */
 }
 
 .quest_Images img {
-  width: calc(100vw / 3);
-  height: calc(100vw / 3);
+  width: calc(100vw / 3);   /* defines width ofo each image */
+  height: calc(100vw / 3);  /* defines height of each image */
   object-fit: cover;
 }
 
