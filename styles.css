@@ -64,7 +64,6 @@ body {
 
 main {
   flex: 1 0 auto; /* Force footer to end of page */
-  padding-inline: 10%;
 }
 
 a {
@@ -305,6 +304,18 @@ footer a {
   border: none;
   background: var(--accent);
   margin-top: 26px;
+}
+
+#profile_gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;   /* 3 columns with equal width */
+  grid-template-rows: auto auto auto;   /* 3 rows with automatic height */
+}
+
+#profile_gallery img {
+  width: calc(100vw / 3);   /* defines width ofo each image */
+  height: calc(100vw / 3);  /* defines height of each image */
+  object-fit: cover;
 }
 
 /* Login page --------------------------------------------------------------------------------------------------------- */
