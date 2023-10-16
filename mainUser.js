@@ -1,16 +1,8 @@
 //import supabase
 import { supa } from './00_setup/supabase.js';
+//console.log(supa)
 
-var userId = await supa.auth?.getsession().session.user.id; //userID of logged-in user for further use
+const userId = await supa.auth.user(); //userId of logged-in user for further use
+console.log('userId:', userId);
 
-
-
-/* DEMO CODE
-TODO: @y-neck should be implemented correctly
-if(!userLoggedIn){
-    console.log('User could not be retrieved')
-} else{
-    userId = 'ID of logged-in user'
-}
-*/
 export { userId };
