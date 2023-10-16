@@ -2,8 +2,12 @@
 import { supa } from '../00_setup/supabase.js';
 
 
-//TODO: @joggiletti if user is not logged in, serve login site instead
-// window.location.href = '../views/register.html';
+// If user is not logged in, serve login site instead
+const initialUser = supa.auth.user();
+
+if (initialUser === null) {
+    window.location.href = '../views/login.html';
+}
 
 // Checkbox to image: upload animation------------------------------------------------------------
 const checkbox = document.getElementById('quest_checkbox');
@@ -57,7 +61,6 @@ imageFileInput.addEventListener('change', async (e) => {
 
             // Get User_ID
             const initialUser = supa.auth.user();
-            console.log(initialUser);
 
             // Insert the URL, User_ID and Quest_ID into the 'images' table
             const { data: insertedData, error: insertError } = await supa
