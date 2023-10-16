@@ -76,7 +76,7 @@ a {
 h1 {
   text-align: center;
   font-family: 'Urbanist', sans-serif;
-  font-weight: 700;
+  font-weight: 600;
   font-size: 1.5rem;
   font-style: normal;
   line-height: normal;
@@ -87,7 +87,7 @@ h2 {
   font-family: 'Urbanist', sans-serif;
   font-size: 1.25rem;
   font-style: normal;
-  font-weight: 600;
+  font-weight: 400;
   line-height: normal;
 }
 
@@ -146,22 +146,20 @@ footer a {
 }
 
 /* Home */
-
 #daily_Quest_1 {
   margin: 50px 0px 25px 0px;
 }
 
 #daily_Quest_2 {
   margin: 0px 0px 50px 0px;
-  font-weight: 700;
 }
 
 .quest_Images {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
   /* 3 columns with equal width */
-  grid-template-rows: auto auto auto;
+  grid-template-columns: 1fr 1fr 1fr;
   /* 3 rows with automatic height */
+  grid-template-rows: auto auto auto;
 }
 
 .quest_Images img {
@@ -369,3 +367,66 @@ footer a {
 #impressum_container p {
   text-align: center;      /* Center the text inside the <p> tag */
 }
+
+  
+  /* Headings */
+  h1 {
+    text-align: center;
+    font-family: 'Urbanist', sans-serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+    font-style: normal;
+    line-height: normal;
+  }
+
+  h2 {
+    text-align: center;
+    font-family: 'Urbanist', sans-serif;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  p {
+    font-family: 'Urbanist', sans-serif;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  /* Header */
+  header {
+    flex-shrink: 0;
+    height: 65px;
+    width: 100vw;
+    background-color: var(--primary);
+  }
+
+  /* Home */
+  #daily_Quest_1 {
+    margin: 100px 0px 50px 0px;
+  }
+
+  #daily_Quest_2 {
+    margin: 0px 0px 100px 0px;
+  }
+
+  .quest_Images img {
+    width: calc(100vw / 6);
+    height: calc(100vw / 6);
+  }
+
+  #quest_checkbox {
+    height: 10vw;
+    width: 10vw;
+    margin: 100px 0px 100px 0px;
+  }
+
+  #image_Upload {
+    margin: 100px 0px 100px 0px;
+  }
+
+  /* Responsive for desktop --------------------------------------------------------------------------------------------- */
+@media screen and (min-width: 600px) {}
