@@ -107,6 +107,24 @@ header {
   background-color: var(--primary);
 }
 
+#header_logo {
+  height: 34px;
+  width: 34px;
+  margin-top: 16px;
+  margin-left: 40px;
+  float: left;
+  /* Forces logo to appear on left */
+}
+
+#profile_icon {
+  height: 34px;
+  width: 34px;
+  margin-top: 16px;
+  margin-right: 40px;
+  float: right;
+  /* Forces icon to appear on right; reference #header_logo:float*/
+}
+
 /* Footer */
 footer {
   margin-top: auto;
@@ -125,24 +143,6 @@ footer {
 footer a {
   color: var(--secondary);
   text-decoration: none;
-}
-
-#header_logo {
-  height: 34px;
-  width: 34px;
-  margin-top: 16px;
-  margin-left: 40px;
-  float: left;
-  /* Forces logo to appear on left */
-}
-
-#profile_icon {
-  height: 34px;
-  width: 34px;
-  margin-top: 16px;
-  margin-right: 40px;
-  float: right;
-  /* Forces icon to appear on right; reference #header_logo:float*/
 }
 
 /* Home */
@@ -368,8 +368,9 @@ footer a {
   text-align: center;      /* Center the text inside the <p> tag */
 }
 
-  /* Responsive for desktop --------------------------------------------------------------------------------------------- */
-@media screen and (min-width: 600px) {
+
+/* Responsive for desktop --------------------------------------------------------------------------------------------- */
+@media screen and (min-width: 1000px) {
 
   /* Headings */
   h1 {
@@ -389,7 +390,14 @@ footer a {
     flex-shrink: 0;
     height: 65px;
     width: 100vw;
-    background-color: var(--primary);
+  }
+
+  #header_logo {
+    margin-left: calc(100vw / 4);
+  }
+
+  #profile_icon {
+    margin-right: calc(100vw / 4);
   }
 
   /* Home */

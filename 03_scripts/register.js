@@ -21,16 +21,24 @@ async function registerUser() {
             console.error('Error registering user:', error.message);    //Add error handling
         } else {
             console.log('User registered successfully as ', data[0].username);
-            // Check and display the initial user status
-            const initialUser = supa.auth.user();
-            updateUserStatus(initialUser);
-            console.log(initialUser);
         }
     } catch (error) {
         console.error('An error occurred during registration:', error.message);
     }
 }
 
+// Function to update user status
+function updateUserStatus(user) {
+    if (user) {
+        console.log(`Authenticated as: ${user.email}`);
+    } else {
+        console.log('Not authenticated.');
+    }
+}
+
+// Check and display the initial user status
+const initialUser = supa.auth.user();
+updateUserStatus(initialUser);
 
 // RegisterUser button event listener
 document.querySelector('#registerButton').addEventListener('click', registerUser);
