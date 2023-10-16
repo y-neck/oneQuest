@@ -357,6 +357,41 @@ footer a {
 
 /* Responsive for desktop --------------------------------------------------------------------------------------------- */
 @media screen and (min-width: 600px) {
+  
+  /* Headings */
+  h1 {
+    text-align: center;
+    font-family: 'Urbanist', sans-serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+    font-style: normal;
+    line-height: normal;
+  }
+
+  h2 {
+    text-align: center;
+    font-family: 'Urbanist', sans-serif;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  p {
+    font-family: 'Urbanist', sans-serif;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  /* Header */
+  header {
+    flex-shrink: 0;
+    height: 65px;
+    width: 100vw;
+    background-color: var(--primary);
+  }
 
   /* Home */
   #daily_Quest_1 {
