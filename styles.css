@@ -98,6 +98,8 @@ p {
   font-weight: 400;
   line-height: normal;
   margin-inline: 40px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 /* Header */
@@ -362,6 +364,7 @@ footer a {
   display: flex;
   justify-content: center; /* Center content horizontally */
   align-items: center;     /* Center content vertically */
+
 }
 
 #impressum_container p {
