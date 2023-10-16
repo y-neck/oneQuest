@@ -146,7 +146,6 @@ footer a {
 }
 
 /* Home */
-
 #daily_Quest_1 {
   margin: 50px 0px 25px 0px;
 }
@@ -359,4 +358,64 @@ footer a {
 /* Responsive for desktop */
 @media screen and (min-width: 600px) {
   
+  /* Home */
+  #daily_Quest_1 {
+    margin: 50px 0px 25px 0px;
+  }
+
+  #daily_Quest_2 {
+    margin: 0px 0px 50px 0px;
+  }
+
+  .quest_Images {
+    display: grid;
+    /* 3 columns with equal width */
+    grid-template-columns: 1fr 1fr 1fr;
+    /* 3 rows with automatic height */
+    grid-template-rows: auto auto auto;
+  }
+
+  .quest_Images img {
+    width: calc(100vw / 3);
+    height: calc(100vw / 3);
+    object-fit: cover;
+  }
+
+  #checkbox {
+    justify-content: center;
+    align-items: center;
+  }
+
+  #quest_checkbox {
+    height: 20vw;
+    width: 20vw;
+    margin: 50px 0px 50px 0px;
+  }
+
+  #image_Upload {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0px 50px 0px;
+  }
+
+  /* Register */
+
+  #register_input {
+    display: flex;
+    flex-direction: column;
+    margin: 25px;
+  }
+
+  #register_input input {
+    width: 232px;
+    height: 53px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    background: var(--secondary);
+    margin-bottom: 15px;
+    border: none;
+    color: var(--text);
+    text-align: center;
+  }
 }
