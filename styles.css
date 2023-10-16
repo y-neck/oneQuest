@@ -355,3 +355,17 @@ footer a {
 #login_top {
   margin-top: 150px;
 }
+
+
+/* Impressum Text */
+
+#impressum_container {
+  display: flex;
+  justify-content: center; /* Center content horizontally */
+  align-items: center;     /* Center content vertically */
+  height: 100vh;           /* Take the full viewport height */
+}
+
+#impressum_container p {
+  text-align: center;      /* Center the text inside the <p> tag */
+}
