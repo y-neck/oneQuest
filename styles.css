@@ -63,8 +63,7 @@ body {
 }
 
 main {
-  flex: 1 0 auto;
-  /* Force footer to end of page */
+  flex: 1 0 auto; /* Force footer to end of page */
   padding-inline: 10%;
 }
 
@@ -310,7 +309,7 @@ footer a {
   margin-top: 26px;
 }
 
-/* Login page */
+/* Login page --------------------------------------------------------------------------------------------------------- */
 .button-container {
   display: flex;
   flex-direction: column;
