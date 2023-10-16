@@ -364,6 +364,7 @@ footer a {
   display: flex;
   justify-content: center; /* Center content horizontally */
   align-items: center;     /* Center content vertically */
+  flex-direction: column;  /* This will arrange the children vertically */
 
 }
 
