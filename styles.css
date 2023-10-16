@@ -369,6 +369,7 @@ footer a {
   text-align: center;      /* Center the text inside the <p> tag */
 }
 
+
 /* Responsive for desktop --------------------------------------------------------------------------------------------- */
 @media screen and (min-width: 1000px) {
 
@@ -398,6 +399,16 @@ footer a {
 
   #profile_icon {
     margin-right: calc(100vw / 4);
+  }
+
+  /* Footer */
+  footer {
+    justify-content: space-between;
+  }
+  
+  footer a {
+    color: var(--secondary);
+    text-decoration: none;
   }
 
   /* Home */
