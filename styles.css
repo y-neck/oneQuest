@@ -107,6 +107,24 @@ header {
   background-color: var(--primary);
 }
 
+#header_logo {
+  height: 34px;
+  width: 34px;
+  margin-top: 16px;
+  margin-left: 40px;
+  float: left;
+  /* Forces logo to appear on left */
+}
+
+#profile_icon {
+  height: 34px;
+  width: 34px;
+  margin-top: 16px;
+  margin-right: 40px;
+  float: right;
+  /* Forces icon to appear on right; reference #header_logo:float*/
+}
+
 /* Footer */
 footer {
   margin-top: auto;
@@ -125,24 +143,6 @@ footer {
 footer a {
   color: var(--secondary);
   text-decoration: none;
-}
-
-#header_logo {
-  height: 34px;
-  width: 34px;
-  margin-top: 16px;
-  margin-left: 40px;
-  float: left;
-  /* Forces logo to appear on left */
-}
-
-#profile_icon {
-  height: 34px;
-  width: 34px;
-  margin-top: 16px;
-  margin-right: 40px;
-  float: right;
-  /* Forces icon to appear on right; reference #header_logo:float*/
 }
 
 /* Home */
