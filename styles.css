@@ -97,6 +97,7 @@ p {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  margin-inline: 40px;
 }
 
 /* Header */
@@ -361,11 +362,10 @@ footer a {
   display: flex;
   justify-content: center; /* Center content horizontally */
   align-items: center;     /* Center content vertically */
-  margin: 20px 20%;         /* 20px top and bottom, 20% left and right */
 }
 
 #impressum_container p {
-  text-align: center;      /* Center the text inside the <p> tag */
+  text-align: left;      /* Center the text inside the <p> tag */
 }
 
 
