@@ -149,6 +149,11 @@ footer a {
 }
 
 /* Home */
+#quest_box {
+  margin-left: calc(100vw / 4);
+  margin-right: calc(100vw / 4);
+}
+
 #daily_Quest_1 {
   margin: 50px 0px 25px 0px;
 }
@@ -405,6 +410,11 @@ footer a {
   }
 
   /* Home */
+  #quest_box {
+    margin-left: calc(100vw / 4);
+    margin-right: calc(100vw / 4);
+  }
+
   #daily_Quest_1 {
     margin: 100px 0px 50px 0px;
   }
