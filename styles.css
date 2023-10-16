@@ -369,8 +369,8 @@ footer a {
   text-align: center;      /* Center the text inside the <p> tag */
 }
 
-  /* Responsive for desktop --------------------------------------------------------------------------------------------- */
-@media screen and (min-width: 600px) {
+/* Responsive for desktop --------------------------------------------------------------------------------------------- */
+@media screen and (min-width: 1000px) {
 
   /* Headings */
   h1 {
@@ -390,7 +390,6 @@ footer a {
     flex-shrink: 0;
     height: 65px;
     width: 100vw;
-    background-color: var(--primary);
   }
 
   /* Home */
