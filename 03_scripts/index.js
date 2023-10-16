@@ -3,7 +3,7 @@ import { supa } from '../00_setup/supabase.js';
 
 
 //TODO: @joggiletti if user is not logged in, serve login site instead
-
+// window.location.href = '../views/register.html';
 
 // Checkbox to image: upload animation------------------------------------------------------------
 const checkbox = document.getElementById('quest_checkbox');
@@ -55,16 +55,17 @@ imageFileInput.addEventListener('change', async (e) => {
                 .select('id')
                 .eq('created_at', todayQuest);
 
-            const { data: userId } = await supa
-                .from('users')
-                .select('id')
+
+            const initialUser = supa.auth.user();
+            console.log(initialUser);
+
 
             const { data: insertedData, error: insertError } = await supa
                 .from('images')
                 .insert( {
                     url: imageUrl.publicURL,
                     challenge_to_quest: dailyQuest[0].id,
-                    user: userId,
+                    user: initialUser.id,
                 });
 
             //Error handling
@@ -76,6 +77,7 @@ imageFileInput.addEventListener('change', async (e) => {
         }
     }
 });
+
 
 
 // Loading posts-----------------------------------------------------------------------
