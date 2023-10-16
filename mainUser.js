@@ -1,7 +1,7 @@
 //import supabase
 import { supa } from './00_setup/supabase.js';
 
-var userId; //userID of logged-in user for further use
+var userId = await supa.auth?.getsession().session.user.id; //userID of logged-in user for further use
 
 
 
