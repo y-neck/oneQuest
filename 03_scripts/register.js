@@ -11,17 +11,17 @@ async function registerUser() {
     const registerUsername = document.querySelector('#registerUsername').value;
     const registerPassword = document.querySelector('#registerPassword').value;
 
- 
-        const {user, error} = await supa.auth.signUp({
-            email: registerEmail,
-            password: registerPassword,
-        });
+    //Signup user
+    const { user, error } = await supa.auth.signUp({
+        email: registerEmail,
+        password: registerPassword,
+    });
 
-        if (error) {
-            console.error('Error registering user:', error.message);    //Add error handling
-        } else {
-            console.log('User registered successfully as ', user);
-        }
+    if (error) {
+        console.error('Error registering user:', error.message);    //Add error handling
+    } else {
+        console.log('User registered successfully as ', user);
+    }
 
 }
 
