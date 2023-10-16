@@ -78,7 +78,8 @@ const imageContainer = document.querySelector('.quest_Images');
 //Fetch the image URLs from the 'images' table
 const { data: imageData, error: imageError } = await supa
     .from('images')
-    .select('url');
+    .select('url')
+    .order('created_at', { ascending: false });
 
 if (imageError) {
     console.error('Error fetching image URLs:', imageError.message);
