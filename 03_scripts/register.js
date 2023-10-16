@@ -15,19 +15,16 @@ async function registerUser() {
         const { data, error } = await supa.auth.signUp({
             email: registerEmail,
             password: registerPassword,
-            options: {
-                //Register additional username data: https://github.com/orgs/supabase/discussions/3491
-                data: {
-                    username: registerUsername
-                }
-            }
         });
 
         if (error) {
             console.error('Error registering user:', error.message);    //Add error handling
         } else {
             console.log('User registered successfully as ', data[0].username);
-            // You can use user and session data here for further actions.
+            // Check and display the initial user status
+            const initialUser = supa.auth.user();
+            updateUserStatus(initialUser);
+            console.log(initialUser);
         }
     } catch (error) {
         console.error('An error occurred during registration:', error.message);
