@@ -368,6 +368,9 @@ footer a {
   text-align: center;      /* Center the text inside the <p> tag */
 }
 
+  /* Responsive for desktop --------------------------------------------------------------------------------------------- */
+@media screen and (min-width: 600px) {
+
   
   /* Headings */
   h1 {
@@ -428,5 +431,4 @@ footer a {
     margin: 100px 0px 100px 0px;
   }
 
-  /* Responsive for desktop --------------------------------------------------------------------------------------------- */
-@media screen and (min-width: 600px) {}
+}
