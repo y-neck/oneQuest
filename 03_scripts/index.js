@@ -1,11 +1,11 @@
-//import supabase
+// Import supabase
 import { supa } from '../00_setup/supabase.js';
 
 
 //TODO: @joggiletti if user is not logged in, serve login site instead
 
 
-//Checkbox to image: upload animation------------------------------------------------------------
+// Checkbox to image: upload animation------------------------------------------------------------
 const checkbox = document.getElementById('quest_checkbox');
 const uploadForm = document.getElementById('image_Upload');
 
@@ -25,7 +25,7 @@ checkbox.addEventListener('change', function () {
 });
 
 
-//Upload image to bucket and table-----------------------------------------------------------------------
+// Upload image to bucket and table-----------------------------------------------------------------------
 const imageFileInput = document.getElementById('image_File');
 
 imageFileInput.addEventListener('change', async (e) => {
@@ -73,9 +73,9 @@ imageFileInput.addEventListener('change', async (e) => {
 });
 
 
-//Loading posts-----------------------------------------------------------------------
+// Loading posts-----------------------------------------------------------------------
 const imageContainer = document.querySelector('.quest_Images');
-//Fetch the image URLs from the 'images' table
+// Fetch the image URLs from the 'images' table
 const { data: imageData, error: imageError } = await supa
     .from('images')
     .select('url')
@@ -133,7 +133,7 @@ async function moveChallengeToQuest() {
 }
 
 
-//move one challenge to the quest
+//Move one challenge to the quest
 const { data: questCheck, error: fetchError } = await supa
     .from('challengeToQuest')
     .select('created_at')
