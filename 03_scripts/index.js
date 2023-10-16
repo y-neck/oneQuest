@@ -48,18 +48,18 @@ imageFileInput.addEventListener('change', async (e) => {
                 .from('image_bucket')
                 .getPublicUrl(filename);
 
-            // Insert the URL and Quest_ID into the 'images' table
+            // Get Quest_ID
             const todayQuest = new Date().toISOString().split('T')[0];
             const { data: dailyQuest } = await supa
                 .from('challengeToQuest')
                 .select('id')
                 .eq('created_at', todayQuest);
 
-
+            // Get User_ID
             const initialUser = supa.auth.user();
             console.log(initialUser);
 
-
+            // Insert the URL, User_ID and Quest_ID into the 'images' table
             const { data: insertedData, error: insertError } = await supa
                 .from('images')
                 .insert( {
