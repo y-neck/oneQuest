@@ -372,6 +372,12 @@ footer a {
   text-align: left;      /* Center the text inside the <p> tag */
 }
 
+.text_title{
+  text-align: left;
+  margin-inline: 40px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
 
 /* Responsive for desktop --------------------------------------------------------------------------------------------- */
 @media screen and (min-width: 1000px) {
