@@ -401,16 +401,6 @@ footer a {
     margin-right: calc(100vw / 4);
   }
 
-  /* Footer */
-  footer {
-    justify-content: space-between;
-  }
-  
-  footer a {
-    color: var(--secondary);
-    text-decoration: none;
-  }
-
   /* Home */
   #daily_Quest_1 {
     margin: 100px 0px 50px 0px;
