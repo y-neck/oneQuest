@@ -334,6 +334,7 @@ footer a {
   border: none;
   cursor: pointer;
   color: var(--text);
+  text-align: center;
 }
 
 .login_buttonS {
