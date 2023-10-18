@@ -205,7 +205,8 @@ footer a {
   margin-bottom: 15px;
   border: none;
   color: var(--text);
-  text-align: center;
+  text-align: left;
+  padding-left: 10px;
 }
 
 /* Profile page / edit profile page ----------------------------------------------------------------------------------- */
@@ -334,7 +335,8 @@ footer a {
   border: none;
   cursor: pointer;
   color: var(--text);
-  text-align: center;
+  text-align: left;
+  padding-left: 10px;
 }
 
 .login_buttonS {
