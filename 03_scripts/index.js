@@ -64,9 +64,9 @@ async function updateQuestScore() {
     }
 }
 
-
 // Call the updateQuestScore function to update the questScore
 checkbox.addEventListener('change', updateQuestScore);
+
 
 // Upload image to bucket and table-----------------------------------------------------------------------
 const imageFileInput = document.getElementById('image_File');
