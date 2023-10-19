@@ -14,7 +14,6 @@ if (initialUser === null) {
 
 /* 
 // Checkbox to image: upload animation------------------------------------------------------------
-const checkbox = document.getElementById('quest_checkbox');
 const uploadForm = document.getElementById('image_Upload');
 
 // Show Upload Button instead of Checkbox when it's checked
@@ -69,6 +68,7 @@ async function updateQuestScore() {
 }
 
 // Call the updateQuestScore function to update the questScore
+const checkbox = document.getElementById('quest_checkbox');
 checkbox.addEventListener('change', updateQuestScore);
 
 
@@ -79,6 +79,7 @@ imageFileInput.addEventListener('change', async (e) => {
     const imageFile = e.target.files[0];
 
     if (imageFile) {
+        updateQuestScore();
         // Generate a unique filename for the uploaded image
         const filename = `image_posts/${Date.now()}_${imageFile.name}`;
 
