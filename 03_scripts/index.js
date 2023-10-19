@@ -30,7 +30,43 @@ checkbox.addEventListener('change', function () {
     }
 });
 
+// Update questScore
+async function updateQuestScore() {
+    const { data: questScoreData, error: questScoreError } = await supa
+        .from('users')
+        .select('questScore')
+        .eq('id', userId.id)
+        .single();  //Get single column
 
+    if (questScoreError) {
+        console.error('Error fetching questScore:', questScoreError.message);
+        return;
+    }
+
+    let questScore = questScoreData.questScore;
+
+    // Handle 'null' value by setting it to 0
+    if (questScore === null) {
+        questScore = 0;
+    }
+
+    // Update the questScore
+    const { data, error } = await supa
+        .from('users')
+        .update({ questScore: questScore + 1 })
+        .eq('id', userId.id)
+        .single();
+
+    if (error) {
+        console.error('Error updating questScore:', error.message);
+    } else {
+        console.log('QuestScore updated successfully. New questScore:', data.questScore);
+    }
+}
+
+
+// Call the updateQuestScore function to update the questScore
+checkbox.addEventListener('change', updateQuestScore);
 // Upload image to bucket and table-----------------------------------------------------------------------
 const imageFileInput = document.getElementById('image_File');
 
@@ -67,7 +103,7 @@ imageFileInput.addEventListener('change', async (e) => {
             // Insert the URL, User_ID and Quest_ID into the 'images' table
             const { data: insertedData, error: insertError } = await supa
                 .from('images')
-                .insert( {
+                .insert({
                     url: imageUrl.publicURL,
                     challenge_to_quest: dailyQuest[0].id,
                     user: initialUser.id,
@@ -103,7 +139,7 @@ if (imageError) {
         if (i < imageData.length) {
             img.src = imageData[i].url;
         } else {
-        // If there is no image URL available, you can set a fallback image or hide the image element
+            // If there is no image URL available, you can set a fallback image or hide the image element
             img.style.display = 'none';
         }
     }
@@ -114,34 +150,34 @@ if (imageError) {
 
 // Function to move one item from the "challenges" table to the "challengeToQuest" table
 async function moveChallengeToQuest() {
-  // Fetch all challenges
-  const { data: challenges, error: fetchError } = await supa
-    .from('challenges')
-    .select('*');
+    // Fetch all challenges
+    const { data: challenges, error: fetchError } = await supa
+        .from('challenges')
+        .select('*');
 
-  if (fetchError) {
-    console.error('Error fetching challenges:', fetchError.message);
-    return;
-  }
+    if (fetchError) {
+        console.error('Error fetching challenges:', fetchError.message);
+        return;
+    }
 
-  // Select a random challenge from the fetched data
-  const randomIndex = Math.floor(Math.random() * challenges.length);
-  const selectedChallenge = challenges[randomIndex];
+    // Select a random challenge from the fetched data
+    const randomIndex = Math.floor(Math.random() * challenges.length);
+    const selectedChallenge = challenges[randomIndex];
 
-  try {
-    // Insert the selected item into the "challengeToQuest" table
-    const { data: insertedChallenge } = await supa
-      .from('challengeToQuest')
-      .insert({
-        challenge: selectedChallenge.challenge,
-        created_at: new Date().toISOString(),
-      });
-      
-      console.log('Successfully moved challenge to challengeToQuest:', insertedChallenge);
+    try {
+        // Insert the selected item into the "challengeToQuest" table
+        const { data: insertedChallenge } = await supa
+            .from('challengeToQuest')
+            .insert({
+                challenge: selectedChallenge.challenge,
+                created_at: new Date().toISOString(),
+            });
 
-  } catch (insertError) {
-    console.error('Error inserting challenge into challengeToQuest:', insertError.message);
-  }
+        console.log('Successfully moved challenge to challengeToQuest:', insertedChallenge);
+
+    } catch (insertError) {
+        console.error('Error inserting challenge into challengeToQuest:', insertError.message);
+    }
 }
 
 
