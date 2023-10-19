@@ -79,7 +79,6 @@ imageFileInput.addEventListener('change', async (e) => {
     const imageFile = e.target.files[0];
 
     if (imageFile) {
-        updateQuestScore();
         // Generate a unique filename for the uploaded image
         const filename = `image_posts/${Date.now()}_${imageFile.name}`;
 
