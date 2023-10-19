@@ -45,7 +45,8 @@ async function updateUserName(user) {
     const { data, error } = await supa.from('users').insert([
         {id: user.id, username: registerUsername}
     ])
-    console.log(data);
+    //Testing
+    //console.log(data);
 
     //If user registration successful, redirect to index
     if(data){
