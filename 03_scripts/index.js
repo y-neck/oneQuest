@@ -15,7 +15,7 @@ if (initialUser === null) {
 const checkbox = document.getElementById('quest_checkbox');
 const uploadForm = document.getElementById('image_Upload');
 
-/* Show Upload Button instead of Checkbox when it's checked */
+// Show Upload Button instead of Checkbox when it's checked
 checkbox.addEventListener('change', function () {
     if (checkbox.checked) {
         setTimeout(function () {
@@ -29,6 +29,8 @@ checkbox.addEventListener('change', function () {
         }, 400);
     }
 });
+
+// QuestScore +1 when Checkbox is checked ----------------------------------------------------------------
 
 
 // Upload image to bucket and table-----------------------------------------------------------------------
