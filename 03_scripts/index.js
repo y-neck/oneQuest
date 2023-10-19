@@ -11,6 +11,8 @@ if (initialUser === null) {
     window.location.href = '../views/login.html';
 }
 
+
+/* 
 // Checkbox to image: upload animation------------------------------------------------------------
 const checkbox = document.getElementById('quest_checkbox');
 const uploadForm = document.getElementById('image_Upload');
@@ -29,6 +31,8 @@ checkbox.addEventListener('change', function () {
         }, 400);
     }
 });
+ */
+
 
 // Update questScore
 async function updateQuestScore() {
