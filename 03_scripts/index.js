@@ -73,7 +73,7 @@ checkbox.addEventListener('change', updateQuestScore);
 
 
 // Upload image to bucket and table-----------------------------------------------------------------------
-const imageFileInput = document.getElementById('image_File');
+const imageFileInput = document.getElementById('quest_checkbox');
 
 imageFileInput.addEventListener('change', async (e) => {
     const imageFile = e.target.files[0];
