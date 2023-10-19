@@ -43,7 +43,7 @@ async function updateUserName(user) {
     const registerUsername = document.querySelector('#registerUsername').value;
     //Update username
     const { data, error } = await supa.from('users').insert([
-        {id: user.id, username: registerUsername}
+        {id: user.id, username: registerUsername, questScore: 0}
     ])
     //Testing
     //console.log(data);
