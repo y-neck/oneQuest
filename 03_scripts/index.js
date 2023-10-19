@@ -30,8 +30,43 @@ checkbox.addEventListener('change', function () {
     }
 });
 
-// QuestScore +1 when Checkbox is checked ----------------------------------------------------------------
+// Update questScore
+async function updateQuestScore() {
+    const { data: questScoreData, error: questScoreError } = await supa
+        .from('users')
+        .select('questScore')
+        .eq('id', userId.id)
+        .single();  //Get single column
 
+    if (questScoreError) {
+        console.error('Error fetching questScore:', questScoreError.message);
+        return;
+    }
+
+    let questScore = questScoreData.questScore;
+
+    // Handle 'null' value by setting it to 0
+    if (questScore === null) {
+        questScore = 0;
+    }
+
+    // Update the questScore
+    const { data, error } = await supa
+        .from('users')
+        .update({ questScore: questScore + 1 })
+        .eq('id', userId.id)
+        .single();
+
+    if (error) {
+        console.error('Error updating questScore:', error.message);
+    } else {
+        console.log('QuestScore updated successfully. New questScore:', data.questScore);
+    }
+}
+
+
+// Call the updateQuestScore function to update the questScore
+checkbox.addEventListener('change', updateQuestScore);
 
 // Upload image to bucket and table-----------------------------------------------------------------------
 const imageFileInput = document.getElementById('image_File');
