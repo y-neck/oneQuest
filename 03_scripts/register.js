@@ -46,14 +46,12 @@ async function updateUserName(user) {
         {id: user.id, username: registerUsername}
     ])
     console.log(data);
-}
 
-/*     const { data, error } = await supa.auth.updateUser({
-        data: { username: registerUsername }
+    //If user registration successful, redirect to index
+    if(data){
+        window.location.href="../index.html";
     }
-    )
-}; */
- 
+}
 
 // RegisterUser button event listener
 document.querySelector('#registerButton').addEventListener('click', registerUser);
