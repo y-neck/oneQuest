@@ -53,11 +53,11 @@
     <div class="button-container">
 
         <div id="login_input">
-            <input id="loginUsername" class="login_button" placeholder="Benutzername">
-            <input id="loginPassword" class="login_button" placeholder="Passwort">
+            <input id="loginUsername" class="login_button" type="email" placeholder="Benutzername">
+            <input id="loginPassword" class="login_button" type="password" placeholder="Passwort">
         </div>
 
-        <button class="login_buttonS">Login</button>
+        <button id="loginButton" class="login_buttonS">Login</button>
     </div>
     <a href="../views/register.html">Noch kein Konto?</a>
 
@@ -68,9 +68,9 @@
     </footer>
 
     <!-- Import supabase -->
-    <script type='module' src=" ../00_setup/supabase.js"></script>
+    <script type="module" src=" ../00_setup/supabase.js"></script>
     <script type="module" src="../01_api/supabase_api.js"></script>
-    <script src="../mainUser.js" type="module"></script>
+    <script type="module" src = "../mainUser.js"></script>
     <script type="module" src="../03_scripts/login.js"></script>
 
 </body>
