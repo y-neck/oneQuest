@@ -175,19 +175,6 @@ footer a {
   align-items: center;
 }
 
-#quest_checkbox {
-  height: 20vw;
-  width: 20vw;
-  margin: 50px 0px 50px 0px;
-}
-
-#image_Upload {
-  display: none;
-  justify-content: center;
-  align-items: center;
-  margin: 50px 0px 50px 0px;
-}
-
 /* Register ------------------------------------------------------------------------------------------------------------- */
 
 #register_input {
