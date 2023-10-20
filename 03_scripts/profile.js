@@ -18,7 +18,7 @@ async function getUsername(userId) {
         console.error('Could not retrieve username from database: ', error.message);  //Add error handling
     } else {
         document.querySelector('#profile_username').innerHTML = data.username; //Replace default username with actual username
-        //}
+        }
         console.log('console.log in function ', data.username);
     }
 
@@ -27,12 +27,13 @@ async function getUsername(userId) {
         const { data, error } = await supa
             .from('users')
             .select('questScore')
-            .eq('id', userId.id);
+            .eq('id', userId.id)
+            .single();
 
         if (data) {
             document.getElementById('profile_questpoints_number').innerHTML = data.questScore;
         } else {
-            console.error('Could not retrieve questpoints from database');
+            console.error('Could not retrieve questpoints from database:', error.message);
         }
     }
     //Call functions
@@ -45,5 +46,6 @@ async function getUsername(userId) {
         console.log('profile.js loaded')
         console.log('DOM Loaded');      //Check if DOM is loaded
         getUsername();
+        getQuestpoints();
 
     });  //End of DOM loader
