@@ -5,28 +5,21 @@ import { supa } from '../00_setup/supabase.js';
 import { userId } from '../mainUser.js';
 console.log('Imported mainUser.js');
 
-document.addEventListener('DOMContentLoaded', function () {
-    console.log('profile.js loaded')
-    console.log('DOM Loaded');      //Check if DOM is loaded
-});  //End of DOM loader
-
 
 //Replace default username with username from database
-var profileUsername;
-
 async function getUsername(userId) {
-    const { data, error } = await supa
+    const {data, error} = await supa
         .from('users')
         .select('username')
-        .eq('id', userId);   //Get username where db id = userId
+        .eq('id', userId.id)   //Get username where db id = userId
+        .single();
 
-    if (data) {
-        profileUsername = data[0].username; //Assign username to profileUsername
-        document.getElementById('profile_username').innerHTML = profileUsername; //Replace default username with actual username
-    } else {
-        console.error('Could not retrieve username from database');  //Add error handling
-    }
-    console.log('console.log in function ' + profileUsername);
+/*     if (error) {
+        console.error('Could not retrieve username from database: ',error.message);  //Add error handling
+    } else { 
+ */        document.querySelector('#profile_username').innerHTML = data.username; //Replace default username with actual username
+    //}
+    console.log('console.log in function ', data.username);
 }
 
 //Get questpoints from database
@@ -47,3 +40,10 @@ async function getQuestpoints(userId) {
     await getUsername(userId);
     await getQuestpoints(userId);
 })();
+
+document.addEventListener('DOMContentLoaded', function () {
+    console.log('profile.js loaded')
+    console.log('DOM Loaded');      //Check if DOM is loaded
+    getUsername();
+
+});  //End of DOM loader
