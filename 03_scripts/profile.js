@@ -10,6 +10,8 @@ if (userId === null) {
     window.location.href = '../views/login.html';
 }
 
+//TODO: @y-neck Get user's profile picture
+
 //Replace default username with username from database
 async function getUsername(userId) {
     const { data, error } = await supa
