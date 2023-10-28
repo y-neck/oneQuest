@@ -11,27 +11,7 @@ if (initialUser === null) {
     window.location.href = '../views/login.html';
 }
 
-
-/* 
-// Checkbox to image: upload animation------------------------------------------------------------
-const uploadForm = document.getElementById('image_Upload');
-
-// Show Upload Button instead of Checkbox when it's checked
-checkbox.addEventListener('change', function () {
-    if (checkbox.checked) {
-        setTimeout(function () {
-            checkbox.style.display = 'none';    //Switch display state for elements after timeout
-            uploadForm.style.display = 'flex';
-        }, 400);
-    } else {
-        setTimeout(function () {
-            checkbox.style.display = 'flex';
-            uploadForm.style.display = 'none';
-        }, 400);
-    }
-});
- */
-
+// Fix Image Upload Button
 function displaySelectedFile() {
     const fileInput = document.getElementById("quest_checkbox");
     const fileDisplay = document.getElementById("file-name");
@@ -42,7 +22,6 @@ function displaySelectedFile() {
       fileDisplay.textContent = "";
     }
   }  
-
 
 // Update questScore
 async function updateQuestScore() {
