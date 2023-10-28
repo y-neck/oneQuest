@@ -32,6 +32,17 @@ checkbox.addEventListener('change', function () {
 });
  */
 
+function displaySelectedFile() {
+    const fileInput = document.getElementById("quest_checkbox");
+    const fileDisplay = document.getElementById("file-name");
+  
+    if (fileInput.files.length > 0) {
+      fileDisplay.textContent = `Selected File: ${fileInput.files[0].name}`;
+    } else {
+      fileDisplay.textContent = "";
+    }
+  }  
+
 
 // Update questScore
 async function updateQuestScore() {

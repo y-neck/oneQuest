@@ -171,12 +171,26 @@ footer a {
 }
 
 #checkbox {
-  justify-content: center;
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  margin: 75px 0px 75px 0px;
 }
 
-/* Register ------------------------------------------------------------------------------------------------------------- */
+#quest_checkbox {
+  display: none; /* Hide the original file input */
+}
 
+#checkbox_button {
+  background-color: var(--accent);
+  color: var(--text);
+  padding: 15px 25px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+
+/* Register ------------------------------------------------------------------------------------------------------------- */
 #register_input {
   display: flex;
   flex-direction: column;
@@ -197,7 +211,6 @@ footer a {
 }
 
 /* Profile page / edit profile page ----------------------------------------------------------------------------------- */
-
 #profile_header {
   height: 65px;
   width: 100vw;
@@ -360,7 +373,6 @@ footer a {
 
 
 /* Impressum Text ----------------------------------------------------------------------------------------------------- */
-
 #impressum_container {
   display: flex;
   justify-content: center; /* Center content horizontally */
@@ -436,14 +448,16 @@ footer a {
     height: calc(100vw / 6);
   }
 
-  #quest_checkbox {
-    height: 10vw;
-    width: 10vw;
+  #image_Upload {
     margin: 100px 0px 100px 0px;
   }
 
-  #image_Upload {
+  #checkbox {
     margin: 100px 0px 100px 0px;
+  }
+
+  #checkbox_button {
+    padding: 15px 25px;
   }
 
 }
