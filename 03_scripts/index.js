@@ -38,6 +38,7 @@ console.log(checkboxButton.disabled);
 
 checkboxButton.addEventListener('click', () => {
     checkboxButton.style.display = "none";
+    congrats.style.display = "flex";
     localStorage.setItem(storageKey, currentDate);
 });
 
@@ -45,6 +46,7 @@ if (lastClickedDate !== currentDate) {
     checkboxButton.style.display = "flex";
 } else {
     checkboxButton.style.display = "none";
+    congrats.style.display = "flex";
 }
 
 
