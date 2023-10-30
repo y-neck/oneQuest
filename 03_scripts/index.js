@@ -4,14 +4,15 @@ import { supa } from '../00_setup/supabase.js';
 //Import userId
 import { userId } from '../mainUser.js';
 
-// If user is not logged in, serve login site instead
+// If user is not logged in, serve login site instead -----------------------------------------------------------------
 const initialUser = supa.auth.user();   //@joggiletti Replace with userId from line 5
 
 if (initialUser === null) {
     window.location.href = '../views/login.html';
 }
 
-// Fix Image Upload Button Styling
+/* 
+// Fix Image Upload Button Styling ------------------------------------------------------------------------------------
 function displaySelectedFile() {
     const fileInput = document.getElementById("quest_checkbox");
     const fileDisplay = document.getElementById("file-name");
@@ -21,9 +22,29 @@ function displaySelectedFile() {
     } else {
       fileDisplay.textContent = "";
     }
-  }  
+  }
+*/
 
-// Update QuestScore
+// Button can only be clicked once per day ----------------------------------------------------------------------------
+const checkboxButton = document.getElementById('checkbox_button');
+const storageKey = 'lastClickedDate';
+const lastClickedDate = localStorage.getItem(storageKey);
+const currentDate = new Date().toISOString().split('T')[0];
+
+  checkboxButton.addEventListener('click', () => {
+    checkboxButton.disabled = true;
+    localStorage.setItem(storageKey, currentDate);
+});
+
+if (lastClickedDate !== currentDate) {
+  checkboxButton.disabled = false;
+    // Perform the desired action when the button is clicked
+} else {
+  checkboxButton.disabled = true;
+}
+
+
+// Update QuestScore --------------------------------------------------------------------------------------------------
 async function updateQuestScore() {
     const { data: questScoreData, error: questScoreError } = await supa
         .from('users')
@@ -62,7 +83,7 @@ const checkbox = document.getElementById('quest_checkbox');
 checkbox.addEventListener('change', updateQuestScore);
 
 
-// Upload image to bucket and table-----------------------------------------------------------------------
+// Upload image to bucket and table------------------------------------------------------------------------------------
 const imageFileInput = document.getElementById('quest_checkbox');
 
 imageFileInput.addEventListener('change', async (e) => {
@@ -116,7 +137,7 @@ imageFileInput.addEventListener('change', async (e) => {
 
 
 
-// Loading posts-----------------------------------------------------------------------
+// Loading posts ------------------------------------------------------------------------------------------------------
 const imageContainer = document.querySelector('.quest_Images');
 // Fetch the image URLs from the 'images' table
 const { data: imageData, error: imageError } = await supa
@@ -141,7 +162,7 @@ if (imageError) {
 };
 
 
-// Challenge to daily quest--------------------------------------------------------
+// Challenge to daily quest--------------------------------------------------------------------------------------------
 
 // Function to move one item from the "challenges" table to the "challengeToQuest" table
 async function moveChallengeToQuest() {
@@ -197,7 +218,7 @@ if (newQuestCheck !== isItToday || questCheck.length === 0) {
 }
 
 
-// Daily quest-----------------------------------------------------------------------
+// Daily quest---------------------------------------------------------------------------------------------------------
 const today = new Date().toISOString().split('T')[0];
 
 // Fetch the quest from the Supabase table
