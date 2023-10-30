@@ -10,3 +10,37 @@ if (userId === null) {
     window.location.href = '../views/login.html';
 }
 
+// get elements
+let updateUsername = document.querySelector('#editUsername').value;
+let updatePassword = document.querySelector('#editPassword').value;
+
+//Update user profile
+async function updateUser() {
+    //Update password
+    const passwordUpdateResult = await supa.auth.updateUser({ password: updatePassword });
+    const passwordUpdateError = passwordUpdateResult.error;
+
+    if (passwordUpdateError) {
+        console.error('Error updating password:', passwordUpdateError.message);
+    } else {
+        console.log('Password updated successfully');
+    }
+
+    //Update username
+    const usernameUpdateResult = await supa
+        .from('users')
+        .update('username', updateUsername)
+        .eq('id', userId.id);
+    const usernameUpdateError = usernameUpdateResult.error;
+
+    if (usernameUpdateError) {
+        console.error('Error updating username:', usernameUpdateError.message);
+    } else {
+        console.log('Username updated successfully');
+    }
+
+    //window.location.href = '../views/profile.html';
+}
+
+//Add event listeners
+document.querySelector('#confirmChanges').addEventListener('click', updateUser);
