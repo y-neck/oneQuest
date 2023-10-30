@@ -11,7 +11,7 @@ if (initialUser === null) {
     window.location.href = '../views/login.html';
 }
 
-// Fix Image Upload Button
+// Fix Image Upload Button Styling
 function displaySelectedFile() {
     const fileInput = document.getElementById("quest_checkbox");
     const fileDisplay = document.getElementById("file-name");
@@ -23,7 +23,7 @@ function displaySelectedFile() {
     }
   }  
 
-// Update questScore
+// Update QuestScore
 async function updateQuestScore() {
     const { data: questScoreData, error: questScoreError } = await supa
         .from('users')
@@ -43,7 +43,7 @@ async function updateQuestScore() {
         questScore = 0;
     }
 
-    // Update the questScore
+    // Update the QuestScore
     const { data, error } = await supa
         .from('users')
         .update({ questScore: questScore + 1 })
