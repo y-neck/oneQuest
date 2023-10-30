@@ -63,7 +63,8 @@ body {
 }
 
 main {
-  flex: 1 0 auto; /* Force footer to end of page */
+  flex: 1 0 auto;
+  /* Force footer to end of page */
 }
 
 a {
@@ -113,7 +114,8 @@ header {
   width: 34px;
   margin-top: 16px;
   margin-left: 40px;
-  float: left; /* Forces logo to appear on left */
+  float: left;
+  /* Forces logo to appear on left */
 }
 
 #profile_icon {
@@ -121,7 +123,8 @@ header {
   width: 34px;
   margin-top: 16px;
   margin-right: 40px;
-  float: right; /* Forces icon to appear on right; reference #header_logo:float*/
+  float: right;
+  /* Forces icon to appear on right; reference #header_logo:float*/
 }
 
 /* Footer ------------------------------------------------------------------------------------------------------------- */
@@ -160,13 +163,17 @@ footer a {
 
 .quest_Images {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;   /* 3 columns with equal width */
-  grid-template-rows: auto auto auto;   /* 3 rows with automatic height */
+  grid-template-columns: 1fr 1fr 1fr;
+  /* 3 columns with equal width */
+  grid-template-rows: auto auto auto;
+  /* 3 rows with automatic height */
 }
 
 .quest_Images img {
-  width: calc(100vw / 3);   /* defines width ofo each image */
-  height: calc(100vw / 3);  /* defines height of each image */
+  width: calc(100vw / 3);
+  /* defines width ofo each image */
+  height: calc(100vw / 3);
+  /* defines height of each image */
   object-fit: cover;
 }
 
@@ -178,7 +185,8 @@ footer a {
 }
 
 #quest_checkbox {
-  display: none; /* Hide the original file input */
+  display: none;
+  /* Hide the original file input */
 }
 
 #checkbox_button {
@@ -273,32 +281,28 @@ footer a {
 }
 
 #editProfile_inputs {
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  place-items: center;
   display: flex;
   flex-direction: column;
 }
 
-#editUsername {
-  margin-top: 40px;
+.editProfile_input {
   width: 232px;
   height: 53px;
   flex-shrink: 0;
   border-radius: 8px;
-  border: none;
   background: var(--secondary);
-  color: var(--text);
-  text-align: center;
-}
-
-#editPassword {
-  margin-top: 26px;
-  width: 232px;
-  height: 53px;
-  flex-shrink: 0;
-  border-radius: 8px;
+  margin-bottom: 15px;
   border: none;
-  background: var(--secondary);
   color: var(--text);
-  text-align: center;
+  text-align: left;
+  padding-left: 10px;
+  display: flex;
+  flex-direction: column;
 }
 
 #deleteProfile {
@@ -309,17 +313,22 @@ footer a {
   border: none;
   background: var(--accent);
   margin-top: 26px;
+  margin: 0 auto;
 }
 
 #profile_gallery {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;   /* 3 columns with equal width */
-  grid-template-rows: auto auto auto;   /* 3 rows with automatic height */
+  grid-template-columns: 1fr 1fr 1fr;
+  /* 3 columns with equal width */
+  grid-template-rows: auto auto auto;
+  /* 3 rows with automatic height */
 }
 
 #profile_gallery img {
-  width: calc(100vw / 3);   /* defines width ofo each image */
-  height: calc(100vw / 3);  /* defines height of each image */
+  width: calc(100vw / 3);
+  /* defines width ofo each image */
+  height: calc(100vw / 3);
+  /* defines height of each image */
   object-fit: cover;
 }
 
@@ -379,17 +388,21 @@ footer a {
 /* Impressum Text ----------------------------------------------------------------------------------------------------- */
 #impressum_container {
   display: flex;
-  justify-content: center; /* Center content horizontally */
-  align-items: center;     /* Center content vertically */
-  flex-direction: column;  /* This will arrange the children vertically */
+  justify-content: center;
+  /* Center content horizontally */
+  align-items: center;
+  /* Center content vertically */
+  flex-direction: column;
+  /* This will arrange the children vertically */
 
 }
 
 #impressum_container p {
-  text-align: left;      /* Center the text inside the <p> tag */
+  text-align: left;
+  /* Center the text inside the <p> tag */
 }
 
-.text_title{
+.text_title {
   text-align: left;
   margin-inline: 40px;
   margin-top: 20px;
