@@ -26,7 +26,7 @@ function displaySelectedFile() {
 */
 
 // Button can only be clicked once per day ----------------------------------------------------------------------------
-const checkboxButton = document.getElementById('checkbox_button');
+const checkboxButton = document.getElementById('checkbox');
 const congrats = document.getElementById('congrats');
 
 const storageKey = 'lastClickedDate';
