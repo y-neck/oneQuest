@@ -33,15 +33,14 @@ const storageKey = 'lastClickedDate';
 const lastClickedDate = localStorage.getItem(storageKey);
 const currentDate = new Date().toISOString().split('T')[0];
 
-console.log(lastClickedDate);
-console.log(checkboxButton.disabled);
-
+// Deactivate checkboxButton when it's clicked
 checkboxButton.addEventListener('click', () => {
     checkboxButton.style.display = "none";
     congrats.style.display = "flex";
     localStorage.setItem(storageKey, currentDate);
 });
 
+// Deactivate checkboxButton when it was already clicked today
 if (lastClickedDate !== currentDate) {
     checkboxButton.style.display = "flex";
 } else {
