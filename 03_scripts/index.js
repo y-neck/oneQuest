@@ -27,20 +27,24 @@ function displaySelectedFile() {
 
 // Button can only be clicked once per day ----------------------------------------------------------------------------
 const checkboxButton = document.getElementById('checkbox_button');
+const congrats = document.getElementById('congrats');
+
 const storageKey = 'lastClickedDate';
 const lastClickedDate = localStorage.getItem(storageKey);
 const currentDate = new Date().toISOString().split('T')[0];
 
-  checkboxButton.addEventListener('click', () => {
-    checkboxButton.disabled = true;
+console.log(lastClickedDate);
+console.log(checkboxButton.disabled);
+
+checkboxButton.addEventListener('click', () => {
+    checkboxButton.style.display = "none";
     localStorage.setItem(storageKey, currentDate);
 });
 
 if (lastClickedDate !== currentDate) {
-  checkboxButton.disabled = false;
-    // Perform the desired action when the button is clicked
+    checkboxButton.style.display = "flex";
 } else {
-  checkboxButton.disabled = true;
+    checkboxButton.style.display = "none";
 }
 
 
