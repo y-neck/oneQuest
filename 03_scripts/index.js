@@ -11,37 +11,22 @@ if (initialUser === null) {
     window.location.href = '../views/login.html';
 }
 
-/* 
-// Fix Image Upload Button Styling ------------------------------------------------------------------------------------
-function displaySelectedFile() {
-    const fileInput = document.getElementById("quest_checkbox");
-    const fileDisplay = document.getElementById("file-name");
-  
-    if (fileInput.files.length > 0) {
-      fileDisplay.textContent = `Selected File: ${fileInput.files[0].name}`;
-    } else {
-      fileDisplay.textContent = "";
-    }
-  }
-*/
-
 // Button can only be clicked once per day ----------------------------------------------------------------------------
-const checkboxButton = document.getElementById('checkbox_button');
+const checkboxButton = document.getElementById('checkbox');
 const congrats = document.getElementById('congrats');
 
 const storageKey = 'lastClickedDate';
 const lastClickedDate = localStorage.getItem(storageKey);
 const currentDate = new Date().toISOString().split('T')[0];
 
-console.log(lastClickedDate);
-console.log(checkboxButton.disabled);
-
+// Deactivate checkboxButton when it's clicked
 checkboxButton.addEventListener('click', () => {
     checkboxButton.style.display = "none";
     congrats.style.display = "flex";
     localStorage.setItem(storageKey, currentDate);
 });
 
+// Deactivate checkboxButton when it was already clicked today
 if (lastClickedDate !== currentDate) {
     checkboxButton.style.display = "flex";
 } else {
