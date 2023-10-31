@@ -286,6 +286,8 @@ label {
   flex-shrink: 0;
 }
 
+.avatar {}
+
 #profile_username {
   margin-top: 5px;
   margin-bottom: 10px;
