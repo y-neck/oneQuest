@@ -11,11 +11,23 @@ if (userId === null) {
 }
 
 //TODO: @y-neck Get user's profile picture
-//Get avatar----------------------------------------------------------------------------
-async function getProfilePicture() {
-    
+//Load avatar----------------------------------------------------------------------------
+async function loadAvatar() {
+    const avatarPlaceholder = document.querySelector('.avatar');
+    //Fetch the avatar URL
+    const imageUrl = await supa
+        .from('users')
+        .select('avatar_url')
+        .eq('id', userId.id)
+        .single();
+    //Update avatar placeholder
+    if (imageUrl) {
+        console.log('imageUrl:', imageUrl.data.avatar_url);
+        avatarPlaceholder.src = imageUrl.data.avatar_url;
+    } else {
+        console.error('Error fetching avatar URL:', error.message);
+    }
 }
-
 
 //Replace default username with username from database-----------------------------------
 async function getUsername(userId) {
@@ -52,6 +64,7 @@ async function getQuestpoints(userId) {
 (async () => {
     await getUsername(userId);
     await getQuestpoints(userId);
+    await loadAvatar();
 })();
 
 //User image gallery-------------------------------------------------------------------------------
@@ -81,10 +94,7 @@ if (imageError) {
 };
 
 
-document.addEventListener('DOMContentLoaded', function () {
+/* document.addEventListener('DOMContentLoaded', function () {
     console.log('profile.js loaded')
     console.log('DOM Loaded');      //Check if DOM is loaded
-    getUsername();
-    getQuestpoints();
-
-});  //End of DOM loader
+});  //End of DOM loader */
