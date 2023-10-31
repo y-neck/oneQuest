@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <!--Default character set: https://www.w3schools.com/html/html_charset.asp-->
-    <title></title>
+    <title>Registrieren</title>
     <!--Tab title-->
     <meta name="description" content="">
     <!--Description of web page-->
@@ -53,9 +53,12 @@
         <h1 class="login_text">Registrieren</h1>
 
         <div id="register_input">
-            <input type="text" id="registerEmail" placeholder="Email" required>
-            <input type="text" id="registerUsername" placeholder="Benutzername" required>
-            <input type="password" id="registerPassword" placeholder="Passwort" required>
+            <label for="registerEmail">Email</label>
+            <input type="text" id="registerEmail" name="registerEmail" placeholder="Email" required>
+            <label for="registerUsername">Benutzername</label>
+            <input type="text" id="registerUsername" name="registerUsername" placeholder="Benutzername" required>
+            <label for="registerPassword">Passwort</label>
+            <input type="password" id="registerPassword" name="registerPassword" placeholder="Passwort" required>
         </div>
 
         <button class="login_buttonS" id="registerButton">Registrieren</button>
