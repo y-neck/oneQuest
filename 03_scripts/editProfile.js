@@ -28,7 +28,7 @@ async function updateUser() {
     //Update username
     const usernameUpdateResult = await supa
         .from('users')
-        .update('username', updateUsername)
+        .update({ username: updateUsername })
         .eq('id', userId.id)
     const usernameUpdateError = usernameUpdateResult.error;
 
@@ -36,10 +36,9 @@ async function updateUser() {
         console.error('Error updating username:', usernameUpdateError.message);
     } else {
         console.log('Username updated successfully');
-        console.log(userId)
     }
 
-    //window.location.href = '../views/profile.html';
+    window.location.href = '../views/profile.html';
 }
 
 //Add event listeners
