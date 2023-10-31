@@ -5,9 +5,9 @@ import { supa } from '../00_setup/supabase.js';
 import { userId } from '../mainUser.js';
 
 // If user is not logged in, serve login site instead -----------------------------------------------------------------
-const userId = supa.auth.user();
+const loggedIn = supa.auth.user();
 
-if (userId === null) {
+if (loggedIn === null) {
     window.location.href = '../views/login.html';
 }
 
