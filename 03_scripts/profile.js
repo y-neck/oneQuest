@@ -11,15 +11,15 @@ if (userId === null) {
 }
 
 //TODO: @y-neck Get user's profile picture
-async function getProfilePicture(userId){
-    const {data, error}=await supa
-    .from('users')
-    .select('avatar_url')
-    .eq('id',userId.id)
-    .single();
+async function getProfilePicture(userId) {
+    const { data, error } = await supa
+        .from('users')
+        .select('avatar_url')
+        .eq('id', userId.id)
+        .single();
 
-    if(error){
-        console.error('Could not retrieve profile picture from user: ',error.message)
+    if (error) {
+        console.error('Could not retrieve profile picture from user: ', error.message)
     } else {
         document.querySelector('#profile_picture_url').src = userId.avatar_url;
     }
@@ -37,35 +37,61 @@ async function getUsername(userId) {
         console.error('Could not retrieve username from database: ', error.message);  //Add error handling
     } else {
         document.querySelector('#profile_username').innerHTML = data.username; //Replace default username with actual username
-        }
-        //Testing
-        //console.log('console.log in function ', data.username);
     }
+    //Testing
+    //console.log('console.log in function ', data.username);
+}
 
-    //Get questpoints from database
-    async function getQuestpoints(userId) {
-        const { data, error } = await supa
-            .from('users')
-            .select('questScore')
-            .eq('id', userId.id)
-            .single();
+//Get questpoints from database
+async function getQuestpoints(userId) {
+    const { data, error } = await supa
+        .from('users')
+        .select('questScore')
+        .eq('id', userId.id)
+        .single();
 
-        if (data) {
-            document.getElementById('profile_questpoints_number').innerHTML = data.questScore;
+    if (data) {
+        document.getElementById('profile_questpoints_number').innerHTML = data.questScore;
+    } else {
+        console.error('Could not retrieve questpoints from database:', error.message);
+    }
+}
+//Call functions
+(async () => {
+    await getUsername(userId);
+    await getQuestpoints(userId);
+})();
+
+//Load user's image gallery
+const profileGallery = document.querySelector('#profile_gallery');
+// Fetch the image URLs from the 'images' table
+const { data: imageData, error: imageError } = await supa
+    .from('images')
+    .select('url')
+    .eq('user', userId.id)
+    .order('created_at', { ascending: false });
+
+if (imageError) {
+    console.error('Error fetching image URLs:', imageError.message);
+} else {
+    // Iterate through the image data and update the image elements
+    for (let i = 0; i < 9; i++) {
+        const img = profileGallery.children[i];
+        // Check if there is an image URL available for this index
+        if (i < imageData.length) {
+            img.src = imageData[i].url;
         } else {
-            console.error('Could not retrieve questpoints from database:', error.message);
+            // If there is no image URL available, you can set a fallback image or hide the image element
+            img.style.display = 'none';
         }
     }
-    //Call functions
-    (async () => {
-        await getUsername(userId);
-        await getQuestpoints(userId);
-    })();
+};
 
-    document.addEventListener('DOMContentLoaded', function () {
-        console.log('profile.js loaded')
-        console.log('DOM Loaded');      //Check if DOM is loaded
-        getUsername();
-        getQuestpoints();
 
-    });  //End of DOM loader
+document.addEventListener('DOMContentLoaded', function () {
+    console.log('profile.js loaded')
+    console.log('DOM Loaded');      //Check if DOM is loaded
+    getUsername();
+    getQuestpoints();
+
+});  //End of DOM loader
