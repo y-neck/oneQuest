@@ -286,6 +286,10 @@ label {
   flex-shrink: 0;
 }
 
+.avatar {
+border-radius: 50%;
+}
+
 #profile_username {
   margin-top: 5px;
   margin-bottom: 10px;
