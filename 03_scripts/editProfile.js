@@ -54,7 +54,7 @@ async function deleteUser() {
     }
     //Delete localStorage
     localStorage.clear();
-
+    //Redirect
     window.location.href = '../views/register.html';
 }
 
