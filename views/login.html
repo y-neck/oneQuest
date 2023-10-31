@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <!--Default character set: https://www.w3schools.com/html/html_charset.asp-->
-    <title></title>
+    <title>Login</title>
     <!--Tab title-->
     <meta name="description" content="">
     <!--Description of web page-->
@@ -40,35 +40,38 @@
 
 </head>
 
-<header>
-    <a href="../index.html"><img id="header_logo" src="../img/graphics/LogoOQ4.png" alt="Header Logo OQ"></a>
-</header>
-
 <body>
+    <header>
+        <a href="../index.html"><img id="header_logo" src="../img/graphics/LogoOQ4.png" alt="Header Logo OQ"></a>
+    </header>
+
     <h1 id="login_top">Login</h1>
 
-    <div class="button-container">
+    <div id="button-container">
 
         <div id="login_input">
-            <input id="loginEmail" class="login_button" type="email" placeholder="Email" required>
-            <input id="loginPassword" class="login_button" type="password" placeholder="Passwort" required>
+            <label for="loginEmail">Email</label>
+            <input id="loginEmail" class="login_button" name="loginEmail" type="email" placeholder="Email" required>
+            <label for="loginPassword">Passwort</label>
+            <input id="loginPassword" class="login_button" name="loginPassword" type="password" placeholder="Passwort"
+                required>
         </div>
 
         <button id="loginButton" class="login_buttonS">Login</button>
+        <a href="../views/register.html">Noch kein Konto?</a>
     </div>
-    <a href="../views/register.html">Noch kein Konto?</a>
 
-<footer>
-    <a href="../views/impressum.html" target="_blank">Impressum</a>
-    <a href="../views/rules.html" target="_blank">Regeln</a>
-    <a href="../views/about.html" target="_blank">About</a>
-    <a href="../views/datenschutz.html" target="_blank">Datenschutz</a>
-</footer>
+    <footer>
+        <a href="../views/impressum.html" target="_blank">Impressum</a>
+        <a href="../views/rules.html" target="_blank">Regeln</a>
+        <a href="../views/about.html" target="_blank">About</a>
+        <a href="../views/datenschutz.html" target="_blank">Datenschutz</a>
+    </footer>
 
     <!-- Import supabase -->
     <script type="module" src=" ../00_setup/supabase.js"></script>
     <script type="module" src="../01_api/supabase_api.js"></script>
-    <script type="module" src = "../mainUser.js"></script>
+    <script type="module" src="../mainUser.js"></script>
     <script type="module" src="../03_scripts/login.js"></script>
 
 </body>

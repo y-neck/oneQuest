@@ -14,7 +14,7 @@
     --background: #c4eff3;
     --primary: #3692a1;
     --secondary: #ffffff;
-    --accent: #f9c34e;
+    --accent: #d79404;
   }
 }
 
@@ -24,7 +24,7 @@
     --background: #0c373b;
     --primary: #5ebbc9;
     --secondary: #000000;
-    --accent: #b17b06;
+    --accent: #F9B00B;
   }
 }
 
@@ -189,7 +189,8 @@ footer a {
   margin: 75px 0px 75px 0px;
   display: none;
   /* Hide the original file input */
-  margin-bottom: 40px; /* BUG: @joggiletti Fix margin to footer */
+  margin-bottom: 40px;
+  /* BUG: @joggiletti Fix margin to footer */
 }
 
 #checkbox_button {
@@ -210,6 +211,10 @@ footer a {
 
 
 /* Register ------------------------------------------------------------------------------------------------------------- */
+label{
+  display: none;
+}
+
 #register_input {
   display: flex;
   flex-direction: column;
@@ -348,9 +353,10 @@ footer a {
 }
 
 /* Login page --------------------------------------------------------------------------------------------------------- */
-.button-container {
+#button-container {
   display: flex;
   flex-direction: column;
+  margin-bottom: 40px;
 }
 
 .login_button {
