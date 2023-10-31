@@ -220,6 +220,7 @@ label{
   background: none;
   border: none;
   cursor: pointer;
+  display: none;
 }
 
 #register_input {
@@ -241,9 +242,6 @@ label{
   padding-left: 10px;
 }
 
-#profile_pictureUpload {
-  display: none;
-}
 
 #upload_Button {
   display: flex;
