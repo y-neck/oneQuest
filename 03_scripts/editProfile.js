@@ -10,14 +10,13 @@ if (userId === null) {
     window.location.href = '../views/login.html';
 }
 
-// get elements
-let updateUsername = document.querySelector('#editUsername').value;
-let updatePassword = document.querySelector('#editPassword').value;
-
 //Update user profile
 async function updateUser() {
+    // get elements
+    let updateUsername = document.querySelector('#editUsername').value;
+    let updatePassword = document.querySelector('#editPassword').value;
     //Update password
-    const passwordUpdateResult = await supa.auth.updateUser({ password: updatePassword });
+    const passwordUpdateResult = await supa.auth.update({ password: updatePassword });
     const passwordUpdateError = passwordUpdateResult.error;
 
     if (passwordUpdateError) {
@@ -30,17 +29,20 @@ async function updateUser() {
     const usernameUpdateResult = await supa
         .from('users')
         .update('username', updateUsername)
-        .eq('id', userId.id);
+        .eq('id', userId.id)
     const usernameUpdateError = usernameUpdateResult.error;
 
     if (usernameUpdateError) {
         console.error('Error updating username:', usernameUpdateError.message);
     } else {
         console.log('Username updated successfully');
+        console.log(userId)
     }
 
     //window.location.href = '../views/profile.html';
 }
 
 //Add event listeners
-document.querySelector('#confirmChanges').addEventListener('click', updateUser);
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelector('#profile_confirmChanges').addEventListener('click', updateUser);
+});
