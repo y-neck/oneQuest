@@ -43,16 +43,20 @@ async function updateUserName(user) {
     const registerUsername = document.querySelector('#registerUsername').value;
     //Update username
     const { data, error } = await supa.from('users').insert([
-        {id: user.id, username: registerUsername, questScore: 0}
+        { id: user.id, username: registerUsername, questScore: 0 }
     ])
     //Testing
     //console.log(data);
 
     //If user registration successful, redirect to index
-    if(data){
-        window.location.href="../index.html";
+    if (data) {
+        window.location.href = "../index.html";
     }
 }
+
+//Upload profile picture
+let avatarUpload = document.querySelector('#profile_pictureUpload');
+
 
 // RegisterUser button event listener
 document.querySelector('#registerButton').addEventListener('click', registerUser);

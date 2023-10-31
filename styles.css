@@ -215,6 +215,12 @@ label{
   display: none;
 }
 
+#profile_pictureUpload{
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
 #register_input {
   display: flex;
   flex-direction: column;
@@ -385,10 +391,17 @@ label{
   color: var(--secondary);
 }
 
-.mail_icon {
+.profile_picUploadImg {
   width: 120px;
   height: 120px;
   margin-top: 35px;
+  filter: invert(43%) sepia(93%) saturate(337%) hue-rotate(141deg) brightness(97%) contrast(78%)
+}
+
+@media (prefers-color-scheme:dark){
+.profile_picUploadImg{
+  filter: invert(80%) sepia(19%) saturate(981%) hue-rotate(140deg) brightness(82%) contrast(91%);
+}
 }
 
 .login_text {

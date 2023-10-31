@@ -47,7 +47,9 @@
     </header>
 
     <main>
-        <div id="profile_picture"><img src="../img/graphics/profile.png" alt="Profilbild"></div>
+        <div id="profile_picture">
+            <button id="profile_pictureUpload"><img src="../img/graphics/circle-arrow-up-solid.svg" alt="Profilbild" class="profile_picUploadImg"></button>
+        </div>
         <!-- TODO: @y-neck Add functionality to retrieve or update profile picture -->
         <div id="editProfile_inputs">
             <!-- TODO: @y-neck Add functionality to retrieve or update Username/pw -->
@@ -60,12 +62,12 @@
 
     </main>
 
-<footer>
-    <a href="../views/impressum.html" target="_blank">Impressum</a>
-    <a href="../views/rules.html" target="_blank">Regeln</a>
-    <a href="../views/about.html" target="_blank">About</a>
-    <a href="../views/datenschutz.html" target="_blank">Datenschutz</a>
-</footer>
+    <footer>
+        <a href="../views/impressum.html" target="_blank">Impressum</a>
+        <a href="../views/rules.html" target="_blank">Regeln</a>
+        <a href="../views/about.html" target="_blank">About</a>
+        <a href="../views/datenschutz.html" target="_blank">Datenschutz</a>
+    </footer>
 
     <!-- Import supabase -->
     <script type='module' src=" ../00_setup/supabase.js"></script>
