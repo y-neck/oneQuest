@@ -67,7 +67,7 @@ avatarUpload.addEventListener('change', async (e) => {
 
         // Upload the image to the Supabase bucket
         const { data, error } = await supa.storage
-            .from('avatars')
+            .from('image_bucket')
             .upload(filename, imageFile);
 
         if (error) {
@@ -75,7 +75,7 @@ avatarUpload.addEventListener('change', async (e) => {
         } else {
             // Get the URL of the uploaded image
             const imageUrl = supa.storage
-                .from('avatars')
+                .from('image_bucket')
                 .getPublicUrl(filename);
 
             // Get User_ID
@@ -83,10 +83,11 @@ avatarUpload.addEventListener('change', async (e) => {
 
             // Insert the URL and User_ID into the 'users' table
             const { data: insertedData, error: insertError } = await supa
-                .from('users')
-                .update( {
-                    avatar_url: imageUrl.publicURL,
-                });
+              .from('users')
+              .update({
+                avatar_url: imageUrl.publicURL,
+              })
+              .eq('id', initialUser.id);
 
             //Error handling
             if (insertError) {
