@@ -21,8 +21,13 @@ async function loadAvatar() {
         .single();
     //Update avatar placeholder
     if (imageUrl) {
-        console.log('imageUrl:', imageUrl.data.avatar_url);
+        //console.log('imageUrl:', imageUrl.data.avatar_url);
         avatarPlaceholder.src = imageUrl.data.avatar_url;
+
+        // Set CSS properties to fit the image with correct aspect ratio
+        avatarPlaceholder.style.width = '100%';
+        avatarPlaceholder.style.height = '100%';
+        avatarPlaceholder.style.objectFit = 'cover';
     } else {
         console.error('Error fetching avatar URL:', error.message);
     }
