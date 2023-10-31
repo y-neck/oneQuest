@@ -41,7 +41,25 @@ async function updateUser() {
     window.location.href = '../views/profile.html';
 }
 
+async function deleteUser() {
+    //Warning
+    alert('Willst du deinen Account wirklich löschen?');
+    //Delete user
+    const { error } = await supa.rpc('delete_user');
+    //Error handling
+    if (error) {
+        console.error('Error deleting user:', error.message);
+    } else {
+        console.log('User deleted successfully');
+    }
+    //Delete localStorage
+    localStorage.clear();
+
+    window.location.href = '../views/register.html';
+}
+
 //Add event listeners
 document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('#editProfile_confirmChanges').addEventListener('click', updateUser);
+    document.querySelector('#deleteProfile').addEventListener('click', deleteUser);
 });
