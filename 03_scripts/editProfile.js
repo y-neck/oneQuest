@@ -58,6 +58,49 @@ async function deleteUser() {
     window.location.href = '../views/register.html';
 }
 
+// Update image ------------------------------------------------------------------------------------
+const newImage = document.getElementById('profile_pictureUpload');
+
+newImage.addEventListener('change', async (e) => {
+    const imageFile = e.target.files[0];
+
+    if (imageFile) {
+        // Generate a unique filename for the uploaded image
+        const filename = `image_profile/${Date.now()}_${imageFile.name}`;
+
+        // Upload the image to the Supabase bucket
+        const { data, error } = await supa.storage
+            .from('image_bucket')
+            .upload(filename, imageFile);
+
+        if (error) {
+            console.error('Error uploading image:', error.message);
+        } else {
+            // Get the URL of the uploaded image
+            const imageUrl = supa.storage
+                .from('image_bucket')
+                .getPublicUrl(filename);
+
+            // Get User_ID
+            const initialUser = supa.auth.user();
+
+            // Insert the URL and User_ID into the 'users' table
+            const { data: insertedData, error: insertError } = await supa
+              .from('users')
+              .update({ avatar_url: imageUrl.publicURL })
+              .eq('id', initialUser.id);
+
+            //Error handling
+            if (insertError) {
+                console.error('Error inserting image URL:', insertError.message);
+            } else {
+                console.log('Image URL inserted successfully:', imageUrl);
+            }
+        }
+    }
+});
+
+
 //Add event listeners
 document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('#editProfile_confirmChanges').addEventListener('click', updateUser);
