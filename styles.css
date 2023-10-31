@@ -167,6 +167,8 @@ footer a {
   /* 3 columns with equal width */
   grid-template-rows: auto auto auto;
   /* 3 rows with automatic height */
+  pointer-events: none;
+  /* Disables clicks and downloads on images */
 }
 
 .quest_Images img {
@@ -284,7 +286,7 @@ footer a {
   line-height: normal;
 }
 
-#editProfile_confirmChanges{
+#editProfile_confirmChanges {
   background: none;
   border: none;
   cursor: pointer;
@@ -332,6 +334,8 @@ footer a {
   /* 3 columns with equal width */
   grid-template-rows: auto auto auto;
   /* 3 rows with automatic height */
+  pointer-events: none;
+  /* Disables clicks and downloads on images */
 }
 
 #profile_gallery img {
