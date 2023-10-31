@@ -151,6 +151,7 @@ if (imageError) {
             img.style.display = 'none';
         }
     }
+    //TODO: Automatic page reload after upload
 };
 
 
