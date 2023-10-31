@@ -84,9 +84,7 @@ avatarUpload.addEventListener('change', async (e) => {
             // Insert the URL and User_ID into the 'users' table
             const { data: insertedData, error: insertError } = await supa
               .from('users')
-              .update({
-                avatar_url: imageUrl.publicURL,
-              })
+              .update({ avatar_url: imageUrl.publicURL })
               .eq('id', initialUser.id);
               
             //Error handling
