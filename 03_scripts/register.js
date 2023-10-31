@@ -63,11 +63,11 @@ avatarUpload.addEventListener('change', async (e) => {
 
     if (imageFile) {
         // Generate a unique filename for the uploaded image
-        const filename = `image_posts/${Date.now()}_${imageFile.name}`;
+        const filename = `image_profile/${Date.now()}_${imageFile.name}`;
 
         // Upload the image to the Supabase bucket
         const { data, error } = await supa.storage
-            .from('image_bucket')
+            .from('avatars')
             .upload(filename, imageFile);
 
         if (error) {
@@ -75,26 +75,17 @@ avatarUpload.addEventListener('change', async (e) => {
         } else {
             // Get the URL of the uploaded image
             const imageUrl = supa.storage
-                .from('image_bucket')
+                .from('avatars')
                 .getPublicUrl(filename);
-
-            // Get Quest_ID
-            const todayQuest = new Date().toISOString().split('T')[0];
-            const { data: dailyQuest } = await supa
-                .from('challengeToQuest')
-                .select('id')
-                .eq('created_at', todayQuest);
 
             // Get User_ID
             const initialUser = supa.auth.user();
 
-            // Insert the URL, User_ID and Quest_ID into the 'images' table
+            // Insert the URL and User_ID into the 'users' table
             const { data: insertedData, error: insertError } = await supa
-                .from('images')
-                .insert( {
-                    url: imageUrl.publicURL,
-                    challenge_to_quest: dailyQuest[0].id,
-                    user: initialUser.id,
+                .from('users')
+                .update( {
+                    avatar_url: imageUrl.publicURL,
                 });
 
             //Error handling
