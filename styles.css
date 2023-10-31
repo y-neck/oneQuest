@@ -193,6 +193,8 @@ footer a {
 }
 
 #checkbox_button {
+  margin: 75px 0px 75px 0px;
+  display: flex;
   background-color: var(--accent);
   color: var(--text);
   padding: 15px 25px;
