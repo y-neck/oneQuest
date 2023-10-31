@@ -4,7 +4,7 @@ console.log('imported supabase');
 
 document.addEventListener('DOMContentLoaded', () => {
     console.log('DOM loaded');
-})
+})  
 
 async function registerUser() {
     const registerEmail = document.querySelector('#registerEmail').value;
@@ -56,7 +56,7 @@ async function updateUserName(user) {
 
 
 //Upload profile picture
-let avatarUpload = document.querySelector('#profile_pictureUpload');
+const avatarUpload = document.getElementById('profile_pictureUpload');
  
 avatarUpload.addEventListener('change', async (e) => {
     const imageFile = e.target.files[0];
@@ -88,7 +88,7 @@ avatarUpload.addEventListener('change', async (e) => {
                 avatar_url: imageUrl.publicURL,
               })
               .eq('id', initialUser.id);
-
+              
             //Error handling
             if (insertError) {
                 console.error('Error inserting image URL:', insertError.message);
