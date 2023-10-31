@@ -24,6 +24,7 @@ checkboxButton.addEventListener('click', () => {
     checkboxButton.style.display = "none";
     congrats.style.display = "flex";
     localStorage.setItem(storageKey, currentDate);
+    console.log('Checkbox button clicked');
 });
 
 // Deactivate checkboxButton when it was already clicked today
