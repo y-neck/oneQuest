@@ -189,6 +189,7 @@ footer a {
   margin: 75px 0px 75px 0px;
   display: none;
   /* Hide the original file input */
+  margin-bottom: 40px; /* BUG: @joggiletti Fix margin to footer */
 }
 
 #checkbox_button {
