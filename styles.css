@@ -240,6 +240,16 @@ label{
   padding-left: 10px;
 }
 
+#profile_pictureUpload {
+  display: none;
+}
+
+#upload_Button {
+  display: flex;
+  cursor: pointer;
+  flex-direction: column;
+}
+
 /* Profile page / edit profile page ----------------------------------------------------------------------------------- */
 #profile_header {
   height: 65px;

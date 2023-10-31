@@ -54,8 +54,58 @@ async function updateUserName(user) {
     }
 }
 
+
 //Upload profile picture
 let avatarUpload = document.querySelector('#profile_pictureUpload');
+ 
+avatarUpload.addEventListener('change', async (e) => {
+    const imageFile = e.target.files[0];
+
+    if (imageFile) {
+        // Generate a unique filename for the uploaded image
+        const filename = `image_posts/${Date.now()}_${imageFile.name}`;
+
+        // Upload the image to the Supabase bucket
+        const { data, error } = await supa.storage
+            .from('image_bucket')
+            .upload(filename, imageFile);
+
+        if (error) {
+            console.error('Error uploading image:', error.message);
+        } else {
+            // Get the URL of the uploaded image
+            const imageUrl = supa.storage
+                .from('image_bucket')
+                .getPublicUrl(filename);
+
+            // Get Quest_ID
+            const todayQuest = new Date().toISOString().split('T')[0];
+            const { data: dailyQuest } = await supa
+                .from('challengeToQuest')
+                .select('id')
+                .eq('created_at', todayQuest);
+
+            // Get User_ID
+            const initialUser = supa.auth.user();
+
+            // Insert the URL, User_ID and Quest_ID into the 'images' table
+            const { data: insertedData, error: insertError } = await supa
+                .from('images')
+                .insert( {
+                    url: imageUrl.publicURL,
+                    challenge_to_quest: dailyQuest[0].id,
+                    user: initialUser.id,
+                });
+
+            //Error handling
+            if (insertError) {
+                console.error('Error inserting image URL:', insertError.message);
+            } else {
+                console.log('Image URL inserted successfully:', imageUrl);
+            }
+        }
+    }
+});
 
 
 // RegisterUser button event listener
