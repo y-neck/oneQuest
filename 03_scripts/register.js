@@ -6,11 +6,11 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('DOM loaded');
 })  
 
+//Signup user--------------------------------------------------------------------------------------------
 async function registerUser() {
     const registerEmail = document.querySelector('#registerEmail').value;
     const registerPassword = document.querySelector('#registerPassword').value;
 
-    //Signup user
     const { user, error } = await supa.auth.signUp({
         email: registerEmail,
         password: registerPassword,
@@ -55,7 +55,7 @@ async function updateUserName(user) {
 }
 
 
-//Upload profile picture
+//Upload profile picture---------------------------------------------------------------------------------
 const avatarUpload = document.getElementById('profile_pictureUpload');
  
 avatarUpload.addEventListener('change', async (e) => {
@@ -74,7 +74,7 @@ avatarUpload.addEventListener('change', async (e) => {
             console.error('Error uploading image:', error.message);
         } else {
             // Get the URL of the uploaded image
-            const imageUrl = supa.storage
+            const avatarUrl = supa.storage
                 .from('image_bucket')
                 .getPublicUrl(filename);
 
@@ -84,14 +84,14 @@ avatarUpload.addEventListener('change', async (e) => {
             // Insert the URL and User_ID into the 'users' table
             const { data: insertedData, error: insertError } = await supa
               .from('users')
-              .update({ avatar_url: imageUrl.publicURL })
+              .update({ avatar_url: avatarUrl.publicURL })
               .eq('id', initialUser.id);
               
             //Error handling
             if (insertError) {
                 console.error('Error inserting image URL:', insertError.message);
             } else {
-                console.log('Image URL inserted successfully:', imageUrl);
+                console.log('Image URL inserted successfully:', avatarUrl);
             }
         }
     }

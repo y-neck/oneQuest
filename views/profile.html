@@ -48,7 +48,8 @@
     </header>
 
     <main>
-        <div id="profile_picture"><img id="profile_picture_url" src="../img/graphics/profile.png" alt="Profilbild"></div>
+        <div id="profile_picture"><img id="profile_avatar" class="avatar" src="../img/graphics/profile.png"
+                alt="Profilbild"></div>
         <h1 id="profile_username">User</h1>
         <div id="profile_questpoints">
             <p>Du hast schon</p>
@@ -69,19 +70,20 @@
 
     </main>
 
-<footer>
-    <a href="../views/impressum.html" target="_blank">Impressum</a>
-    <a href="../views/rules.html" target="_blank">Regeln</a>
-    <a href="../views/about.html" target="_blank">About</a>
-    <a href="../views/datenschutz.html" target="_blank">Datenschutz</a>
-</footer>
+    <footer>
+        <a href="../views/impressum.html" target="_blank">Impressum</a>
+        <a href="../views/rules.html" target="_blank">Regeln</a>
+        <a href="../views/about.html" target="_blank">About</a>
+        <a href="../views/datenschutz.html" target="_blank">Datenschutz</a>
+    </footer>
 
     <!-- Import supabase -->
     <script type="module" src=" ../00_setup/supabase.js"></script>
     <script type="module" src="../01_api/supabase_api.js"></script>
     <!-- JS -->
     <script src="../03_scripts/profile.js" type="module"></script>
-    <script src="../mainUser.js" type="module"></script> <!-- Require type="module" when working with imports in the js file -->
+    <script src="../mainUser.js" type="module"></script>
+    <!-- Require type="module" when working with imports in the js file -->
 
 </body>
 
