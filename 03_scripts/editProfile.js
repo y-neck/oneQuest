@@ -43,5 +43,5 @@ async function updateUser() {
 
 //Add event listeners
 document.addEventListener('DOMContentLoaded', () => {
-    document.querySelector('#profile_confirmChanges').addEventListener('click', updateUser);
+    document.querySelector('#editProfile_confirmChanges').addEventListener('click', updateUser);
 });

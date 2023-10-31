@@ -284,6 +284,12 @@ footer a {
   line-height: normal;
 }
 
+#editProfile_confirmChanges{
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
 #editProfile_inputs {
   justify-content: center;
   align-items: center;
