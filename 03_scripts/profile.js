@@ -10,7 +10,6 @@ if (userId === null) {
     window.location.href = '../views/login.html';
 }
 
-//TODO: @y-neck Get user's profile picture
 //Load avatar----------------------------------------------------------------------------
 async function loadAvatar() {
     const avatarPlaceholder = document.querySelector('.avatar');
