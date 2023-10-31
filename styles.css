@@ -212,11 +212,11 @@ footer a {
 
 
 /* Register ------------------------------------------------------------------------------------------------------------- */
-label{
+label {
   display: none;
 }
 
-#profile_pictureUpload{
+#profile_pictureUpload {
   background: none;
   border: none;
   cursor: pointer;
@@ -365,6 +365,8 @@ label{
   height: calc(100vw / 3);
   /* defines height of each image */
   object-fit: cover;
+  width: calc(100vw / 6);
+  height: calc(100vw / 6);
 }
 
 /* Login page --------------------------------------------------------------------------------------------------------- */
@@ -407,10 +409,10 @@ label{
   filter: invert(43%) sepia(93%) saturate(337%) hue-rotate(141deg) brightness(97%) contrast(78%)
 }
 
-@media (prefers-color-scheme:dark){
-.profile_picUploadImg{
-  filter: invert(80%) sepia(19%) saturate(981%) hue-rotate(140deg) brightness(82%) contrast(91%);
-}
+@media (prefers-color-scheme:dark) {
+  .profile_picUploadImg {
+    filter: invert(80%) sepia(19%) saturate(981%) hue-rotate(140deg) brightness(82%) contrast(91%);
+  }
 }
 
 .login_text {
