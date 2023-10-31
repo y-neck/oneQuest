@@ -11,21 +11,13 @@ if (userId === null) {
 }
 
 //TODO: @y-neck Get user's profile picture
-async function getProfilePicture(userId) {
-    const { data, error } = await supa
-        .from('users')
-        .select('avatar_url')
-        .eq('id', userId.id)
-        .single();
-
-    if (error) {
-        console.error('Could not retrieve profile picture from user: ', error.message)
-    } else {
-        document.querySelector('#profile_picture_url').src = userId.avatar_url;
-    }
+//Get avatar----------------------------------------------------------------------------
+async function getProfilePicture() {
+    
 }
 
-//Replace default username with username from database
+
+//Replace default username with username from database-----------------------------------
 async function getUsername(userId) {
     const { data, error } = await supa
         .from('users')
@@ -42,7 +34,7 @@ async function getUsername(userId) {
     //console.log('console.log in function ', data.username);
 }
 
-//Get questpoints from database
+//Get questpoints from database------------------------------------------------------------------
 async function getQuestpoints(userId) {
     const { data, error } = await supa
         .from('users')
@@ -62,6 +54,7 @@ async function getQuestpoints(userId) {
     await getQuestpoints(userId);
 })();
 
+//User image gallery-------------------------------------------------------------------------------
 //Load user's image gallery
 const profileGallery = document.querySelector('#profile_gallery');
 // Fetch the image URLs from the 'images' table
