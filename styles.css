@@ -173,7 +173,7 @@ footer a {
 
 .quest_Images img {
   width: calc(100vw / 3);
-  /* defines width ofo each image */
+  /* defines width of each image */
   height: calc(100vw / 3);
   /* defines height of each image */
   object-fit: cover;
@@ -365,7 +365,7 @@ border-radius: 50%;
 
 #profile_gallery img {
   width: calc(100vw / 3);
-  /* defines width ofo each image */
+  /* defines width of each image */
   height: calc(100vw / 3);
   /* defines height of each image */
   object-fit: cover;
