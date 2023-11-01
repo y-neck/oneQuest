@@ -491,6 +491,8 @@ border-radius: 50%;
 
   #profile_icon {
     margin-right: calc(100vw / 4);
+    width: 34px;
+    height: 34px;
   }
 
   /* Home */
