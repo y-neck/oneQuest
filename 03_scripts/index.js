@@ -122,6 +122,7 @@ imageFileInput.addEventListener('change', async (e) => {
                 console.error('Error inserting image URL:', insertError.message);
             } else {
                 console.log('Image URL inserted successfully:', imageUrl);
+                location.reload(); // Refresh the page
             }
         }
     }
