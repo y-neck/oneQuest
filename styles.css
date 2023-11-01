@@ -369,8 +369,6 @@ border-radius: 50%;
   height: calc(100vw / 3);
   /* defines height of each image */
   object-fit: cover;
-  width: calc(100vw / 6);
-  height: calc(100vw / 6);
 }
 
 /* Login page --------------------------------------------------------------------------------------------------------- */
@@ -524,6 +522,12 @@ border-radius: 50%;
 
   #checkbox_button {
     padding: 15px 25px;
+  }
+
+  /* Profile Gallery */
+  #profile_gallery img {
+    width: calc(100vw / 6);
+    height: calc(100vw / 6);
   }
 
 }
