@@ -29,7 +29,7 @@ async function updateUser() {
     const usernameUpdateResult = await supa
         .from('users')
         .update({ username: updateUsername })
-        .eq('id', userId.id)
+        .eq('id', userId.id);
     const usernameUpdateError = usernameUpdateResult.error;
 
     if (usernameUpdateError) {

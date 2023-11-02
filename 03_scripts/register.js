@@ -4,7 +4,7 @@ console.log('imported supabase');
 
 document.addEventListener('DOMContentLoaded', () => {
     console.log('DOM loaded');
-})  
+});
 
 //Signup user--------------------------------------------------------------------------------------------
 async function registerUser() {
@@ -44,7 +44,7 @@ async function updateUserName(user) {
     //Update username
     const { data, error } = await supa.from('users').insert([
         { id: user.id, username: registerUsername, questScore: 0 }
-    ])
+    ]);
     //Testing
     //console.log(data);
 

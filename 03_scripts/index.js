@@ -153,7 +153,7 @@ if (imageError) {
         }
     }
     //TODO: Automatic page reload after upload
-};
+}
 
 
 // Challenge to daily quest--------------------------------------------------------------------------------------------

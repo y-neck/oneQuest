@@ -73,7 +73,7 @@ if (imageError) {
             img.style.display = 'none';
         }
     }
-};
+}
 
 
 /* document.addEventListener('DOMContentLoaded', function () {
