@@ -1,3 +1,7 @@
+
+
+![Static Badge](https://img.shields.io/badge/Project_Version-v1-blue?style=flat)
+
 # oneQuest
 Willkommen bei OneQuest!
 Wir sind ein Quartett von Studenten, von denen jeder sein eigenes Flair und Talent in dieses Projekt einbringt. Auf einer Reise voller Innovation und Kreativität entstand OneQuest aus dem Wunsch heraus, dem Alltag ein wenig Abenteuer zu verleihen.
