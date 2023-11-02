@@ -30,7 +30,10 @@ async function loadAvatar() {
     }
 }
 
-document.addEventListener('DOMContentLoaded', loadAvatar);
+//Error handling for placeholder
+const avatarPlaceholder = document.querySelector('.avatar');
+if (avatarPlaceholder !== null) { document.addEventListener('DOMContentLoaded', loadAvatar); }
+
 
 //Exports
 export { userId };
